@@ -1,7 +1,12 @@
 {
   "cSpell.words": [
+    "evals",
     "Henrard",
-    "oklch"
+    "Hormozi",
+    "nocompatible",
+    "oklch",
+    "Piron",
+    "turbopack"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }

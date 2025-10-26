@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio (Next.js + AI features)
 
-## Getting Started
+This repository is a Next.js (app router) TypeScript project with built-in AI UI components.
 
-First, run the development server:
+## Repo snapshot
 
-```bash
+- Framework: Next.js (app router), TypeScript, React 19, Next 16.
+- UI system: `core/components/ui/*` (reusable primitives — Button, Card, Field, Input, etc.).
+- AI feature area: `features/ai/` contains AI UI and domain logic (components, schema, tools).
+- Server endpoints: `app/api/*` — e.g. `app/api/chat/route.ts` and `app/api/notify/discord/route.ts`.
+
+## Getting started
+
+Install dependencies and run the dev server:
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — start Next.js in development mode
+- `npm run build` — build for production
+- `npm run start` — run the production build
+- `npm run lint` — run ESLint
 
-## Learn More
+## AI & extension guidance
 
-To learn more about Next.js, take a look at the following resources:
+This repo contains AI-specific patterns and helper files under `features/ai/`. There's also a concise agent guide created to help automated coding agents and contributors: `.github/copilot-instructions.md` — check that file for immediate, repo-specific guidance (UI primitives, how AI tools are wired via `ChatTools`/`addToolResult`, and schema/form conventions).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key places to inspect
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- App entry/layout: `app/layout.tsx`, `app/page.tsx`
+- UI primitives: `core/components/ui/*`
+- Providers: `core/providers/index.tsx`, `core/providers/theme-provider.tsx`
+- AI features: `features/ai/` (components, schema, tools)
+- API routes: `app/api/chat/route.ts`, `app/api/notify/discord/route.ts`
 
-## Deploy on Vercel
+If you maintain CI, deploy steps, or environment conventions not represented here, add them to the README or `.github/copilot-instructions.md` so contributors and agents can follow them.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Edited: concise project summary and pointers for contributors and AI agents.

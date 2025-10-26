@@ -1,8 +1,10 @@
-import Header from "@/components/layouts/header";
-import Providers from "@/components/providers";
+import Background from "@/core/components/layouts/background";
+import Header from "@/core/components/layouts/header";
+import Providers from "@/core/components/providers";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PropsWithChildren } from "react";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,10 +25,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen pt-16`}
+      >
         <Providers>
           <Header />
+          <Background />
           {children}
+          <Toaster position="top-center" />
         </Providers>
       </body>
     </html>

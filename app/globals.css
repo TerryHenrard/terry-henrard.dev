@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin 'tailwind-scrollbar';
+
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -195,4 +198,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+div[role="log"][class*="overflow-y-auto"] > div[style*="overflow: auto"] {
+  @apply scrollbar-thin
 }
