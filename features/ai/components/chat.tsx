@@ -85,6 +85,7 @@ export default function Chat() {
 
   // Keyboard UX:
   // - Enter on empty input = send first starter prompt.
+  // - Enter on non-empty input = submit the message.
   // - Keys 1-5 on empty input = send corresponding starter prompt.
   const onTextareaKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (e) => {
     const empty = text.trim().length === 0;
@@ -93,6 +94,13 @@ export default function Chat() {
     if (empty && e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       firePrompt(starterPrompts[0]);
+      return;
+    }
+
+    // Submit message on Enter (no Shift) when not empty.
+    if (!empty && e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit({ text });
       return;
     }
 

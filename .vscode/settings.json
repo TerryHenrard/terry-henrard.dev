@@ -6,7 +6,8 @@
     "nocompatible",
     "oklch",
     "Piron",
-    "turbopack"
+    "turbopack",
+    "waitlist"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }
