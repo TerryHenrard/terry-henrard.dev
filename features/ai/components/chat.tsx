@@ -26,12 +26,12 @@ import { Response } from "./ai-elements/response";
 import { Suggestion, Suggestions } from "./ai-elements/suggestion";
 import { PhoneCallRequestForm } from "./phone-call-request-form";
 
-const suggestions = [
-  "Tell me about your projects",
-  "What are your skills and expertise?",
-  "Can you describe your professional experience?",
-  "Show me your portfolio highlights",
-  "What technologies do you work with?",
+const starterPrompts = [
+  "Give me a 30-second intro to Terry.",
+  "Show 3 flagship projects (one-liner each).",
+  "What can you build for a B2B SaaS in 14 days?",
+  "Summarize your skills and stack briefly.",
+  "Can we book a quick call?",
 ];
 
 export default function Chat() {
@@ -44,70 +44,86 @@ export default function Chat() {
     transport: new DefaultChatTransport({ api: "/api/chat" }),
     sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
     async onToolCall({ toolCall }) {
-      if (toolCall.dynamic) {
-        return;
-      }
-
+      if (toolCall.dynamic) return;
       if (toolCall.toolName === "displayPhoneCallRequestForm") {
         setIsInputDisabled(true);
       }
     },
   });
 
+  // Autofocus input on mount for "zero-friction" start.
+  useEffect(() => {
+    textareaRef.current?.focus();
+  }, []);
+
+  // Toast errors nicely.
+  useEffect(() => {
+    if (error) {
+      toast.error("An error occurred. Please try again.", { duration: 5000 });
+    }
+  }, [error]);
+
+  const firePrompt = (prompt: string) => {
+    sendMessage({ text: prompt });
+  };
+
   const handleSubmit = async (message: PromptInputMessage) => {
     const hasText = Boolean(message.text);
     const hasAttachments = Boolean(message.files?.length);
+    if (!(hasText || hasAttachments)) return;
 
-    if (!(hasText || hasAttachments)) {
-      return;
-    }
-
-    sendMessage(
-      {
-        text: message.text || "Sent with attachments",
-        files: message.files,
-      }
-      // {
-      //   body: {
-      //     model: model,
-      //     webSearch: useWebSearch,
-      //   },
-      // }
-    );
+    sendMessage({
+      text: message.text || "Sent with attachments",
+      files: message.files,
+    });
     setText("");
   };
 
   const handleSuggestionClick = (suggestion: string) => {
-    sendMessage({ text: suggestion });
+    firePrompt(suggestion);
   };
 
-  useEffect(() => {
-    if (error) {
-      toast.error("An error occurred while sending the message. Please try again.", {
-        duration: 5000,
-      });
+  // Keyboard UX:
+  // - Enter on empty input = send first starter prompt.
+  // - Keys 1-5 on empty input = send corresponding starter prompt.
+  const onTextareaKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (e) => {
+    const empty = text.trim().length === 0;
+
+    // Send first starter prompt on Enter (no Shift) when empty.
+    if (empty && e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      firePrompt(starterPrompts[0]);
+      return;
     }
-  }, [error]);
+
+    // Number keys to trigger suggestions 1-5 when empty.
+    if (empty && /^[1-5]$/.test(e.key)) {
+      e.preventDefault();
+      const idx = Number(e.key) - 1;
+      firePrompt(starterPrompts[idx]);
+    }
+  };
 
   return (
     <div className="flex flex-col justify-between h-full">
       <Conversation className="relative w-full">
         <ConversationContent
-          className={` ${messages.length <= 0 ? "flex justify-center items-center h-full" : ""}`}
+          className={`${messages.length <= 0 ? "flex justify-center items-center h-full" : ""}`}
         >
           {messages.length === 0 ? (
             <div>
               <ConversationEmptyState
                 icon={<MessageSquare className="size-12" />}
-                title="No messages yet"
-                description="Start a conversation to see messages here"
+                title="Ask me anything about Terry"
+                description="Press Enter to start or tap a suggestion below. You can also press 1-5 to pick a prompt."
               />
               <Suggestions className="flex items-center justify-center max-w-xl mx-auto flex-wrap">
-                {suggestions.map((suggestion) => (
+                {starterPrompts.map((suggestion, i) => (
                   <Suggestion
                     key={suggestion}
                     onClick={handleSuggestionClick}
-                    suggestion={suggestion}
+                    // Prefix with the shortcut number for clarity
+                    suggestion={`${i + 1}. ${suggestion}`}
                   />
                 ))}
               </Suggestions>
@@ -122,7 +138,6 @@ export default function Chat() {
                         return <Response key={`${message.id}-${i}`}>{part.text}</Response>;
                       case "tool-displayPhoneCallRequestForm": {
                         const callId = part.toolCallId;
-
                         switch (part.state) {
                           case "input-streaming":
                             return (
@@ -130,7 +145,6 @@ export default function Chat() {
                                 <p>Requesting phone call...</p>
                               </div>
                             );
-
                           case "input-available":
                             return (
                               <PhoneCallRequestForm
@@ -141,14 +155,12 @@ export default function Chat() {
                                 setIsInputDisabled={setIsInputDisabled}
                               />
                             );
-
                           case "output-available":
                             return (
                               <div key={callId}>
                                 <Response>{part.input.message}</Response>
                               </div>
                             );
-
                           case "output-error":
                             return (
                               <div key={callId}>
@@ -176,50 +188,17 @@ export default function Chat() {
 
       <PromptInput onSubmit={handleSubmit} className="mt-4" globalDrop multiple>
         <PromptInputBody>
-          {/* <PromptInputAttachments>
-            {(attachment) => <PromptInputAttachment data={attachment} />}
-          </PromptInputAttachments> */}
           <PromptInputTextarea
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={onTextareaKeyDown}
             ref={textareaRef}
             value={text}
             disabled={isInputDisabled}
+            placeholder="Press Enter to start • Type or paste anything • Press 1-5 to pick a prompt"
           />
         </PromptInputBody>
         <PromptInputFooter>
-          <PromptInputTools>
-            {/* <PromptInputActionMenu>
-              <PromptInputActionMenuTrigger />
-              <PromptInputActionMenuContent>
-                <PromptInputActionAddAttachments />
-              </PromptInputActionMenuContent>
-            </PromptInputActionMenu> */}
-            {/* <PromptInputSpeechButton onTranscriptionChange={setText} textareaRef={textareaRef} />
-            <PromptInputButton
-              onClick={() => setUseWebSearch(!useWebSearch)}
-              variant={useWebSearch ? "default" : "ghost"}
-            >
-              <GlobeIcon size={16} />
-              <span>Search</span>
-            </PromptInputButton>
-            <PromptInputModelSelect
-              onValueChange={(value) => {
-                setModel(value);
-              }}
-              value={model}
-            >
-              <PromptInputModelSelectTrigger>
-                <PromptInputModelSelectValue />
-              </PromptInputModelSelectTrigger>
-              <PromptInputModelSelectContent>
-                {models.map((model) => (
-                  <PromptInputModelSelectItem key={model.id} value={model.id}>
-                    {model.name}
-                  </PromptInputModelSelectItem>
-                ))}
-              </PromptInputModelSelectContent>
-            </PromptInputModelSelect> */}
-          </PromptInputTools>
+          <PromptInputTools />
           <PromptInputSubmit disabled={(!text && !status) || isInputDisabled} status={status} />
         </PromptInputFooter>
       </PromptInput>

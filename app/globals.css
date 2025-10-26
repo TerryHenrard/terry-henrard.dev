@@ -204,5 +204,5 @@
 }
 
 div[role="log"][class*="overflow-y-auto"] > div[style*="overflow: auto"] {
-  @apply scrollbar-thin
+  @apply scrollbar-none
 }
