@@ -27,10 +27,10 @@ import { Suggestion, Suggestions } from "./ai-elements/suggestion";
 import { PhoneCallRequestForm } from "./phone-call-request-form";
 
 const starterPrompts = [
-  "Give me a 30-second intro to Terry.",
-  "Show 3 flagship projects (one-liner each).",
+  "Show me your services with timelines & deliverables.",
   "What can you build for a B2B SaaS in 14 days?",
-  "Summarize your skills and stack briefly.",
+  "Can you build an AI assistant for my website?",
+  "I want an mvp for my startup idea.",
   "Can we book a quick call?",
 ];
 
@@ -41,7 +41,7 @@ export default function Chat() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const { messages, sendMessage, status, addToolResult, error } = useChat<ChatMessage>({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
+    transport: new DefaultChatTransport({ api: "/api/ai/chat" }),
     sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
     async onToolCall({ toolCall }) {
       if (toolCall.dynamic) return;
@@ -160,6 +160,7 @@ export default function Chat() {
                                 callId={callId}
                                 addToolResult={addToolResult}
                                 message={part.input.message}
+                                messages={messages}
                                 setIsInputDisabled={setIsInputDisabled}
                               />
                             );
@@ -210,6 +211,12 @@ export default function Chat() {
           <PromptInputSubmit disabled={(!text && !status) || isInputDisabled} status={status} />
         </PromptInputFooter>
       </PromptInput>
+
+      <div className="flex items-center justify-center mt-4">
+        <p className="text-xs text-muted-foreground">
+          Don't take what AI tells you for granted. It's for demonstration purposes only.
+        </p>
+      </div>
     </div>
   );
 }

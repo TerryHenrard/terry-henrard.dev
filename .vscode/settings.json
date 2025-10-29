@@ -1,13 +1,18 @@
 {
   "cSpell.words": [
+    "automations",
     "evals",
+    "Français",
+    "henrard",
     "Henrard",
     "Hormozi",
     "nocompatible",
     "oklch",
+    "openai",
     "Piron",
     "turbopack",
     "waitlist"
   ],
+  "cSpell.language": "en,fr",
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }

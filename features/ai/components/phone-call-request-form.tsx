@@ -18,11 +18,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { addDays, format, setHours, setMinutes } from "date-fns";
 
 import { Field, FieldDescription, FieldError, FieldLabel } from "@/core/components/ui/field";
+import { Spinner } from "@/core/components/ui/spinner";
 import { Dispatch, SetStateAction } from "react";
+import { summarizeHistory } from "../lib/utils/summarize-history";
 import {
   phoneCallRequestFormSchema,
   type PhoneCallRequestForm,
-} from "../schema/phone-call-request-form-schema";
+} from "../schemas/phone-call-request-form-schema";
+import { type ChatMessage } from "../tools";
 
 interface PhoneCallRequestFormProps {
   callId: string;
@@ -32,6 +35,7 @@ interface PhoneCallRequestFormProps {
     output: ChatTools["displayPhoneCallRequestForm"]["output"];
   }) => void;
   message: ChatTools["displayPhoneCallRequestForm"]["input"]["message"];
+  messages: ChatMessage[];
   setIsInputDisabled: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -39,6 +43,7 @@ export function PhoneCallRequestForm({
   callId,
   addToolResult,
   message,
+  messages,
   setIsInputDisabled,
 }: PhoneCallRequestFormProps) {
   const form = useForm<PhoneCallRequestForm>({
@@ -48,11 +53,16 @@ export function PhoneCallRequestForm({
 
   const onSubmit = form.handleSubmit(async (data: PhoneCallRequestForm) => {
     try {
-      await fetch("/api/notify/discord", {
+      const summary = await summarizeHistory(messages);
+      const result = await fetch("/api/notify/discord", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, summary }),
       });
+
+      if (!result.ok) {
+        throw new Error(`Failed to send notification: ${result.statusText}`);
+      }
     } catch {
       toast.error("There was an error scheduling your call. Please try again later.");
       addToolResult({
@@ -60,11 +70,11 @@ export function PhoneCallRequestForm({
         toolCallId: callId,
         output: `Sorry, we couldn't schedule your call at this time. Please try to contact Terry directly.`,
       });
+      setIsInputDisabled(false);
       return;
     }
 
     const [date, time] = (data.datetime || "").split("T");
-
     addToolResult({
       tool: "displayPhoneCallRequestForm",
       toolCallId: callId,
@@ -72,6 +82,7 @@ export function PhoneCallRequestForm({
     });
 
     toast.success("Your call has been scheduled successfully, Terry has been notified!");
+    setIsInputDisabled(false);
   });
 
   const handleCancel = () => {
@@ -178,12 +189,26 @@ export function PhoneCallRequestForm({
               className="flex-1 cursor-pointer"
               variant={"destructive"}
               onClick={handleCancel}
+              disabled={form.formState.isSubmitting}
             >
               Cancel
             </Button>
-            <Button type="submit" className="flex-1 cursor-pointer">
-              <Phone className="h-4 w-4 mr-2" />
-              Schedule Call
+            <Button
+              type="submit"
+              className="flex-1 cursor-pointer "
+              disabled={form.formState.isSubmitting}
+            >
+              {form.formState.isSubmitting ? (
+                <>
+                  <Spinner />
+                  Scheduling...
+                </>
+              ) : (
+                <>
+                  <Phone className="h-4 w-4 mr-2" />
+                  Schedule Call
+                </>
+              )}
             </Button>
           </CardFooter>
         </Card>
