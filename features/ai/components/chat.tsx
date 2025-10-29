@@ -214,7 +214,8 @@ export default function Chat() {
 
       <div className="flex items-center justify-center mt-4">
         <p className="text-xs text-muted-foreground">
-          Don't take what AI tells you for granted. It's for demonstration purposes only.
+          Don't take what AI tells you for granted. It can make mistakes. It's for demonstration
+          purposes only.
         </p>
       </div>
     </div>

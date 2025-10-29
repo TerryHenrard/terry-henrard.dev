@@ -1,14 +1,58 @@
 "use client";
 
 import { useIsMobile } from "@/core/hooks/use-mobile";
+import { Route } from "next";
 import Link from "next/link";
 import { ModeToggle } from "../ui/mode-toggle";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "../ui/navigation-menu";
+
+function ListItem({
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: Route }) {
+  return (
+    <li {...props}>
+      <NavigationMenuLink asChild>
+        <Link href={href} className="p-4">
+          <div className="text-sm font-bold leading-none">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+}
+
+const services: { title: string; href: Route; description: string }[] = [
+  {
+    title: "Audit",
+    href: "/services/audit",
+    description: "Building responsive and dynamic websites tailored to your needs",
+  },
+  {
+    title: "MVP Foundry",
+    href: "/services/mvp-foundry",
+    description: "from zero to a usable product in 4 to 6 weeks",
+  },
+  {
+    title: "AI Sprint",
+    href: "/services/ai-sprint",
+    description: "deliver true AI functionality in 14 days, not months",
+  },
+  {
+    title: "Care Plan",
+    href: "/services/care-plan",
+    description: "Building responsive and dynamic websites tailored to your needs",
+  },
+];
 
 export default function Header() {
   const isMobile = useIsMobile();
@@ -24,17 +68,48 @@ export default function Header() {
             <NavigationMenuList className="gap-4">
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/work">Work</Link>
+                  <Link href="/experience">My Experience</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent">
+                  My services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-2 grid-cols-3 w-xl">
+                    <li className="row-span-2">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href="/services"
+                          className="w-full h-full flex flex-col justify-end p-4"
+                        >
+                          <div className="text-lg font-bold">Services</div>
+                          <p className="text-muted-foreground text-sm">
+                            Explore the wide range of services I offer to help you achieve your
+                            goals
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    {services.map((service) => (
+                      <ListItem key={service.title} title={service.title} href={service.href}>
+                        {service.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">About Me</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact">Let's Connect</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
