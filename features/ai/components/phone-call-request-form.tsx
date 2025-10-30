@@ -98,7 +98,7 @@ export function PhoneCallRequestForm({
     <div>
       <Response>{message}</Response>
       <form onSubmit={onSubmit} noValidate>
-        <Card className="max-w-md mt-4 bg-card/40">
+        <Card className="max-w-md mt-4 bg-transparent border-0 shadow-none">
           <CardHeader className="pb-4">
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-primary" />

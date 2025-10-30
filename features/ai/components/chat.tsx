@@ -40,7 +40,7 @@ export default function Chat() {
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const { messages, sendMessage, status, addToolResult, error } = useChat<ChatMessage>({
+  const { messages, sendMessage, status, addToolResult, error, stop } = useChat<ChatMessage>({
     transport: new DefaultChatTransport({ api: "/api/ai/chat" }),
     sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
     async onToolCall({ toolCall }) {
@@ -51,17 +51,28 @@ export default function Chat() {
     },
   });
 
-  // Autofocus input on mount for "zero-friction" start.
   useEffect(() => {
+    if (!textareaRef.current) return;
     textareaRef.current?.focus();
   }, []);
 
-  // Toast errors nicely.
   useEffect(() => {
     if (error) {
       toast.error("An error occurred. Please try again.", { duration: 5000 });
     }
   }, [error]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const prompt = decodeURIComponent(params.get("prompt") || "");
+
+    if (prompt) {
+      firePrompt(prompt);
+      params.delete("prompt");
+      const newPath = window.location.pathname + (params.toString() ? `?${params.toString()}` : "");
+      window.history.replaceState(null, "", newPath);
+    }
+  }, []);
 
   const firePrompt = (prompt: string) => {
     sendMessage({ text: prompt });
@@ -129,6 +140,7 @@ export default function Chat() {
                 {starterPrompts.map((suggestion, i) => (
                   <Suggestion
                     key={suggestion}
+                    variant={"default"}
                     onClick={handleSuggestionClick}
                     // Prefix with the shortcut number for clarity
                     suggestion={`${i + 1}. ${suggestion}`}

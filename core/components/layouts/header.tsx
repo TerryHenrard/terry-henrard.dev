@@ -48,7 +48,7 @@ const services: { title: string; href: Route; description: string }[] = [
     description: "deliver true AI functionality in 14 days, not months",
   },
   {
-    title: "Care Plan",
+    title: "Care & Hosting Plan",
     href: "/services/care-plan",
     description: "Building responsive and dynamic websites tailored to your needs",
   },
@@ -61,11 +61,19 @@ export default function Header() {
     <header className="p-4 h-16 fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b bg-secondary/50">
       <div className="container mx-auto flex h-full justify-between items-center">
         <div className="flex items-center gap-8">
-          <Link className="font-bold text-xl" href="/">
-            Portfolio
-          </Link>
+          {/* <Link className="font-bold text-xl" href="/">
+            AI
+          </Link> */}
           <NavigationMenu viewport={isMobile}>
             <NavigationMenuList className="gap-4">
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/" className="text-xl font-bold">
+                    Terry's assistant
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link href="/experience">My Experience</Link>
@@ -77,7 +85,7 @@ export default function Header() {
                   My services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 grid-cols-3 w-xl">
+                  <ul className="grid gap-2 grid-cols-3 w-2xl">
                     <li className="row-span-2">
                       <NavigationMenuLink asChild>
                         <Link

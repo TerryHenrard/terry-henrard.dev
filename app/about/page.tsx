@@ -1,149 +1,209 @@
 import { Badge } from "@/core/components/ui/badge";
 import { Button } from "@/core/components/ui/button";
-import { Card, CardContent } from "@/core/components/ui/card";
-import { Award, Briefcase, Code2, GraduationCap, Sparkles } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/core/components/ui/card";
+import {
+  Award,
+  BookOpen,
+  Briefcase,
+  CheckCircle2,
+  Code2,
+  Gauge,
+  GraduationCap,
+  ShieldCheck,
+  Sparkles,
+  TerminalSquare,
+  Users,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
-  const skillGroups = [
-    {
-      category: "14-Day Sprint Deliverables",
-      skills: [
-        "Production AI feature",
-        "Data wired to your app",
-        "Guardrails (PII filters, rate limits)",
-        "Evals & tracking (PostHog)",
-        "Docs & handover",
-      ],
-    },
-    {
-      category: "Who I Serve",
-      skills: ["Europe-based B2B SaaS", "5–80 employees", "Founder / PM / VP Eng", "Seed–Series A"],
-    },
-    {
-      category: "AI / LLM Stack",
-      skills: [
-        "Vercel AI SDK",
-        "OpenAI tools & function calls",
-        "RAG (Upstash / Neon)",
-        "Prompt/tooling patterns",
-        "Safety checks",
-      ],
-    },
-    {
-      category: "Data & Integrations",
-      skills: ["Postgres / Neon", "Supabase", "REST / GraphQL", "Webhooks", "Auth (OAuth / SSO)"],
-    },
-    {
-      category: "Quality & Safety",
-      skills: ["Guardrails & tests", "Eval harness", "PII redaction", "Rate limiting", "Fallbacks"],
-    },
-    {
-      category: "Ops & Delivery",
-      skills: ["GitHub Actions", "Vercel", "Feature flags", "Observability", "Error budgets"],
-    },
-  ];
-
-  const journey = [
-    {
-      icon: GraduationCap,
-      year: "Days 0–1",
-      title: "Scope & Success Metric",
-      description:
-        "We define one clear metric (e.g., adoption %, CSAT uplift) and the smallest valuable slice to ship in 14 days.",
-    },
-    {
-      icon: Code2,
-      year: "Days 2–5",
-      title: "Data Wiring & Prototype",
-      description:
-        "Wire your data sources, set up RAG/tooling, and deliver a working prototype you can click and test.",
-    },
-    {
-      icon: Briefcase,
-      year: "Days 6–10",
-      title: "Guardrails, Evals & Iteration",
-      description:
-        "Add PII filtering, rate limits, evals, and success tracking. Iterate with fast feedback loops.",
-    },
-    {
-      icon: Award,
-      year: "Days 11–14",
-      title: "Ship, Instrument & Handover",
-      description:
-        "Release to production, instrument tracking, document everything. If we miss the metric, I keep working for free until we hit it.",
-    },
-  ];
-
   return (
-    <main className="min-h-screen relative overflow-hidden container mx-auto ">
-      <div className="relative z-10 container mx-auto  max-w-6xl">
+    <div className="min-h-screen relative overflow-hidden">
+      <div className="relative z-10 mx-auto px-4 py-8 max-w-6xl">
+        {/* Hero — About & Eligibility */}
         <div className="mb-12 relative rounded-3xl overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url(/abstract-gradient-landscape-with-mountains-at-suns.jpg)",
+            }}
+          />
           <Card className="relative bg-transparent border-0">
-            <CardContent className="bg-card/40 rounded-2xl md:p-10">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <Badge variant="default" className="rounded-full">
+            <CardContent className="p-0">
+              <div className="">
+                <Badge className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium mb-4">
                   <Sparkles className="w-3 h-3" />
-                  <span className="ml-1">About / How I Work</span>
+                  About Me
                 </Badge>
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 text-balance">
+                  I'm Terry - a Next.js/TypeScript developer who ships fast, keeps promises, and
+                  owns outcomes.
+                </h1>
+                <p className="text-lg md:text-xl text-foreground/70 leading-relaxed text-pretty">
+                  I combine
+                  <strong> production discipline</strong> (clean, tested, documented code) with
+                  <strong> product sense</strong> (scope ruthlessly, measure what matters) and
+                  <strong> ownership</strong> (I treat your app like mine).
+                </p>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-balance">
-                Ship a Real AI Feature in 14 Days
-              </h1>
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed text-pretty">
-                I help B2B SaaS ship a production AI feature in 14 days—wired to your data with
-                guardrails & tracking—so you impress users and investors without burning your team.
-                If we miss the success metric, I keep working for free until we hit it.
-              </p>
             </CardContent>
           </Card>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <Card className="rounded-3xl bg-card/40 p-8 hover:-translate-y-1 transition-all duration-300">
-            <CardContent>
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                <Code2 className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="text-2xl font-bold mb-3">What I Believe</h2>
-              <p className="text-foreground/70 leading-relaxed">
-                Value beats features. We win by increasing the likelihood of the outcome you want
-                while cutting time, effort, and risk. That’s why my offer is outcome-tied,
-                time-boxed, and backed by a strong guarantee.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="rounded-3xl p-8 bg-card/40 hover:-translate-y-1 transition-all duration-300">
-            <CardContent>
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="text-2xl font-bold mb-3">How the 14-Day Sprint Works</h2>
-              <p className="text-foreground/70 leading-relaxed">
-                We agree on one metric and a smallest-viable feature. I wire your data, add
-                guardrails, instrument tracking, and iterate fast. You get a production release in
-                14 days plus docs and handover. Limited concurrent slots to keep quality high.
-              </p>
-            </CardContent>
-          </Card>
+        {/* Credibility / Proof Strip — personal, not salesy */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+          {[
+            { icon: Gauge, label: "Ships reliably (weekly demos)" },
+            { icon: ShieldCheck, label: "Production mindset (tests, CI/CD)" },
+            { icon: Code2, label: "Next.js + AI experience" },
+            { icon: Users, label: "Clear comms & ownership" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="rounded-2xl px-4 py-3 text-sm font-medium flex items-center gap-2"
+            >
+              <item.icon className="w-4 h-4" />
+              {item.label}
+            </div>
+          ))}
         </div>
 
-        <Card className="rounded-3xl p-8 mb-12 bg-card/40">
+        {/* Why I'm a Strong Fit */}
+        <Card className="p-8 mb-12">
+          <CardHeader>
+            <CardTitle className="text-3xl">I'm a strong fit for your team</CardTitle>
+          </CardHeader>
+          <CardContent className="text-foreground/70 leading-relaxed">
+            <ul className="grid md:grid-cols-2 gap-4">
+              {[
+                "I scope to must-haves first, then iterate — momentum > perfection.",
+                "I communicate early and clearly: weekly demos, no surprises.",
+                "I design for change: typed code, modular architecture, tests where it counts.",
+                "I'm comfortable across the stack: Next.js/React, Node, Postgres, vector search, basic cloud.",
+                "I've shipped AI features (RAG, assistants) on small projects and know the pitfalls (latency, evals, adoption).",
+                "I document decisions so future you (or teammates) can move fast without me.",
+              ].map((point, i) => (
+                <li key={i} className="flex gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* Principles I work by */}
+        <Card className="p-8 mb-12">
+          <CardHeader>
+            <CardTitle className="text-3xl">Principles I work by</CardTitle>
+          </CardHeader>
           <CardContent>
-            <h2 className="text-3xl font-bold mb-6">What You Get</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "Clarity > Cleverness",
+                  desc: "Readable, typed, predictable code beats magic. Future-proof means future-readable.",
+                  icon: BookOpen,
+                },
+                {
+                  title: "Measure What Matters",
+                  desc: "Latency, uptime, adoption. I pick 2-3 metrics and build around them.",
+                  icon: Gauge,
+                },
+                {
+                  title: "Owner's Mindset",
+                  desc: "I optimize for the long-term health of your product, not just 'done'.",
+                  icon: ShieldCheck,
+                },
+              ].map((p, i) => (
+                <Card key={i} className="p-4">
+                  <CardHeader className="pb-2">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-2">
+                      <p.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg">{p.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0 text-foreground/70">{p.desc}</CardContent>
+                </Card>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Experience Snapshot (real, concise) */}
+        <Card className="p-8 mb-12">
+          <CardHeader>
+            <CardTitle className="text-3xl">Experience Snapshot</CardTitle>
+          </CardHeader>
+          <CardContent className="text-foreground/70">
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="  rounded-xl p-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <TerminalSquare className="w-5 h-5 text-primary" />
+                  <div className="font-medium text-foreground">Frontend & Platform</div>
+                </div>
+                <p>
+                  React/Next.js (App Router), TypeScript, Tailwind, shadcn/ui, TanStack Query,
+                  CI/CD.
+                </p>
+              </div>
+              <div className="  rounded-xl p-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <Code2 className="w-5 h-5 text-primary" />
+                  <div className="font-medium text-foreground">Backend & Data</div>
+                </div>
+                <p>Node.js, Postgres/Neon, REST, auth, file storage, background jobs, logging.</p>
+              </div>
+              <div className="  rounded-xl p-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <Award className="w-5 h-5 text-primary" />
+                  <div className="font-medium text-foreground">AI</div>
+                </div>
+                <p>
+                  RAG/assistants, prompt & context, evals basics, latency budgets, product adoption
+                  focus.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Tools I use daily */}
+        <Card className="p-8 mb-12">
+          <CardHeader>
+            <CardTitle className="text-3xl">Tools I use daily</CardTitle>
+          </CardHeader>
+          <CardContent>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {skillGroups.map((item, index) => (
-                <Card key={index} className="glass-dark glass-border rounded-2xl p-4 bg-card/40">
-                  <CardContent>
-                    <h3 className="font-semibold text-primary mb-2">{item.category}</h3>
-                    <ul className="space-y-1">
+              {[
+                {
+                  category: "Frontend",
+                  skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+                },
+                { category: "Backend", skills: ["Node.js", "PostgreSQL (Neon)", "REST APIs"] },
+                {
+                  category: "AI & Data",
+                  skills: ["Vercel AI SDK", "OpenAI SDK", "Vector Search (Upstash/PGVector)"],
+                },
+                {
+                  category: "Cloud",
+                  skills: ["Vercel", "AWS (basics)", "Supabase/Firebase (as needed)"],
+                },
+                { category: "DevX", skills: ["GitHub Actions", "Docker", "ESLint/Prettier"] },
+                { category: "Collab", skills: ["Figma", "Linear/ClickUp", "Notion"] },
+              ].map((item, index) => (
+                <Card key={index} className="p-4">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">{item.category}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="flex flex-wrap gap-1">
                       {item.skills.map((skill, i) => (
-                        <li key={i} className="text-sm text-foreground/70">
+                        <Badge key={i} variant="secondary" className="text-xs">
                           {skill}
-                        </li>
+                        </Badge>
                       ))}
-                    </ul>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -151,47 +211,100 @@ export default function AboutPage() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-3xl p-8 mb-12 bg-card/40">
-          <CardContent>
-            <h2 className="text-3xl font-bold mb-8">Delivery Timeline (0–14 Days)</h2>
-            <div className="space-y-8">
-              {journey.map((item, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    {index < journey.length - 1 && (
-                      <div className="w-px h-full bg-linear-to-b from-primary/50 to-transparent mt-2" />
-                    )}
-                  </div>
-                  <div className="pb-8">
-                    <div className="text-sm text-primary font-semibold mb-1">{item.year}</div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-foreground/70 leading-relaxed">{item.description}</p>
-                  </div>
+        {/* Story (short & relevant) */}
+        <Card className="p-8 mb-12">
+          <CardHeader>
+            <CardTitle className="text-3xl">My story (short)</CardTitle>
+          </CardHeader>
+          <CardContent className="text-foreground/70 leading-relaxed">
+            <div className="space-y-6">
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <GraduationCap className="w-6 h-6 text-primary" />
                 </div>
-              ))}
+                <div>
+                  <div className="text-sm text-primary font-semibold mb-1">2018 → Today</div>
+                  <p>
+                    I fell in love with the craft of building fast, reliable web apps. Over time I
+                    focused on TypeScript/Next.js and pragmatic AI — not hype, just features users
+                    adopt.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Briefcase className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-primary font-semibold mb-1">Recent</div>
+                  <p>
+                    Built MVPs and AI proofs on small projects; learned to cut scope, design for
+                    change, and keep latency budgets honest. I care about developer ergonomics and
+                    long-term maintainability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-primary font-semibold mb-1">
+                    What this means for you
+                  </div>
+                  <p>
+                    You get someone who moves quickly without breaking tomorrow, communicates
+                    clearly, and treats your product like an owner.
+                  </p>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-3xl p-8 text-center bg-card/40">
+        {/* Eligibility Checklist (for hiring managers) */}
+        <Card className="p-8 mb-12">
+          <CardHeader>
+            <CardTitle className="text-3xl">Eligibility checklist</CardTitle>
+          </CardHeader>
+          <CardContent className="text-foreground/70">
+            <ul className="space-y-2">
+              {[
+                "Can deliver an MVP baseline with clean, typed code and CI.",
+                "Comfortable integrating AI features where they truly help users.",
+                "Understands product trade-offs; scopes ruthlessly for momentum.",
+                "Writes docs and ADRs so future work is faster.",
+                "Collaborates well with PM/Design; async by default, quick when needed.",
+              ].map((x, i) => (
+                <li key={i} className="flex gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-1" />
+                  <span>{x}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* Light CTA — still about fit, not selling */}
+        <Card className="p-8 text-center">
+          <CardHeader>
+            <CardTitle className="text-3xl">Want the no-fluff version?</CardTitle>
+          </CardHeader>
           <CardContent>
-            <h2 className="text-3xl font-bold mb-4">Start the 14-Day AI Sprint</h2>
             <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-              Have a feature in mind—or want a quick heuristic review first? I run a limited number
-              of concurrent sprints. If slots are full, I’ll add you to the waitlist and send my
-              latest sector report + email course.
+              If you value speed, clarity, and ownership — I'm a good match. Happy to walk through
+              code or past work.
             </p>
-            <Button asChild size="lg" className="inline-flex items-center gap-2">
-              <Link href="/">
-                <span>Book Your Sprint</span>
+            <Button asChild className="hover:-translate-y-0.5 transition-all duration-300">
+              <Link href={`/?prompt=${encodeURIComponent("Can we book a 15-min call?")}`}>
+                Book a 15-min call
               </Link>
             </Button>
           </CardContent>
         </Card>
       </div>
-    </main>
+    </div>
   );
 }
