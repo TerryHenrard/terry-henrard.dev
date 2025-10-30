@@ -1,10 +1,10 @@
-import { ChatMessage } from "../../tools";
+import { ChatMessage } from '../../tools';
 
 export async function summarizeHistory(messages: ChatMessage[]) {
   try {
-    const response = await fetch("/api/ai/summarize", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const response = await fetch('/api/ai/summarize', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages }),
     });
 

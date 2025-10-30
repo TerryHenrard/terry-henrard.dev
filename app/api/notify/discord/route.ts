@@ -1,6 +1,8 @@
-import { NextRequest } from "next/server";
-import z from "zod";
-import { phoneCallRequestFormSchema } from "../../../../features/ai/schemas/phone-call-request-form-schema";
+import { NextRequest } from 'next/server';
+
+import z from 'zod';
+
+import { phoneCallRequestFormSchema } from '../../../../features/ai/schemas/phone-call-request-form-schema';
 
 /**
  * Escape potentially unsafe characters in a string for Discord markdown.
@@ -8,7 +10,7 @@ import { phoneCallRequestFormSchema } from "../../../../features/ai/schemas/phon
  * @returns The sanitized string.
  */
 function escapeDiscordCharacters(str: string) {
-  return str.replace(/[*_`~>|]/g, "\\$&");
+  return str.replace(/[*_`~>|]/g, '\\$&');
 }
 
 const phoneCallRequestFormSchemaWithSummary = z.object({
@@ -21,13 +23,13 @@ export async function POST(res: NextRequest) {
   try {
     const webhook = process.env.DISCORD_WEBHOOK_URL;
     if (!webhook) {
-      return new Response("Discord webhook URL not configured", { status: 500 });
+      return new Response('Discord webhook URL not configured', { status: 500 });
     }
 
     const { success, data } = phoneCallRequestFormSchemaWithSummary.safeParse(await res.json());
 
     if (!success) {
-      return new Response("Invalid request body", { status: 400 });
+      return new Response('Invalid request body', { status: 400 });
     }
 
     const content = `@everyone Phone Call Request Received:
@@ -39,11 +41,11 @@ export async function POST(res: NextRequest) {
       ${data.summary}
     `
       .trim()
-      .replace(/^\s+/gm, "");
+      .replace(/^\s+/gm, '');
 
     const result = await fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content }),
     });
 
@@ -53,7 +55,7 @@ export async function POST(res: NextRequest) {
       });
     }
 
-    return new Response("Notification sent successfully", { status: 200 });
+    return new Response('Notification sent successfully', { status: 200 });
   } catch (error) {
     return new Response(`Error processing request: ${error}`, { status: 500 });
   }

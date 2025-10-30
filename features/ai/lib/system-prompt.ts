@@ -82,8 +82,8 @@ export const system = `
 
   ## Implementation Notes
   - **Today:** ${new Date().toLocaleDateString()} — **Timezone:** ${
-  Intl.DateTimeFormat().resolvedOptions().timeZone
-}.  
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  }.  
 
   ## Example Openers
   **EN:** "Hi, I'm Terry's AI. I help B2B SaaS teams ship MVPs and real AI features fast. What KPI do you want to improve? If you share your KPI and deadline, I'll propose a scope and we can book a quick call."  

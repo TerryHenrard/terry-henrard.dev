@@ -1,9 +1,11 @@
-"use client";
+'use client';
 
-import { useIsMobile } from "@/core/hooks/use-mobile";
-import { Route } from "next";
-import Link from "next/link";
-import { ModeToggle } from "../ui/mode-toggle";
+import { Route } from 'next';
+import Link from 'next/link';
+
+import { useIsMobile } from '@/core/hooks/use-mobile';
+
+import { ModeToggle } from '../ui/mode-toggle';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,20 +13,20 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "../ui/navigation-menu";
+} from '../ui/navigation-menu';
 
 function ListItem({
   title,
   children,
   href,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: Route }) {
+}: React.ComponentPropsWithoutRef<'li'> & { href: Route }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href} className="p-4">
-          <div className="text-sm font-bold leading-none">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
+        <Link href={href} className='p-4'>
+          <div className='text-sm leading-none font-bold'>{title}</div>
+          <p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>{children}</p>
         </Link>
       </NavigationMenuLink>
     </li>
@@ -33,24 +35,24 @@ function ListItem({
 
 const services: { title: string; href: Route; description: string }[] = [
   {
-    title: "Audit",
-    href: "/services/audit",
-    description: "Building responsive and dynamic websites tailored to your needs",
+    title: 'Audit',
+    href: '/services/audit',
+    description: 'Building responsive and dynamic websites tailored to your needs',
   },
   {
-    title: "MVP Foundry",
-    href: "/services/mvp-foundry",
-    description: "from zero to a usable product in 4 to 6 weeks",
+    title: 'MVP Foundry',
+    href: '/services/mvp-foundry',
+    description: 'from zero to a usable product in 4 to 6 weeks',
   },
   {
-    title: "AI Sprint",
-    href: "/services/ai-sprint",
-    description: "deliver true AI functionality in 14 days, not months",
+    title: 'AI Sprint',
+    href: '/services/ai-sprint',
+    description: 'deliver true AI functionality in 14 days, not months',
   },
   {
-    title: "Care & Hosting Plan",
-    href: "/services/care-plan",
-    description: "Building responsive and dynamic websites tailored to your needs",
+    title: 'Care & Hosting Plan',
+    href: '/services/care-plan',
+    description: 'Building responsive and dynamic websites tailored to your needs',
   },
 ];
 
@@ -58,17 +60,17 @@ export default function Header() {
   const isMobile = useIsMobile();
 
   return (
-    <header className="p-4 h-16 fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b bg-secondary/50">
-      <div className="container mx-auto flex h-full justify-between items-center">
-        <div className="flex items-center gap-8">
+    <header className='bg-secondary/50 fixed top-0 right-0 left-0 z-50 h-16 border-b p-4 transition-colors duration-300'>
+      <div className='container mx-auto flex h-full items-center justify-between'>
+        <div className='flex items-center gap-8'>
           {/* <Link className="font-bold text-xl" href="/">
             AI
           </Link> */}
           <NavigationMenu viewport={isMobile}>
-            <NavigationMenuList className="gap-4">
+            <NavigationMenuList className='gap-4'>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/" className="text-xl font-bold">
+                  <Link href='/' className='text-xl font-bold'>
                     Terry's assistant
                   </Link>
                 </NavigationMenuLink>
@@ -76,24 +78,24 @@ export default function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/experience">My Experience</Link>
+                  <Link href='/experience'>My Experience</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">
+                <NavigationMenuTrigger className='bg-transparent'>
                   My services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 grid-cols-3 w-2xl">
-                    <li className="row-span-2">
+                  <ul className='grid w-2xl grid-cols-3 gap-2'>
+                    <li className='row-span-2'>
                       <NavigationMenuLink asChild>
                         <Link
-                          href="/services"
-                          className="w-full h-full flex flex-col justify-end p-4"
+                          href='/services'
+                          className='flex h-full w-full flex-col justify-end p-4'
                         >
-                          <div className="text-lg font-bold">Services</div>
-                          <p className="text-muted-foreground text-sm">
+                          <div className='text-lg font-bold'>Services</div>
+                          <p className='text-muted-foreground text-sm'>
                             Explore the wide range of services I offer to help you achieve your
                             goals
                           </p>
@@ -111,13 +113,13 @@ export default function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about">About Me</Link>
+                  <Link href='/about'>About Me</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/contact">Let's Connect</Link>
+                  <Link href='/contact'>Let's Connect</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

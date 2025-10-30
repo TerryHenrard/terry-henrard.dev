@@ -1,6 +1,5 @@
-import { Badge } from "@/core/components/ui/badge";
-import { Button } from "@/core/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/core/components/ui/card";
+import Link from 'next/link';
+
 import {
   Award,
   BookOpen,
@@ -13,33 +12,36 @@ import {
   Sparkles,
   TerminalSquare,
   Users,
-} from "lucide-react";
-import Link from "next/link";
+} from 'lucide-react';
+
+import { Badge } from '@/core/components/ui/badge';
+import { Button } from '@/core/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/core/components/ui/card';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      <div className="relative z-10 mx-auto px-4 py-8 max-w-6xl">
+    <div className='relative min-h-screen overflow-hidden'>
+      <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>
         {/* Hero — About & Eligibility */}
-        <div className="mb-12 relative rounded-3xl overflow-hidden">
+        <div className='relative mb-12 overflow-hidden rounded-3xl'>
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className='absolute inset-0 bg-cover bg-center'
             style={{
-              backgroundImage: "url(/abstract-gradient-landscape-with-mountains-at-suns.jpg)",
+              backgroundImage: 'url(/abstract-gradient-landscape-with-mountains-at-suns.jpg)',
             }}
           />
-          <Card className="relative bg-transparent border-0">
-            <CardContent className="p-0">
-              <div className="">
-                <Badge className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium mb-4">
-                  <Sparkles className="w-3 h-3" />
+          <Card className='relative border-0 bg-transparent'>
+            <CardContent className='p-0'>
+              <div className=''>
+                <Badge className='mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium'>
+                  <Sparkles className='h-3 w-3' />
                   About Me
                 </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold mb-4 text-balance">
+                <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
                   I'm Terry - a Next.js/TypeScript developer who ships fast, keeps promises, and
                   owns outcomes.
                 </h1>
-                <p className="text-lg md:text-xl text-foreground/70 leading-relaxed text-pretty">
+                <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
                   I combine
                   <strong> production discipline</strong> (clean, tested, documented code) with
                   <strong> product sense</strong> (scope ruthlessly, measure what matters) and
@@ -51,40 +53,40 @@ export default function AboutPage() {
         </div>
 
         {/* Credibility / Proof Strip — personal, not salesy */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+        <div className='mb-12 grid grid-cols-2 gap-3 md:grid-cols-4'>
           {[
-            { icon: Gauge, label: "Ships reliably (weekly demos)" },
-            { icon: ShieldCheck, label: "Production mindset (tests, CI/CD)" },
-            { icon: Code2, label: "Next.js + AI experience" },
-            { icon: Users, label: "Clear comms & ownership" },
+            { icon: Gauge, label: 'Ships reliably (weekly demos)' },
+            { icon: ShieldCheck, label: 'Production mindset (tests, CI/CD)' },
+            { icon: Code2, label: 'Next.js + AI experience' },
+            { icon: Users, label: 'Clear comms & ownership' },
           ].map((item, i) => (
             <div
               key={i}
-              className="rounded-2xl px-4 py-3 text-sm font-medium flex items-center gap-2"
+              className='flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium'
             >
-              <item.icon className="w-4 h-4" />
+              <item.icon className='h-4 w-4' />
               {item.label}
             </div>
           ))}
         </div>
 
         {/* Why I'm a Strong Fit */}
-        <Card className="p-8 mb-12">
+        <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className="text-3xl">I'm a strong fit for your team</CardTitle>
+            <CardTitle className='text-3xl'>I'm a strong fit for your team</CardTitle>
           </CardHeader>
-          <CardContent className="text-foreground/70 leading-relaxed">
-            <ul className="grid md:grid-cols-2 gap-4">
+          <CardContent className='text-foreground/70 leading-relaxed'>
+            <ul className='grid gap-4 md:grid-cols-2'>
               {[
-                "I scope to must-haves first, then iterate — momentum > perfection.",
-                "I communicate early and clearly: weekly demos, no surprises.",
-                "I design for change: typed code, modular architecture, tests where it counts.",
+                'I scope to must-haves first, then iterate — momentum > perfection.',
+                'I communicate early and clearly: weekly demos, no surprises.',
+                'I design for change: typed code, modular architecture, tests where it counts.',
                 "I'm comfortable across the stack: Next.js/React, Node, Postgres, vector search, basic cloud.",
                 "I've shipped AI features (RAG, assistants) on small projects and know the pitfalls (latency, evals, adoption).",
-                "I document decisions so future you (or teammates) can move fast without me.",
+                'I document decisions so future you (or teammates) can move fast without me.',
               ].map((point, i) => (
-                <li key={i} className="flex gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+                <li key={i} className='flex gap-2'>
+                  <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
                   <span>{point}</span>
                 </li>
               ))}
@@ -93,21 +95,21 @@ export default function AboutPage() {
         </Card>
 
         {/* Principles I work by */}
-        <Card className="p-8 mb-12">
+        <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className="text-3xl">Principles I work by</CardTitle>
+            <CardTitle className='text-3xl'>Principles I work by</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className='grid gap-4 md:grid-cols-3'>
               {[
                 {
-                  title: "Clarity > Cleverness",
-                  desc: "Readable, typed, predictable code beats magic. Future-proof means future-readable.",
+                  title: 'Clarity > Cleverness',
+                  desc: 'Readable, typed, predictable code beats magic. Future-proof means future-readable.',
                   icon: BookOpen,
                 },
                 {
-                  title: "Measure What Matters",
-                  desc: "Latency, uptime, adoption. I pick 2-3 metrics and build around them.",
+                  title: 'Measure What Matters',
+                  desc: 'Latency, uptime, adoption. I pick 2-3 metrics and build around them.',
                   icon: Gauge,
                 },
                 {
@@ -116,14 +118,14 @@ export default function AboutPage() {
                   icon: ShieldCheck,
                 },
               ].map((p, i) => (
-                <Card key={i} className="p-4">
-                  <CardHeader className="pb-2">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-2">
-                      <p.icon className="w-5 h-5 text-primary" />
+                <Card key={i} className='p-4'>
+                  <CardHeader className='pb-2'>
+                    <div className='bg-primary/10 mb-2 flex h-10 w-10 items-center justify-center rounded-xl'>
+                      <p.icon className='text-primary h-5 w-5' />
                     </div>
-                    <CardTitle className="text-lg">{p.title}</CardTitle>
+                    <CardTitle className='text-lg'>{p.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="pt-0 text-foreground/70">{p.desc}</CardContent>
+                  <CardContent className='text-foreground/70 pt-0'>{p.desc}</CardContent>
                 </Card>
               ))}
             </div>
@@ -131,33 +133,33 @@ export default function AboutPage() {
         </Card>
 
         {/* Experience Snapshot (real, concise) */}
-        <Card className="p-8 mb-12">
+        <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className="text-3xl">Experience Snapshot</CardTitle>
+            <CardTitle className='text-3xl'>Experience Snapshot</CardTitle>
           </CardHeader>
-          <CardContent className="text-foreground/70">
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="  rounded-xl p-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <TerminalSquare className="w-5 h-5 text-primary" />
-                  <div className="font-medium text-foreground">Frontend & Platform</div>
+          <CardContent className='text-foreground/70'>
+            <div className='grid gap-4 md:grid-cols-3'>
+              <div className='rounded-xl p-4'>
+                <div className='mb-2 flex items-center gap-3'>
+                  <TerminalSquare className='text-primary h-5 w-5' />
+                  <div className='text-foreground font-medium'>Frontend & Platform</div>
                 </div>
                 <p>
                   React/Next.js (App Router), TypeScript, Tailwind, shadcn/ui, TanStack Query,
                   CI/CD.
                 </p>
               </div>
-              <div className="  rounded-xl p-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <Code2 className="w-5 h-5 text-primary" />
-                  <div className="font-medium text-foreground">Backend & Data</div>
+              <div className='rounded-xl p-4'>
+                <div className='mb-2 flex items-center gap-3'>
+                  <Code2 className='text-primary h-5 w-5' />
+                  <div className='text-foreground font-medium'>Backend & Data</div>
                 </div>
                 <p>Node.js, Postgres/Neon, REST, auth, file storage, background jobs, logging.</p>
               </div>
-              <div className="  rounded-xl p-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <Award className="w-5 h-5 text-primary" />
-                  <div className="font-medium text-foreground">AI</div>
+              <div className='rounded-xl p-4'>
+                <div className='mb-2 flex items-center gap-3'>
+                  <Award className='text-primary h-5 w-5' />
+                  <div className='text-foreground font-medium'>AI</div>
                 </div>
                 <p>
                   RAG/assistants, prompt & context, evals basics, latency budgets, product adoption
@@ -169,37 +171,37 @@ export default function AboutPage() {
         </Card>
 
         {/* Tools I use daily */}
-        <Card className="p-8 mb-12">
+        <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className="text-3xl">Tools I use daily</CardTitle>
+            <CardTitle className='text-3xl'>Tools I use daily</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
               {[
                 {
-                  category: "Frontend",
-                  skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+                  category: 'Frontend',
+                  skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
                 },
-                { category: "Backend", skills: ["Node.js", "PostgreSQL (Neon)", "REST APIs"] },
+                { category: 'Backend', skills: ['Node.js', 'PostgreSQL (Neon)', 'REST APIs'] },
                 {
-                  category: "AI & Data",
-                  skills: ["Vercel AI SDK", "OpenAI SDK", "Vector Search (Upstash/PGVector)"],
+                  category: 'AI & Data',
+                  skills: ['Vercel AI SDK', 'OpenAI SDK', 'Vector Search (Upstash/PGVector)'],
                 },
                 {
-                  category: "Cloud",
-                  skills: ["Vercel", "AWS (basics)", "Supabase/Firebase (as needed)"],
+                  category: 'Cloud',
+                  skills: ['Vercel', 'AWS (basics)', 'Supabase/Firebase (as needed)'],
                 },
-                { category: "DevX", skills: ["GitHub Actions", "Docker", "ESLint/Prettier"] },
-                { category: "Collab", skills: ["Figma", "Linear/ClickUp", "Notion"] },
+                { category: 'DevX', skills: ['GitHub Actions', 'Docker', 'ESLint/Prettier'] },
+                { category: 'Collab', skills: ['Figma', 'Linear/ClickUp', 'Notion'] },
               ].map((item, index) => (
-                <Card key={index} className="p-4">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-lg">{item.category}</CardTitle>
+                <Card key={index} className='p-4'>
+                  <CardHeader className='pb-2'>
+                    <CardTitle className='text-lg'>{item.category}</CardTitle>
                   </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="flex flex-wrap gap-1">
+                  <CardContent className='pt-0'>
+                    <div className='flex flex-wrap gap-1'>
                       {item.skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">
+                        <Badge key={i} variant='secondary' className='text-xs'>
                           {skill}
                         </Badge>
                       ))}
@@ -212,18 +214,18 @@ export default function AboutPage() {
         </Card>
 
         {/* Story (short & relevant) */}
-        <Card className="p-8 mb-12">
+        <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className="text-3xl">My story (short)</CardTitle>
+            <CardTitle className='text-3xl'>My story (short)</CardTitle>
           </CardHeader>
-          <CardContent className="text-foreground/70 leading-relaxed">
-            <div className="space-y-6">
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <GraduationCap className="w-6 h-6 text-primary" />
+          <CardContent className='text-foreground/70 leading-relaxed'>
+            <div className='space-y-6'>
+              <div className='flex gap-6'>
+                <div className='bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl'>
+                  <GraduationCap className='text-primary h-6 w-6' />
                 </div>
                 <div>
-                  <div className="text-sm text-primary font-semibold mb-1">2018 → Today</div>
+                  <div className='text-primary mb-1 text-sm font-semibold'>2018 → Today</div>
                   <p>
                     I fell in love with the craft of building fast, reliable web apps. Over time I
                     focused on TypeScript/Next.js and pragmatic AI — not hype, just features users
@@ -232,12 +234,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Briefcase className="w-6 h-6 text-primary" />
+              <div className='flex gap-6'>
+                <div className='bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl'>
+                  <Briefcase className='text-primary h-6 w-6' />
                 </div>
                 <div>
-                  <div className="text-sm text-primary font-semibold mb-1">Recent</div>
+                  <div className='text-primary mb-1 text-sm font-semibold'>Recent</div>
                   <p>
                     Built MVPs and AI proofs on small projects; learned to cut scope, design for
                     change, and keep latency budgets honest. I care about developer ergonomics and
@@ -246,12 +248,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Award className="w-6 h-6 text-primary" />
+              <div className='flex gap-6'>
+                <div className='bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl'>
+                  <Award className='text-primary h-6 w-6' />
                 </div>
                 <div>
-                  <div className="text-sm text-primary font-semibold mb-1">
+                  <div className='text-primary mb-1 text-sm font-semibold'>
                     What this means for you
                   </div>
                   <p>
@@ -265,21 +267,21 @@ export default function AboutPage() {
         </Card>
 
         {/* Eligibility Checklist (for hiring managers) */}
-        <Card className="p-8 mb-12">
+        <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className="text-3xl">Eligibility checklist</CardTitle>
+            <CardTitle className='text-3xl'>Eligibility checklist</CardTitle>
           </CardHeader>
-          <CardContent className="text-foreground/70">
-            <ul className="space-y-2">
+          <CardContent className='text-foreground/70'>
+            <ul className='space-y-2'>
               {[
-                "Can deliver an MVP baseline with clean, typed code and CI.",
-                "Comfortable integrating AI features where they truly help users.",
-                "Understands product trade-offs; scopes ruthlessly for momentum.",
-                "Writes docs and ADRs so future work is faster.",
-                "Collaborates well with PM/Design; async by default, quick when needed.",
+                'Can deliver an MVP baseline with clean, typed code and CI.',
+                'Comfortable integrating AI features where they truly help users.',
+                'Understands product trade-offs; scopes ruthlessly for momentum.',
+                'Writes docs and ADRs so future work is faster.',
+                'Collaborates well with PM/Design; async by default, quick when needed.',
               ].map((x, i) => (
-                <li key={i} className="flex gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-1" />
+                <li key={i} className='flex gap-2'>
+                  <CheckCircle2 className='text-primary mt-1 h-4 w-4' />
                   <span>{x}</span>
                 </li>
               ))}
@@ -288,17 +290,17 @@ export default function AboutPage() {
         </Card>
 
         {/* Light CTA — still about fit, not selling */}
-        <Card className="p-8 text-center">
+        <Card className='p-8 text-center'>
           <CardHeader>
-            <CardTitle className="text-3xl">Want the no-fluff version?</CardTitle>
+            <CardTitle className='text-3xl'>Want the no-fluff version?</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
+            <p className='text-foreground/70 mx-auto mb-6 max-w-2xl'>
               If you value speed, clarity, and ownership — I'm a good match. Happy to walk through
               code or past work.
             </p>
-            <Button asChild className="hover:-translate-y-0.5 transition-all duration-300">
-              <Link href={`/?prompt=${encodeURIComponent("Can we book a 15-min call?")}`}>
+            <Button asChild className='transition-all duration-300 hover:-translate-y-0.5'>
+              <Link href={`/?prompt=${encodeURIComponent('Can we book a 15-min call?')}`}>
                 Book a 15-min call
               </Link>
             </Button>
