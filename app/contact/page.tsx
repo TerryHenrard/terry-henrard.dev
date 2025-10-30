@@ -1,35 +1,25 @@
-import Link from 'next/link';
-
-import {
-  Calendar,
-  Clock,
-  FileText,
-  Languages,
-  Mail,
-  MapPin,
-  Phone,
-  ShieldCheck,
-  Sparkles,
-} from 'lucide-react';
+import { Clock, Languages, Linkedin, Mail, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
 
+const LINKEDIN_URL = 'https://www.linkedin.com/in/terry-henrard';
+
 export default function ContactPage() {
   return (
-    <main className='relative container mx-auto min-h-screen overflow-hidden'>
+    <main className='relative container mx-auto min-h-[calc(100vh-4rem)] overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>
         {/* Hero */}
         <div className='relative mb-12 overflow-hidden rounded-3xl'>
           <Card className='relative border-0 bg-transparent'>
             <CardContent className='rounded-2xl'>
               <div className='mb-4 inline-flex items-center gap-2'>
-                <Badge variant='default' className='rounded-full'>
+                <Badge variant='default' className='px-4 py-1.5'>
                   <Sparkles className='h-3 w-3' />
                   <span className='ml-1'>Let's connect</span>
                 </Badge>
-                <Badge variant='secondary' className='ml-2 rounded-full'>
+                <Badge variant='secondary' className='ml-2 px-4 py-1.5'>
                   <Languages className='h-3 w-3' />
                   <span className='ml-1'>FR / EN</span>
                 </Badge>
@@ -43,42 +33,6 @@ export default function ContactPage() {
                 I reply within 24h on weekdays. Prefer email? Great. Urgent? Call me directly. No
                 fluff—just next steps.
               </p>
-
-              <div className='mt-6 flex flex-wrap gap-3'>
-                <Button asChild size='lg' className='inline-flex items-center gap-2'>
-                  <a
-                    href='mailto:terry.henrard@outlook.com?subject=Hello%20Terry'
-                    aria-label='Email Terry Henrard'
-                  >
-                    <Mail className='h-4 w-4' />
-                    <span>Email Terry</span>
-                  </a>
-                </Button>
-
-                <Button
-                  asChild
-                  variant='secondary'
-                  size='lg'
-                  className='inline-flex items-center gap-2'
-                >
-                  <a href='tel:+32498146651' aria-label='Call Terry Henrard'>
-                    <Phone className='h-4 w-4' />
-                    <span>+32 498 14 66 51</span>
-                  </a>
-                </Button>
-
-                <Button
-                  asChild
-                  variant='outline'
-                  size='lg'
-                  className='inline-flex items-center gap-2'
-                >
-                  <Link href={`/?prompt=${encodeURIComponent('Can we book a 15-min call?')}`}>
-                    <Calendar className='h-4 w-4' />
-                    <span>Book a 15-min cal</span>
-                  </Link>
-                </Button>
-              </div>
             </CardContent>
           </Card>
         </div>
@@ -99,8 +53,8 @@ export default function ContactPage() {
             </CardContent>
             <CardFooter>
               <Button asChild>
-                <a href='mailto:terry.henrard@outlook.com?subject=Hello%20Terry'>
-                  terry.henrard@outlook.com
+                <a href='mailto:terry.henrard@outlook.com' className='w-full'>
+                  <Mail className='mr-1' /> terry.henrard@outlook.com
                 </a>
               </Button>
             </CardFooter>
@@ -120,23 +74,30 @@ export default function ContactPage() {
             <CardFooter>
               <Button asChild variant='secondary'>
                 <a href='tel:+32498146651' className='w-full'>
-                  +32 498 14 66 51
+                  <Phone className='mr-1' /> +32 498 14 66 51
                 </a>
               </Button>
             </CardFooter>
           </Card>
 
-          {/* Address */}
-          <Card className='rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1'>
+          {/* LinkedIn */}
+          <Card className='justify-between rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1'>
             <CardContent>
               <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
-                <MapPin className='text-primary h-6 w-6' />
+                <Linkedin className='text-primary h-6 w-6' />
               </div>
-              <h2 className='mb-3 text-2xl font-bold'>Address</h2>
+              <h2 className='mb-3 text-2xl font-bold'>LinkedIn</h2>
               <p className='text-foreground/70 mb-4 leading-relaxed'>
-                42 Rue Léon Bernus, Charleroi
+                Prefer connecting on LinkedIn? Shoot me a DM and mention your product + goal.
               </p>
             </CardContent>
+            <CardFooter>
+              <Button asChild variant='outline'>
+                <a href={LINKEDIN_URL} target='_blank' rel='noopener noreferrer' className='w-full'>
+                  <Linkedin className='mr-1' /> View Profile
+                </a>
+              </Button>
+            </CardFooter>
           </Card>
         </div>
 
@@ -147,7 +108,7 @@ export default function ContactPage() {
               <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
                 <Clock className='text-primary h-6 w-6' />
               </div>
-              <h2 className='mb-3 text-2xl font-bold'>Office Hours (CET)</h2>
+              <h2 className='mb-3 text-2xl font-bold'>Working Hours</h2>
               <p className='text-foreground/70 leading-relaxed'>
                 Mon-Fri, 09:00-18:00. Replies within 24h on weekdays. For production issues (clients
                 on a Care Plan), call the number above.
@@ -162,74 +123,11 @@ export default function ContactPage() {
               </div>
               <h2 className='mb-3 text-2xl font-bold'>Privacy & Respect</h2>
               <p className='text-foreground/70 leading-relaxed'>
-                Your details stay between us. No spam, no resale. Please—no cold agency pitches.
+                Your details stay between us. No spam, no resale.
               </p>
             </CardContent>
           </Card>
         </div>
-
-        {/* Optional Brief */}
-        <Card className='mb-12 rounded-3xl p-8'>
-          <CardContent>
-            <div className='mb-4 flex items-center gap-3'>
-              <div className='bg-primary/10 flex h-12 w-12 items-center justify-center rounded-2xl'>
-                <FileText className='text-primary h-6 w-6' />
-              </div>
-              <h2 className='text-3xl font-bold'>Optional: 3-Minute Brief</h2>
-            </div>
-            <p className='text-foreground/70 mb-6 leading-relaxed'>
-              Share a bit of context to speed things up:
-            </p>
-            <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
-              {[
-                'Your stage & team size',
-                'Outcome you want (1 KPI)',
-                'Key data sources (read-only)',
-                'Constraints or guardrails',
-              ].map((item, i) => (
-                <Card key={i} className='rounded-2xl p-4'>
-                  <CardContent>
-                    <p className='text-foreground/70 text-sm'>{item}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className='mt-6'>
-              <Button asChild variant='secondary'>
-                <Link href='/brief'>Fill the short brief</Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Direct Email */}
-        <Card className='rounded-3xl p-8 text-center'>
-          <CardContent>
-            <h2 className='mb-4 text-3xl font-bold'>Prefer Email?</h2>
-            <p className='text-foreground/70 mx-auto mb-6 max-w-2xl'>
-              Send context, links, or docs. I'll reply with next steps or a quick Loom.
-            </p>
-            <div className='flex flex-wrap items-center justify-center gap-3'>
-              <Button asChild size='lg' className='inline-flex items-center gap-2'>
-                <a href='mailto:terry.henrard@outlook.com?subject=Hello%20Terry'>
-                  <Mail className='h-4 w-4' />
-                  <span>terry.henrard@outlook.com</span>
-                </a>
-              </Button>
-              <Button
-                asChild
-                variant='outline'
-                size='lg'
-                className='inline-flex items-center gap-2'
-              >
-                <a href='tel:+32498146651'>
-                  <Phone className='h-4 w-4' />
-                  <span>Call Terry</span>
-                </a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </main>
   );

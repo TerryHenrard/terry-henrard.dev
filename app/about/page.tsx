@@ -24,12 +24,6 @@ export default function AboutPage() {
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>
         {/* Hero — About & Eligibility */}
         <div className='relative mb-12 overflow-hidden rounded-3xl'>
-          <div
-            className='absolute inset-0 bg-cover bg-center'
-            style={{
-              backgroundImage: 'url(/abstract-gradient-landscape-with-mountains-at-suns.jpg)',
-            }}
-          />
           <Card className='relative border-0 bg-transparent'>
             <CardContent className='p-0'>
               <div className=''>
