@@ -1,19 +1,20 @@
-"use client";
+'use client';
 
-import { Button } from "@/core/components/ui/button";
+import type { ComponentProps } from 'react';
+
+import { Button } from '@/core/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/core/components/ui/tooltip";
-import { cn } from "@/core/lib/utils";
-import type { ComponentProps } from "react";
+} from '@/core/components/ui/tooltip';
+import { cn } from '@/core/lib/utils';
 
-export type ActionsProps = ComponentProps<"div">;
+export type ActionsProps = ComponentProps<'div'>;
 
 export const Actions = ({ className, children, ...props }: ActionsProps) => (
-  <div className={cn("flex items-center gap-1", className)} {...props}>
+  <div className={cn('flex items-center gap-1', className)} {...props}>
     {children}
   </div>
 );
@@ -28,20 +29,20 @@ export const Action = ({
   children,
   label,
   className,
-  variant = "ghost",
-  size = "sm",
+  variant = 'ghost',
+  size = 'sm',
   ...props
 }: ActionProps) => {
   const button = (
     <Button
-      className={cn("relative size-9 p-1.5 text-muted-foreground hover:text-foreground", className)}
+      className={cn('text-muted-foreground hover:text-foreground relative size-9 p-1.5', className)}
       size={size}
-      type="button"
+      type='button'
       variant={variant}
       {...props}
     >
       {children}
-      <span className="sr-only">{label || tooltip}</span>
+      <span className='sr-only'>{label || tooltip}</span>
     </Button>
   );
 

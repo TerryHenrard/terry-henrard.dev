@@ -1,18 +1,20 @@
-"use client";
+'use client';
 
-import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport, lastAssistantMessageIsCompleteWithToolCalls } from "ai";
-import { MessageSquare } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { toast } from "sonner";
-import { ChatMessage } from "../tools";
+import { useEffect, useRef, useState } from 'react';
+
+import { useChat } from '@ai-sdk/react';
+import { DefaultChatTransport, lastAssistantMessageIsCompleteWithToolCalls } from 'ai';
+import { MessageSquare } from 'lucide-react';
+import { toast } from 'sonner';
+
+import { ChatMessage } from '../tools';
 import {
   Conversation,
   ConversationContent,
   ConversationEmptyState,
   ConversationScrollButton,
-} from "./ai-elements/conversation";
-import { Message, MessageAvatar, MessageContent } from "./ai-elements/message";
+} from './ai-elements/conversation';
+import { Message, MessageAvatar, MessageContent } from './ai-elements/message';
 import {
   PromptInput,
   PromptInputBody,
@@ -21,47 +23,58 @@ import {
   PromptInputSubmit,
   PromptInputTextarea,
   PromptInputTools,
-} from "./ai-elements/prompt-input";
-import { Response } from "./ai-elements/response";
-import { Suggestion, Suggestions } from "./ai-elements/suggestion";
-import { PhoneCallRequestForm } from "./phone-call-request-form";
+} from './ai-elements/prompt-input';
+import { Response } from './ai-elements/response';
+import { Suggestion, Suggestions } from './ai-elements/suggestion';
+import { PhoneCallRequestForm } from './phone-call-request-form';
 
 const starterPrompts = [
-  "Show me your services with timelines & deliverables.",
-  "What can you build for a B2B SaaS in 14 days?",
-  "Can you build an AI assistant for my website?",
-  "I want an mvp for my startup idea.",
-  "Can we book a quick call?",
+  'Show me your services with timelines & deliverables.',
+  'What can you build for a B2B SaaS in 14 days?',
+  'Can you build an AI assistant for my website?',
+  'I want an mvp for my startup idea.',
+  'Can we book a quick call?',
 ];
 
 export default function Chat() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [isInputDisabled, setIsInputDisabled] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const { messages, sendMessage, status, addToolResult, error } = useChat<ChatMessage>({
-    transport: new DefaultChatTransport({ api: "/api/ai/chat" }),
+  const { messages, sendMessage, status, addToolResult, error, stop } = useChat<ChatMessage>({
+    transport: new DefaultChatTransport({ api: '/api/ai/chat' }),
     sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
     async onToolCall({ toolCall }) {
       if (toolCall.dynamic) return;
-      if (toolCall.toolName === "displayPhoneCallRequestForm") {
+      if (toolCall.toolName === 'displayPhoneCallRequestForm') {
         setIsInputDisabled(true);
       }
     },
   });
 
-  // Autofocus input on mount for "zero-friction" start.
   useEffect(() => {
+    if (!textareaRef.current) return;
     textareaRef.current?.focus();
   }, []);
 
-  // Toast errors nicely.
   useEffect(() => {
     if (error) {
-      toast.error("An error occurred. Please try again.", { duration: 5000 });
+      toast.error('An error occurred. Please try again.', { duration: 5000 });
     }
   }, [error]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const prompt = decodeURIComponent(params.get('prompt') || '');
+
+    if (prompt) {
+      firePrompt(prompt);
+      params.delete('prompt');
+      const newPath = window.location.pathname + (params.toString() ? `?${params.toString()}` : '');
+      window.history.replaceState(null, '', newPath);
+    }
+  }, []);
 
   const firePrompt = (prompt: string) => {
     sendMessage({ text: prompt });
@@ -73,10 +86,10 @@ export default function Chat() {
     if (!(hasText || hasAttachments)) return;
 
     sendMessage({
-      text: message.text || "Sent with attachments",
+      text: message.text || 'Sent with attachments',
       files: message.files,
     });
-    setText("");
+    setText('');
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -91,14 +104,14 @@ export default function Chat() {
     const empty = text.trim().length === 0;
 
     // Send first starter prompt on Enter (no Shift) when empty.
-    if (empty && e.key === "Enter" && !e.shiftKey) {
+    if (empty && e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       firePrompt(starterPrompts[0]);
       return;
     }
 
     // Submit message on Enter (no Shift) when not empty.
-    if (!empty && e.key === "Enter" && !e.shiftKey) {
+    if (!empty && e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSubmit({ text });
       return;
@@ -113,22 +126,23 @@ export default function Chat() {
   };
 
   return (
-    <div className="flex flex-col justify-between h-full">
-      <Conversation className="relative w-full">
+    <div className='flex h-full flex-col justify-between'>
+      <Conversation className='relative w-full'>
         <ConversationContent
-          className={`${messages.length <= 0 ? "flex justify-center items-center h-full" : ""}`}
+          className={`${messages.length <= 0 ? 'flex h-full items-center justify-center' : ''}`}
         >
           {messages.length === 0 ? (
             <div>
               <ConversationEmptyState
-                icon={<MessageSquare className="size-12" />}
-                title="Ask me anything about Terry"
-                description="Press Enter to start or tap a suggestion below. You can also press 1-5 to pick a prompt."
+                icon={<MessageSquare className='size-12' />}
+                title='Ask me anything about Terry'
+                description='Press Enter to start or tap a suggestion below. You can also press 1-5 to pick a prompt.'
               />
-              <Suggestions className="flex items-center justify-center max-w-xl mx-auto flex-wrap">
+              <Suggestions className='mx-auto flex max-w-xl flex-wrap items-center justify-center'>
                 {starterPrompts.map((suggestion, i) => (
                   <Suggestion
                     key={suggestion}
+                    variant={'default'}
                     onClick={handleSuggestionClick}
                     // Prefix with the shortcut number for clarity
                     suggestion={`${i + 1}. ${suggestion}`}
@@ -142,18 +156,18 @@ export default function Chat() {
                 <MessageContent>
                   {message.parts.map((part, i) => {
                     switch (part.type) {
-                      case "text":
+                      case 'text':
                         return <Response key={`${message.id}-${i}`}>{part.text}</Response>;
-                      case "tool-displayPhoneCallRequestForm": {
+                      case 'tool-displayPhoneCallRequestForm': {
                         const callId = part.toolCallId;
                         switch (part.state) {
-                          case "input-streaming":
+                          case 'input-streaming':
                             return (
                               <div key={callId}>
                                 <p>Requesting phone call...</p>
                               </div>
                             );
-                          case "input-available":
+                          case 'input-available':
                             return (
                               <PhoneCallRequestForm
                                 key={callId}
@@ -164,13 +178,13 @@ export default function Chat() {
                                 setIsInputDisabled={setIsInputDisabled}
                               />
                             );
-                          case "output-available":
+                          case 'output-available':
                             return (
                               <div key={callId}>
                                 <Response>{part.input.message}</Response>
                               </div>
                             );
-                          case "output-error":
+                          case 'output-error':
                             return (
                               <div key={callId}>
                                 <Response>
@@ -185,8 +199,8 @@ export default function Chat() {
                     }
                   })}
                 </MessageContent>
-                {message.role === "assistant" && (
-                  <MessageAvatar name="Terry Henrard" src="/terry-henrard.jpg" />
+                {message.role === 'assistant' && (
+                  <MessageAvatar name='Terry Henrard' src='/terry-henrard.jpg' />
                 )}
               </Message>
             ))
@@ -195,7 +209,7 @@ export default function Chat() {
         <ConversationScrollButton />
       </Conversation>
 
-      <PromptInput onSubmit={handleSubmit} className="mt-4" globalDrop multiple>
+      <PromptInput onSubmit={handleSubmit} className='mt-4' globalDrop multiple>
         <PromptInputBody>
           <PromptInputTextarea
             onChange={(e) => setText(e.target.value)}
@@ -203,7 +217,7 @@ export default function Chat() {
             ref={textareaRef}
             value={text}
             disabled={isInputDisabled}
-            placeholder="Press Enter to start • Type or paste anything • Press 1-5 to pick a prompt"
+            placeholder='Press Enter to start • Type or paste anything • Press 1-5 to pick a prompt'
           />
         </PromptInputBody>
         <PromptInputFooter>
@@ -212,8 +226,8 @@ export default function Chat() {
         </PromptInputFooter>
       </PromptInput>
 
-      <div className="flex items-center justify-center mt-4">
-        <p className="text-xs text-muted-foreground">
+      <div className='mt-4 flex items-center justify-center'>
+        <p className='text-muted-foreground text-xs'>
           Don't take what AI tells you for granted. It can make mistakes. It's for demonstration
           purposes only.
         </p>

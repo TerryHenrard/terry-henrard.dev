@@ -1,4 +1,4 @@
-import { defineConfig, globalIgnores } from "eslint/config";
+import { defineConfig, globalIgnores } from 'eslint/config';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -10,19 +10,19 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = defineConfig([
-    ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-    "node_modules"
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+    'node_modules',
   ]),
   {
-    rules: {'react/no-unescaped-entities': 'off'}
-  }
+    rules: { 'react/no-unescaped-entities': 'off' },
+  },
 ]);
 
 export default eslintConfig;
