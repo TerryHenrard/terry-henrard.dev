@@ -1,17 +1,8 @@
+import nextVitals from 'eslint-config-next/core-web-vitals';
 import { defineConfig, globalIgnores } from 'eslint/config';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
 
 const eslintConfig = defineConfig([
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  // Override default ignores of eslint-config-next.
+  ...nextVitals,
   globalIgnores([
     // Default ignores of eslint-config-next:
     '.next/**',
@@ -21,7 +12,21 @@ const eslintConfig = defineConfig([
     'node_modules',
   ]),
   {
-    rules: { 'react/no-unescaped-entities': 'off' },
+    rules: {
+      'react/no-unescaped-entities': 'off',
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'next/link',
+              importNames: ['Link'],
+              message: 'Please use Link from next-intl/link for internationalized routing.',
+            },
+          ],
+        },
+      ],
+    },
   },
 ]);
 

@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 
 import z from 'zod';
 
-import { phoneCallRequestFormSchema } from '../../../../features/ai/schemas/phone-call-request-form-schema';
+import { phoneCallRequestFormSchema } from '../../../../../features/ai/schemas/phone-call-request-form-schema';
 
 /**
  * Escape potentially unsafe characters in a string for Discord markdown.
