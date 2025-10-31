@@ -42,4 +42,5 @@ This repo contains AI-specific patterns and helper files under `features/ai/`. T
 If you maintain CI, deploy steps, or environment conventions not represented here, add them to the README or `.github/copilot-instructions.md` so contributors and agents can follow them.
 
 ---
+
 Edited: concise project summary and pointers for contributors and AI agents.
