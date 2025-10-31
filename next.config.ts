@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   experimental: {
     turbopackFileSystemCacheForDev: true,
-    turbopackFileSystemCacheForBuild: true,
+    // turbopackFileSystemCacheForBuild: true,
     typedEnv: true,
   },
 };
