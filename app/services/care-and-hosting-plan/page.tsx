@@ -110,8 +110,8 @@ export default function CareAndHostingPage() {
               </div>
               <h4 className='mb-1 font-semibold'>Clarity for stakeholders</h4>
               <p className='text-foreground/70 text-sm'>
-                Monthly report: uptime %, errors, speed, and progress — <strong>no guessing</strong>
-                .
+                Monthly report: analytics, uptime %, errors, speed, and progress —{' '}
+                <strong>no guessing</strong>.
               </p>
             </CardContent>
           </Card>
@@ -122,20 +122,30 @@ export default function CareAndHostingPage() {
           {/* Lite */}
           <Card className='flex flex-col justify-between rounded-3xl p-8'>
             <CardContent>
-              <h3 className='mb-2 text-xl font-bold'>Lite — “Lights On”</h3>
-              <p className='text-foreground/70 mb-3 text-sm'>€199.99 / month (excl. VAT)</p>
+              <h3 className='mb-2 text-xl font-bold'>Lite — "Lights On"</h3>
+              <p className='text-foreground/70 mb-3 text-sm'>
+                Best for: solo founders keeping things stable.
+              </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
                 <li>
-                  Outcome: <strong>Know immediately</strong> when something’s wrong.
+                  Outcome: <strong>Sleep easier</strong>—know immediately when something's wrong.
                 </li>
-                <li>24/7 monitoring + alert routing to our team.</li>
-                <li>Weekly automated health checks.</li>
-                <li>Monthly board-ready PDF (uptime, errors, top fixes).</li>
+                <li>24/7 monitoring with alert routing to our team.</li>
                 <li>
-                  <strong>1 day</strong> of small fixes per month.
+                  Automated controls: <strong>daily database backups</strong>.
                 </li>
                 <li>
-                  Response: within <strong>2 business days</strong>.
+                  Monthly PDF: <strong>uptime %</strong>, <strong>errors per page</strong>, and{' '}
+                  <strong>top AI spend drivers</strong>.
+                </li>
+                <li>
+                  Bug fixes: <strong>unlimited</strong> (within scope).
+                </li>
+                <li>
+                  <strong>1 dev day / month</strong> for small fixes & improvements.
+                </li>
+                <li>
+                  Response: within <strong>2 business days</strong> (CET).
                 </li>
               </ul>
             </CardContent>
@@ -149,23 +159,21 @@ export default function CareAndHostingPage() {
           {/* Pro */}
           <Card className='ring-primary/20 flex flex-col justify-between rounded-3xl p-8 ring-1'>
             <CardContent>
-              <div className='mb-2'>
-                <Badge className='rounded-full'>Most picked</Badge>
-              </div>
-              <h3 className='mb-2 text-xl font-bold'>Pro — “Production Care”</h3>
-              <p className='text-foreground/70 mb-3 text-sm'>€899.99 / month (excl. VAT)</p>
+              <h3 className='mb-2 text-xl font-bold'>Pro — "Production Care"</h3>
+              <p className='text-foreground/70 mb-3 text-sm'>
+                Best for: product teams running live apps.
+              </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
                 <li>
                   Outcome: <strong>Ship faster</strong> with less risk.
                 </li>
                 <li>Everything in Lite.</li>
                 <li>
-                  <strong>2 dev days / month</strong> for fixes or small features.
+                  <strong>3 dev days / month</strong> for fixes or small features.
                 </li>
-                <li>Monthly updates + security patches handled.</li>
-                <li>Cost control review (incl. AI spend) + alert caps.</li>
+                <li>AI cost control & alert caps reviewed monthly.</li>
                 <li>
-                  Response: <strong>same-day</strong> • P1 start &lt; <strong>8h</strong>.
+                  Response: within <strong>24 business hours</strong> (CET).
                 </li>
               </ul>
             </CardContent>
@@ -179,8 +187,10 @@ export default function CareAndHostingPage() {
           {/* Venture */}
           <Card className='flex flex-col justify-between rounded-3xl p-8'>
             <CardContent>
-              <h3 className='mb-2 text-xl font-bold'>Venture — “Ops & Credibility”</h3>
-              <p className='text-foreground/70 mb-3 text-sm'>€999.99 / month (excl. VAT)</p>
+              <h3 className='mb-2 text-xl font-bold'>Venture — "Ops & Credibility"</h3>
+              <p className='text-foreground/70 mb-3 text-sm'>
+                Best for: SaaS teams aiming for investors & boards.
+              </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
                 <li>
                   Outcome: <strong>Investor-ready</strong> reliability and speed.
@@ -189,11 +199,9 @@ export default function CareAndHostingPage() {
                 <li>
                   <strong>5 dev days / month</strong> (features + improvements).
                 </li>
-                <li>Quarterly KPI review (60 min) + next-quarter roadmap.</li>
-                <li>Performance targets agreed (e.g., p95, LCP) + quick wins.</li>
-                <li>Safeguarded releases (feature flags / canaries).</li>
+                <li>Strengthened AI spend monitoring and monthly executive-style reporting.</li>
                 <li>
-                  Response: ≤ <strong>2h</strong> (business hours).
+                  Response: within <strong>2 hours</strong> (business hours, CET).
                 </li>
               </ul>
             </CardContent>
@@ -231,7 +239,7 @@ export default function CareAndHostingPage() {
         <div className='mb-2 flex flex-col items-center gap-3 text-center'>
           <div className='flex flex-col items-center gap-3 sm:flex-row'>
             <Button asChild>
-              <Link href='/services/audit'>Start with the 2–3 day MVP Plan</Link>
+              <Link href='/services/audit'>Start with the 2-3 day MVP Plan</Link>
             </Button>
             <Button asChild variant='outline'>
               <Link href={`/?prompt=${encodeURIComponent('Book a quick call')}`}>

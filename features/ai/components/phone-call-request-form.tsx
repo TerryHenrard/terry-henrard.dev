@@ -24,8 +24,7 @@ import {
   type PhoneCallRequestForm,
   phoneCallRequestFormSchema,
 } from '../schemas/phone-call-request-form-schema';
-import { ChatTools } from '../tools';
-import { type ChatMessage } from '../tools';
+import { type ChatMessage, ChatTools } from '../tools';
 import { Response } from './ai-elements/response';
 
 interface PhoneCallRequestFormProps {
@@ -106,7 +105,10 @@ export function PhoneCallRequestForm({
               <CardTitle className='text-lg'>Schedule a Call</CardTitle>
             </div>
             <CardDescription>
-              Fill out the details below to request a phone call with Terry.
+              Fill out the details below to request a phone call with Terry or call me directly at{' '}
+              <a href='tel:+32498146651' className='text-blue-500 underline'>
+                +32 498 14 66 51
+              </a>
             </CardDescription>
           </CardHeader>
           <CardContent className='space-y-4'>

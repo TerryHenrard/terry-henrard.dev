@@ -62,14 +62,23 @@ export default function AuditServicesPage() {
                 writing a line of code.
               </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2'>
-                <li>Outcome map: users, jobs-to-be-done & success metrics</li>
                 <li>
-                  Scope line: <span className='font-medium'>Must / Should / Later</span>{' '}
-                  (zero-surprise backlog)
+                  <strong>Outcome map:</strong> users, jobs-to-be-done & success metrics
                 </li>
-                <li>Architecture & decision record (so choices won't get re-litigated)</li>
-                <li>Risk & dependency grid with owner + mitigation</li>
-                <li>Launch criteria & demo script for first 10 users</li>
+                <li>
+                  <strong>Scope line:</strong>{' '}
+                  <span className='font-medium'>Must / Should / Later</span> (zero-surprise backlog)
+                </li>
+                <li>
+                  <strong>Architecture & decision record:</strong> (so choices won't get
+                  re-litigated)
+                </li>
+                <li>
+                  <strong>Risk & dependency grid:</strong> with owner + mitigation
+                </li>
+                <li>
+                  <strong>Launch criteria & demo script:</strong> for first 10 users
+                </li>
               </ul>
             </CardContent>
             <CardFooter className='gap-3'>
@@ -98,11 +107,21 @@ export default function AuditServicesPage() {
                 it's safe, useful, and cost-controlled in production.
               </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2'>
-                <li>Data map & access path (what's usable today vs. later)</li>
-                <li>Use-case shortlist with effort/impact & "one-feature" pick</li>
-                <li>Retrieval/model options with safety rules & fallbacks</li>
-                <li>Success metric + eval plan (what we'll measure to call it a win)</li>
-                <li>2-hour developer workshop to transfer patterns</li>
+                <li>
+                  <strong>case studies</strong> to illustrate potential impact
+                </li>
+                <li>
+                  <strong>Use-case shortlist:</strong> with effort/impact & "one-feature" pick
+                </li>
+                <li>
+                  <strong>Retrieval/model options:</strong> with safety rules & fallbacks
+                </li>
+                <li>
+                  <strong>Success metric + eval plan:</strong> (what we'll measure to call it a win)
+                </li>
+                <li>
+                  <strong>2-hour developer workshop:</strong> to transfer patterns
+                </li>
               </ul>
             </CardContent>
             <CardFooter className='gap-3'>
