@@ -1,10 +1,9 @@
-import Link from 'next/link';
-
 import { BarChart3, CheckCircle2, Hammer, Rocket, ShieldCheck, Sparkles } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent } from '@/core/components/ui/card';
+import { Link } from '@/features/i18n/lib/navigation';
 import FOMOCard from '@/features/marketing/fomo-card';
 import GuaranteeHeadline from '@/features/marketing/guarantee-headline';
 

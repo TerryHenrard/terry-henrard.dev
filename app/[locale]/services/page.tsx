@@ -1,18 +1,16 @@
 import type { ElementType, ReactNode } from 'react';
 
-import { Route } from 'next';
-import Link from 'next/link';
-
 import { Brain, FileSearch, Hammer, type LucideIcon, ShieldCheck, Sparkles } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
+import { Link } from '@/features/i18n/lib/navigation';
 
 export default function ServicesPage() {
   const services: {
     title: string;
-    href: Route;
+    href: string;
     description: ReactNode;
     icon: LucideIcon;
     cta: string;

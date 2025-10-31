@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { BarChart3, Rocket, Server, Settings, ShieldCheck } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
+import { Link } from '@/features/i18n/lib/navigation';
 
-export default function CareAndHostingPage() {
+export default function CareAndHostingPlanPage() {
   return (
     <main className='relative container mx-auto min-h-[calc(100vh-4rem)] overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 import type { Metadata } from 'next';
-import { Locale, NextIntlClientProvider, hasLocale } from 'next-intl';
+import { Locale, hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -31,7 +31,7 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'HomePage' });
+  const t = await getTranslations({ locale, namespace: 'home' });
 
   return {
     title: t('title'),
@@ -62,14 +62,12 @@ export default async function RootLayout({
       <body
         className={`${geistSans.className} ${geistMono.variable} min-h-screen pt-16 antialiased`}
       >
-        <NextIntlClientProvider>
-          <Providers>
-            <Header />
-            <Background />
-            {children}
-            <Toaster position='top-center' />
-          </Providers>
-        </NextIntlClientProvider>
+        <Providers>
+          <Header />
+          <Background />
+          {children}
+          <Toaster position='top-center' />
+        </Providers>
       </body>
     </html>
   );

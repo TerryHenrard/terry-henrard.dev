@@ -10,6 +10,8 @@ const eslintConfig = defineConfig([
     'build/**',
     'next-env.d.ts',
     'node_modules',
+    'core/components/ui/**',
+    'features/ai/components/ai-elements/**',
   ]),
   {
     rules: {
@@ -20,8 +22,7 @@ const eslintConfig = defineConfig([
           paths: [
             {
               name: 'next/link',
-              importNames: ['Link'],
-              message: 'Please use Link from next-intl/link for internationalized routing.',
+              message: 'Please use Link from @/features/i18n/lib/navigation for internationalized routing.',
             },
           ],
         },

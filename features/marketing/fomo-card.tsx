@@ -1,10 +1,9 @@
 'use client';
 
-import Link from 'next/link';
-
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { firstToUpper } from '@/core/lib/utils';
+import { Link } from '@/features/i18n/lib/navigation';
 
 interface FOMOCardProps {
   variant: 'mvp-foundry' | 'ai-sprint';

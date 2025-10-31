@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # next-intl experimental messages declaration files
-**/messages/*.d.json.ts
+**/i18n/messages/**/*.d.json.ts
