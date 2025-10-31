@@ -1,5 +1,4 @@
 import type { Route } from 'next';
-import Link from 'next/link';
 
 import {
   Brain,
@@ -15,6 +14,7 @@ import {
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
+import { Link } from '@/features/i18n/lib/navigation';
 import FOMOCard from '@/features/marketing/fomo-card';
 import GuaranteeHeadline from '@/features/marketing/guarantee-headline';
 

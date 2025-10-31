@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import {
   Award,
   BookOpen,
@@ -17,6 +15,7 @@ import {
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/core/components/ui/card';
+import { Link } from '@/features/i18n/lib/navigation';
 
 export default function AboutPage() {
   return (

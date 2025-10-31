@@ -59,7 +59,7 @@ const timelineItems: {
   },
 ];
 
-export default function Timeline() {
+export default function ExperiencePage() {
   return (
     <main className='relative overflow-hidden'>
       <div className='relative z-10 container mx-auto min-h-[calc(100vh-4rem)] border-0 bg-transparent p-8 py-4 shadow-none'>

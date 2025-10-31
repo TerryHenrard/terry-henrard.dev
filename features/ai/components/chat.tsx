@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useEffectEvent, useRef, useState } from 'react';
 
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, lastAssistantMessageIsCompleteWithToolCalls } from 'ai';
@@ -53,28 +53,9 @@ export default function Chat() {
     },
   });
 
-  useEffect(() => {
-    if (!textareaRef.current) return;
-    textareaRef.current?.focus();
-  }, []);
-
-  useEffect(() => {
-    if (error) {
-      toast.error('An error occurred. Please try again.', { duration: 5000 });
-    }
-  }, [error]);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const prompt = decodeURIComponent(params.get('prompt') || '');
-
-    if (prompt) {
-      firePrompt(prompt);
-      params.delete('prompt');
-      const newPath = window.location.pathname + (params.toString() ? `?${params.toString()}` : '');
-      window.history.replaceState(null, '', newPath);
-    }
-  }, []);
+  const onFirePrompt = useEffectEvent((prompt: string) => {
+    sendMessage({ text: prompt });
+  });
 
   const firePrompt = (prompt: string) => {
     sendMessage({ text: prompt });
@@ -96,10 +77,6 @@ export default function Chat() {
     firePrompt(suggestion);
   };
 
-  // Keyboard UX:
-  // - Enter on empty input = send first starter prompt.
-  // - Enter on non-empty input = submit the message.
-  // - Keys 1-5 on empty input = send corresponding starter prompt.
   const onTextareaKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (e) => {
     const empty = text.trim().length === 0;
 
@@ -124,6 +101,29 @@ export default function Chat() {
       firePrompt(starterPrompts[idx]);
     }
   };
+
+  useEffect(() => {
+    if (!textareaRef.current) return;
+    textareaRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    if (error) {
+      toast.error('An error occurred. Please try again.', { duration: 5000 });
+    }
+  }, [error]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const prompt = decodeURIComponent(params.get('prompt') || '');
+
+    if (prompt) {
+      onFirePrompt(prompt);
+      params.delete('prompt');
+      const newPath = window.location.pathname + (params.toString() ? `?${params.toString()}` : '');
+      window.history.replaceState(null, '', newPath);
+    }
+  }, []);
 
   return (
     <div className='flex h-full flex-col justify-between'>

@@ -1,9 +1,7 @@
 'use client';
 
-import { Route } from 'next';
-import Link from 'next/link';
-
 import { useIsMobile } from '@/core/hooks/use-mobile';
+import { Link } from '@/features/i18n/lib/navigation';
 
 import { ModeToggle } from '../ui/mode-toggle';
 import {
@@ -20,7 +18,7 @@ function ListItem({
   children,
   href,
   ...props
-}: React.ComponentPropsWithoutRef<'li'> & { href: Route }) {
+}: React.ComponentPropsWithoutRef<'li'> & { href: string }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
@@ -33,7 +31,7 @@ function ListItem({
   );
 }
 
-const services: { title: string; href: Route; description: string }[] = [
+const services: { title: string; href: string; description: string }[] = [
   {
     title: 'Audit',
     href: '/services/audit',

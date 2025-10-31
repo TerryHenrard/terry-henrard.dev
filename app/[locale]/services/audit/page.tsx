@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import {
   CalendarClock,
   ClipboardCheck,
@@ -13,6 +11,7 @@ import {
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
+import { Link } from '@/features/i18n/lib/navigation';
 
 export default function AuditServicesPage() {
   return (
