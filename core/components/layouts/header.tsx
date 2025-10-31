@@ -51,7 +51,7 @@ const services: { title: string; href: Route; description: string }[] = [
   },
   {
     title: 'Care & Hosting Plan',
-    href: '/services/care-plan',
+    href: '/services/care-and-hosting-plan',
     description: 'Building responsive and dynamic websites tailored to your needs',
   },
 ];
