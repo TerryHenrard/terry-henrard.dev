@@ -20,7 +20,7 @@ const timelineItems: {
   },
   {
     year: '2023 - 2025',
-    title: 'Web Developer',
+    title: 'Co-Founder & CTO',
     company: 'VISIT ME',
     description:
       'Built and maintained a full-stack SaaS platform — designed infrastructure from database schemas to production codebase and ongoing operations.',
