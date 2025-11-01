@@ -27,6 +27,7 @@ const withNextIntl = createNextIntlPlugin({
       './features/i18n/messages/en/phone-call-request-form.json',
       './features/i18n/messages/en/header.json',
       './features/i18n/messages/en/marketing.json',
+      './features/i18n/messages/en/locale-switcher.json',
     ],
   },
 });

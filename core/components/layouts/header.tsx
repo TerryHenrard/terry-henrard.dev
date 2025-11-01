@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { useIsMobile } from '@/core/hooks/use-mobile';
+import { LocaleSwitcher } from '@/features/i18n/components/locale-switcher';
 import { Link } from '@/features/i18n/lib/navigation';
 
 import { ModeToggle } from '../ui/mode-toggle';
@@ -121,7 +122,10 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <ModeToggle />
+        <div className='flex items-center gap-4'>
+          <LocaleSwitcher />
+          <ModeToggle />
+        </div>
       </div>
     </header>
   );

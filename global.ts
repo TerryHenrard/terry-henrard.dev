@@ -7,6 +7,7 @@ import ContactMessages from './features/i18n/messages/en/contact.json';
 import ExperienceMessages from './features/i18n/messages/en/experience.json';
 import HeaderMessages from './features/i18n/messages/en/header.json';
 import HomeMessages from './features/i18n/messages/en/home.json';
+import LocaleSwitcherMessages from './features/i18n/messages/en/locale-switcher.json';
 import MarketingMessages from './features/i18n/messages/en/marketing.json';
 import MvpFoundryMessages from './features/i18n/messages/en/mvp-foundry.json';
 import PhoneCallRequestFormMessages from './features/i18n/messages/en/phone-call-request-form.json';
@@ -25,6 +26,7 @@ declare module 'next-intl' {
       typeof CareAndHostingMessages &
       typeof PhoneCallRequestFormMessages &
       typeof HeaderMessages &
+      typeof LocaleSwitcherMessages &
       typeof MarketingMessages;
     Locale: (typeof routing.locales)[number];
   }
