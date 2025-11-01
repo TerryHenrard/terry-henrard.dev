@@ -1,0 +1,85 @@
+{
+  "experience": {
+    "timeline": {
+      "0": {
+        "year": "2025 - Present",
+        "title": "Web Developer specialized in AI and MVP",
+        "company": "Freelance",
+        "description": "Developing AI-powered web applications using Next.js, React, and TypeScript. Adding intelligent features to enhance user experience and save time to my clients.",
+        "tags": {
+          "0": "AI",
+          "1": "Next.js",
+          "2": "React",
+          "3": "TypeScript",
+          "4": "Tailwind CSS"
+        }
+      },
+      "1": {
+        "year": "2023 - 2025",
+        "title": "Co-Founder & CTO",
+        "company": "VISIT ME",
+        "description": "Built and maintained a full-stack SaaS platform — designed infrastructure from database schemas to production codebase and ongoing operations.",
+        "tags": {
+          "0": "AI",
+          "1": "Next.js",
+          "2": "React",
+          "3": "TypeScript",
+          "4": "Tailwind CSS"
+        }
+      },
+      "2": {
+        "year": "2024 - 2025",
+        "title": "Intern Developer",
+        "company": "Thomas & Piron",
+        "description": "Worked on integrating realtime AI agents into after-sales service. When clients call, an AI helps answer their questions quickly and accurately directly on the phone.",
+        "tags": {
+          "0": "AI",
+          "1": "Docker",
+          "2": "TypesScript",
+          "3": "Azure",
+          "4": "React",
+          "5": "C#"
+        }
+      },
+      "3": {
+        "year": "2024 - 2025",
+        "title": "Intern Developer",
+        "company": "Microsoft Innovate Create",
+        "description": "Worked on web development projects and gained experience with AI technologies. (Fell in love with AI here!)",
+        "tags": {
+          "0": "AI",
+          "1": "React",
+          "2": "TypesScript",
+          "3": "C#",
+          "4": "Azure",
+          "5": "Docker"
+        }
+      },
+      "4": {
+        "year": "2022 - 2024",
+        "title": "Student Developer",
+        "company": "Tech High School",
+        "description": "Built several web projects integrating AI features as part of my coursework.",
+        "tags": {
+          "0": "Python",
+          "1": "C#",
+          "2": "C",
+          "3": "Java",
+          "4": "React Native"
+        }
+      },
+      "5": {
+        "year": "2018 - 2022",
+        "title": "Hobbyist Developer",
+        "company": "Self-Taught",
+        "description": "Explored web development and AI through personal projects and online courses. Since my early teens, I've been passionate about coding and technology.",
+        "tags": {
+          "0": "HTML",
+          "1": "CSS",
+          "2": "JavaScript",
+          "3": "Python"
+        }
+      }
+    }
+  }
+}

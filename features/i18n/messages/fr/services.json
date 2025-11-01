@@ -1,0 +1,32 @@
+{
+  "services": {
+    "badge": "Services",
+    "hero": {
+      "title": "Résultats en semaines — soutenus par une garantie simple.",
+      "description": "Quatre offres ciblées. Commencez petit pour obtenir de la clarté, lancez un produit utilisable rapidement, ajoutez une fonctionnalité à fort impact, et gardez tout en bonne santé sans surprises.",
+      "guarantee": "<strong><em>Garantie :</em></strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <strong class=\"underline\">sans frais supplémentaires</strong>."
+    },
+    "items": {
+      "0": {
+        "title": "Audit",
+        "description": "En quelques jours, obtenez un plan clair que vous pouvez défendre : quoi construire en premier, combien ça coûtera, où sont les risques, et le chemin le plus court vers les résultats.",
+        "cta": "Explorer les audits"
+      },
+      "1": {
+        "title": "MVP Foundry",
+        "description": "Lancez un <strong>MVP utilisable en 4-6 semaines</strong> pour pouvoir réserver des démos, valider avec de vrais utilisateurs, et débloquer le prochain tour de financement en toute confiance.",
+        "cta": "Voir les forfaits"
+      },
+      "2": {
+        "title": "Sprint Fonctionnalité IA",
+        "description": "En <strong>14 jours</strong>, ajoutez une fonctionnalité que vos utilisateurs ressentent instantanément — réponses plus rapides, moins d'étapes, ou résumés automatiques — pour booster l'adoption et la rétention.",
+        "cta": "Lancer un sprint"
+      },
+      "3": {
+        "title": "Plan de Maintenance & Hébergement",
+        "description": "Restez en ligne et sans souci : corrections rapides, mises au point mensuelles, rapports clairs, et <strong>coûts prévisibles</strong> pour que vous dormiez tranquille.",
+        "cta": "Voir les plans"
+      }
+    }
+  }
+}

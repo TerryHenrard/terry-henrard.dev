@@ -1,0 +1,84 @@
+{
+  "careAndHosting": {
+    "badge": "Care & Hosting",
+    "availabilityBadge": "We cap active clients at 8 — availability is limited",
+    "hero": {
+      "title": "Sleep-easy production. Fixed cost. Zero surprises.",
+      "description": "Keep your product <strong>online, fast, and trustworthy</strong>. We take ownership of incidents, updates, and small improvements so your team can ship. You get <strong>clear SLAs, fewer fires,</strong> and board-ready reporting."
+    },
+    "trust": {
+      "text": "All my services are backed by <span class=\"font-semibold\">AWS (Amazon)</span> & <span class=\"font-semibold\">Azure (Microsoft)</span>"
+    },
+    "outcomes": {
+      "0": {
+        "title": "Always-on",
+        "description": "Proactive checks + real people on call → <strong>higher uptime</strong>, less scrambling."
+      },
+      "1": {
+        "title": "Faster product",
+        "description": "Performance tune-ups and quick wins that <strong>cut load times</strong> and bounce."
+      },
+      "2": {
+        "title": "Fewer fires",
+        "description": "Updates, security, and hygiene handled → <strong>less breakage</strong> and rework."
+      },
+      "3": {
+        "title": "Clarity for stakeholders",
+        "description": "Monthly report: analytics, uptime %, errors, speed, and progress — <strong>no guessing</strong>."
+      }
+    },
+    "plans": {
+      "lite": {
+        "title": "Lite — \"Lights On\"",
+        "bestFor": "Best for: solo founders keeping things stable.",
+        "items": {
+          "0": "Outcome: <strong>Sleep easier</strong>—know immediately when something's wrong.",
+          "1": "24/7 monitoring with alert routing to our team.",
+          "2": "Automated controls: <strong>daily database backups</strong>.",
+          "3": "Monthly PDF: <strong>uptime %</strong>, <strong>errors per page</strong>, and <strong>top AI spend drivers</strong>.",
+          "4": "Bug fixes: <strong>unlimited</strong> (within scope).",
+          "5": "<strong>1 dev day / month</strong> for small fixes & improvements.",
+          "6": "Response: within <strong>2 business days</strong> (CET)."
+        },
+        "cta": "Check availability"
+      },
+      "pro": {
+        "title": "Pro — \"Production Care\"",
+        "bestFor": "Best for: product teams running live apps.",
+        "items": {
+          "0": "Outcome: <strong>Ship faster</strong> with less risk.",
+          "1": "Everything in Lite.",
+          "2": "<strong>3 dev days / month</strong> for fixes or small features.",
+          "3": "AI cost control & alert caps reviewed monthly.",
+          "4": "Response: within <strong>24 business hours</strong> (CET)."
+        },
+        "cta": "Reserve a Pro slot"
+      },
+      "venture": {
+        "title": "Venture — \"Ops & Credibility\"",
+        "bestFor": "Best for: SaaS teams aiming for investors & boards.",
+        "items": {
+          "0": "Outcome: <strong>Investor-ready</strong> reliability and speed.",
+          "1": "Everything in Pro.",
+          "2": "<strong>5 dev days / month</strong> (features + improvements).",
+          "3": "Strengthened AI spend monitoring and monthly executive-style reporting.",
+          "4": "Response: within <strong>2 hours</strong> (business hours, CET)."
+        },
+        "cta": "Apply for Venture"
+      }
+    },
+    "guarantees": {
+      "title": "Simple, strong guarantees",
+      "items": {
+        "0": "<strong>Uptime/Response Promise:</strong> If we miss a written SLA (uptime or response), your <strong>next month is free</strong> and we include a corrective action plan.",
+        "1": "<strong>Bug Shield:</strong> We fix critical bugs discovered during your plan window at no extra cost.",
+        "2": "<strong>Cancel anytime:</strong> month-to-month. Stay because it pays for itself."
+      }
+    },
+    "cta": {
+      "primary": "Start with the 2-3 day MVP Plan",
+      "secondary": "Book a quick call",
+      "footer": "After launch, keep momentum with <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">the Care &amp; Hosting Plan</Link>."
+    }
+  }
+}

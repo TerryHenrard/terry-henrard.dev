@@ -1,0 +1,157 @@
+{
+  "about": {
+    "badge": "About Me",
+    "hero": {
+      "title": "I'm Terry - a Next.js/TypeScript developer who ships fast, keeps promises, and owns outcomes.",
+      "description": "I combine <strong>production discipline</strong> (clean, tested, documented code) with <strong>product sense</strong> (scope ruthlessly, measure what matters) and <strong>ownership</strong> (I treat your app like mine)."
+    },
+    "credibility": {
+      "items": {
+        "0": {
+          "label": "Ships reliably (weekly demos)"
+        },
+        "1": {
+          "label": "Production mindset (tests, CI/CD)"
+        },
+        "2": {
+          "label": "Next.js + AI experience"
+        },
+        "3": {
+          "label": "Clear comms & ownership"
+        }
+      }
+    },
+    "strongFit": {
+      "title": "I'm a strong fit for your team",
+      "points": {
+        "0": "I scope to must-haves first, then iterate — momentum > perfection.",
+        "1": "I communicate early and clearly: weekly demos, no surprises.",
+        "2": "I design for change: typed code, modular architecture, tests where it counts.",
+        "3": "I'm comfortable across the stack: Next.js/React, Node, Postgres, vector search, basic cloud.",
+        "4": "I've shipped AI features (RAG, assistants) on small projects and know the pitfalls (latency, evals, adoption).",
+        "5": "I document decisions so future you (or teammates) can move fast without me."
+      }
+    },
+    "principles": {
+      "title": "Principles I work by",
+      "items": {
+        "0": {
+          "title": "Clarity > Cleverness",
+          "description": "Readable, typed, predictable code beats magic. Future-proof means future-readable."
+        },
+        "1": {
+          "title": "Measure What Matters",
+          "description": "Latency, uptime, adoption. I pick 2-3 metrics and build around them."
+        },
+        "2": {
+          "title": "Owner's Mindset",
+          "description": "I optimize for the long-term health of your product, not just 'done'."
+        }
+      }
+    },
+    "experience": {
+      "title": "Experience Snapshot",
+      "items": {
+        "0": {
+          "title": "Frontend & Platform",
+          "description": "React/Next.js (App Router), TypeScript, Tailwind, shadcn/ui, TanStack Query, CI/CD."
+        },
+        "1": {
+          "title": "Backend & Data",
+          "description": "Node.js, Postgres/Neon, REST, auth, file storage, background jobs, logging."
+        },
+        "2": {
+          "title": "AI",
+          "description": "RAG/assistants, prompt & context, evals basics, latency budgets, product adoption focus."
+        }
+      }
+    },
+    "tools": {
+      "title": "Tools I use daily",
+      "categories": {
+        "0": {
+          "category": "Frontend",
+          "skills": {
+            "0": "React",
+            "1": "Next.js",
+            "2": "TypeScript",
+            "3": "Tailwind CSS"
+          }
+        },
+        "1": {
+          "category": "Backend",
+          "skills": {
+            "0": "Node.js",
+            "1": "PostgreSQL (Neon)",
+            "2": "REST APIs"
+          }
+        },
+        "2": {
+          "category": "AI & Data",
+          "skills": {
+            "0": "Vercel AI SDK",
+            "1": "OpenAI SDK",
+            "2": "Vector Search (Upstash/PGVector)"
+          }
+        },
+        "3": {
+          "category": "Cloud",
+          "skills": {
+            "0": "Vercel",
+            "1": "AWS (basics)",
+            "2": "Supabase/Firebase (as needed)"
+          }
+        },
+        "4": {
+          "category": "DevX",
+          "skills": {
+            "0": "GitHub Actions",
+            "1": "Docker",
+            "2": "ESLint/Prettier"
+          }
+        },
+        "5": {
+          "category": "Collab",
+          "skills": {
+            "0": "Figma",
+            "1": "Linear/ClickUp",
+            "2": "Notion"
+          }
+        }
+      }
+    },
+    "story": {
+      "title": "My story (short)",
+      "timeline": {
+        "0": {
+          "period": "2018 → Today",
+          "description": "I fell in love with the craft of building fast, reliable web apps. Over time I focused on TypeScript/Next.js and pragmatic AI — not hype, just features users adopt."
+        },
+        "1": {
+          "period": "Recent",
+          "description": "Built MVPs and AI proofs on small projects; learned to cut scope, design for change, and keep latency budgets honest. I care about developer ergonomics and long-term maintainability."
+        },
+        "2": {
+          "period": "What this means for you",
+          "description": "You get someone who moves quickly without breaking tomorrow, communicates clearly, and treats your product like an owner."
+        }
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility checklist",
+      "items": {
+        "0": "Can deliver an MVP baseline with clean, typed code and CI.",
+        "1": "Comfortable integrating AI features where they truly help users.",
+        "2": "Understands product trade-offs; scopes ruthlessly for momentum.",
+        "3": "Writes docs and ADRs so future work is faster.",
+        "4": "Collaborates well with PM/Design; async by default, quick when needed."
+      }
+    },
+    "cta": {
+      "title": "Want the no-fluff version?",
+      "description": "If you value speed, clarity, and ownership — I'm a good match. Happy to walk through code or past work.",
+      "button": "Book a 15-min call",
+      "buttonPrompt": "Can we book a 15-min call?"
+    }
+  }
+}

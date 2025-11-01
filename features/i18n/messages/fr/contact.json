@@ -1,0 +1,39 @@
+{
+  "contact": {
+    "badges": {
+      "connect": "Connectons-nous",
+      "languages": "FR / EN"
+    },
+    "hero": {
+      "title": "Email, Appel ou Réservez un créneau",
+      "description": "Je réponds dans les 24h en semaine. Vous préférez l'email ? Parfait. Urgent ? Appelez-moi directement. Pas de blabla—juste les prochaines étapes."
+    },
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Idéal pour le contexte, les liens et les questions rapides. Je répondrai avec les prochaines étapes ou un court Loom.",
+        "button": "terry.henrard@outlook.com"
+      },
+      "call": {
+        "title": "Appel",
+        "description": "Discussion rapide pour voir si je peux aider. Si je suis pressé, je vous rappelle dès que possible.",
+        "button": "+32 498 14 66 51"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Vous préférez vous connecter sur LinkedIn ? Envoyez-moi un message et mentionnez votre produit + objectif.",
+        "button": "Voir le profil"
+      }
+    },
+    "info": {
+      "workingHours": {
+        "title": "Heures de travail",
+        "description": "Lun-Ven, 09:00-18:00. Réponses dans les 24h en semaine. Pour les problèmes de production (clients avec un Plan de Maintenance), appelez le numéro ci-dessus."
+      },
+      "privacy": {
+        "title": "Confidentialité & Respect",
+        "description": "Vos informations restent entre nous. Pas de spam, pas de revente."
+      }
+    }
+  }
+}

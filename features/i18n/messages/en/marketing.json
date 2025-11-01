@@ -1,0 +1,20 @@
+{
+  "fomoCard": {
+    "limitedSpots": "Limited spots",
+    "message": {
+      "intro": "I take",
+      "mvpFoundry": "max 2 MVP builds/month.",
+      "aiSprint": "max 2 AI Sprint builds/month.",
+      "intakeOpen": "intake now open."
+    },
+    "cta": {
+      "call": "Book a quick call",
+      "audit": "Start with the 2-3 day MVP Plan",
+      "mvpPrompt": "I want to book a call to discuss your MVP services.",
+      "aiSprintPrompt": "I want to book a call to discuss your AI Sprint services."
+    }
+  },
+  "guarantee": {
+    "text": "<strong>Guarantee:</strong> if we miss the agreed success metric or deadline because of me, I keep working at <span class=\"font-bold underline\">no extra cost</span> until it's met. Bug-fix safety net after launch included."
+  }
+}
