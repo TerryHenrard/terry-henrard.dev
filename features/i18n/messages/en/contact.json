@@ -1,0 +1,39 @@
+{
+  "contact": {
+    "badges": {
+      "connect": "Let's connect",
+      "languages": "FR / EN"
+    },
+    "hero": {
+      "title": "Email, Call, or Book a Slot",
+      "description": "I reply within 24h on weekdays. Prefer email? Great. Urgent? Call me directly. No fluff—just next steps."
+    },
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Best for context, links, and quick questions. I'll reply with next steps or a short Loom.",
+        "button": "terry.henrard@outlook.com"
+      },
+      "call": {
+        "title": "Call",
+        "description": "Quick chat to see if I can help. If I'm in a rush, I'll call back ASAP.",
+        "button": "+32 498 14 66 51"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Prefer connecting on LinkedIn? Shoot me a DM and mention your product + goal.",
+        "button": "View Profile"
+      }
+    },
+    "info": {
+      "workingHours": {
+        "title": "Working Hours",
+        "description": "Mon-Fri, 09:00-18:00. Replies within 24h on weekdays. For production issues (clients on a Care Plan), call the number above."
+      },
+      "privacy": {
+        "title": "Privacy & Respect",
+        "description": "Your details stay between us. No spam, no resale."
+      }
+    }
+  }
+}

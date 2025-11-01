@@ -1,0 +1,32 @@
+{
+  "services": {
+    "badge": "Services",
+    "hero": {
+      "title": "Outcomes in weeks — backed by a simple guarantee.",
+      "description": "Four focused offers. Start small to get clarity, launch a usable product fast, add one high-impact feature, and keep everything healthy without surprises.",
+      "guarantee": "<strong><em>Guarantee:</em></strong> if we miss the agreed success metric or deadline because of me, I keep working at <strong class=\"underline\">no extra cost</strong>."
+    },
+    "items": {
+      "0": {
+        "title": "Audit",
+        "description": "In a few days, get a clear plan you can defend: what to build first, what it will cost, where the risks are, and the shortest path to results.",
+        "cta": "Explore audits"
+      },
+      "1": {
+        "title": "MVP Foundry",
+        "description": "Launch a <strong>usable MVP in 4-6 weeks</strong> so you can book demos, validate with real users, and unlock the next round of budget with confidence.",
+        "cta": "See packages"
+      },
+      "2": {
+        "title": "AI Feature Sprint",
+        "description": "In <strong>14 days</strong>, add one feature your users feel instantly — faster answers, fewer steps, or automatic summaries — to boost adoption and retention.",
+        "cta": "Run a sprint"
+      },
+      "3": {
+        "title": "Care & Hosting Plan",
+        "description": "Stay online and worry-free: quick fixes, monthly tune-ups, clear reports, and <strong>predictable costs</strong> so you sleep at night.",
+        "cta": "View plans"
+      }
+    }
+  }
+}

@@ -1,6 +1,26 @@
 {
   "home": {
-    "title": "Welcome to My Portfolio",
-    "description": "Explore my projects, skills, and contact information."
+    "title": "Terry Lenig - Développeur Full-Stack & Spécialiste IA",
+    "nav": {
+      "about": "À propos"
+    },
+    "disclaimer": "Ne prenez pas pour acquis ce que l'IA vous dit. Elle peut faire des erreurs. C'est à des fins de démonstration uniquement.",
+    "chat": {
+      "emptyState": {
+        "title": "Posez-moi n'importe quelle question sur Terry",
+        "description": "Appuyez sur Entrée pour commencer ou cliquez sur une suggestion ci-dessous. Vous pouvez également appuyer sur 1-5 pour choisir une suggestion."
+      },
+      "suggestions": {
+        "1": "Montrez-moi vos services avec délais et livrables.",
+        "2": "Que pouvez-vous construire pour un SaaS B2B en 14 jours ?",
+        "3": "Pouvez-vous créer un assistant IA pour mon site web ?",
+        "4": "Je veux un MVP pour mon idée de startup.",
+        "5": "Pouvons-nous planifier un appel rapide ?"
+      },
+      "placeholder": "Appuyez sur Entrée pour commencer • Tapez ou collez n'importe quoi • Appuyez sur 1-5 pour choisir une suggestion",
+      "errors": {
+        "generic": "Une erreur s'est produite. Veuillez réessayer."
+      }
+    }
   }
 }

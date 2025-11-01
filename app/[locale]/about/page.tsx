@@ -1,3 +1,5 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+
 import {
   Award,
   BookOpen,
@@ -17,7 +19,10 @@ import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/core/components/ui/card';
 import { Link } from '@/features/i18n/lib/navigation';
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'fr' }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('about');
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>
@@ -28,18 +33,15 @@ export default function AboutPage() {
               <div className=''>
                 <Badge className='mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium'>
                   <Sparkles className='h-3 w-3' />
-                  About Me
+                  {t('badge')}
                 </Badge>
                 <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
-                  I'm Terry - a Next.js/TypeScript developer who ships fast, keeps promises, and
-                  owns outcomes.
+                  {t('hero.title')}
                 </h1>
-                <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
-                  I combine
-                  <strong> production discipline</strong> (clean, tested, documented code) with
-                  <strong> product sense</strong> (scope ruthlessly, measure what matters) and
-                  <strong> ownership</strong> (I treat your app like mine).
-                </p>
+                <p
+                  className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'
+                  dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }}
+                />
               </div>
             </CardContent>
           </Card>
@@ -48,10 +50,10 @@ export default function AboutPage() {
         {/* Credibility / Proof Strip — personal, not salesy */}
         <div className='mb-12 grid grid-cols-2 gap-3 md:grid-cols-4'>
           {[
-            { icon: Gauge, label: 'Ships reliably (weekly demos)' },
-            { icon: ShieldCheck, label: 'Production mindset (tests, CI/CD)' },
-            { icon: Code2, label: 'Next.js + AI experience' },
-            { icon: Users, label: 'Clear comms & ownership' },
+            { icon: Gauge, label: t('credibility.items.0.label') },
+            { icon: ShieldCheck, label: t('credibility.items.1.label') },
+            { icon: Code2, label: t('credibility.items.2.label') },
+            { icon: Users, label: t('credibility.items.3.label') },
           ].map((item, i) => (
             <div
               key={i}
@@ -66,21 +68,14 @@ export default function AboutPage() {
         {/* Why I'm a Strong Fit */}
         <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className='text-3xl'>I'm a strong fit for your team</CardTitle>
+            <CardTitle className='text-3xl'>{t('strongFit.title')}</CardTitle>
           </CardHeader>
           <CardContent className='text-foreground/70 leading-relaxed'>
             <ul className='grid gap-4 md:grid-cols-2'>
-              {[
-                'I scope to must-haves first, then iterate — momentum > perfection.',
-                'I communicate early and clearly: weekly demos, no surprises.',
-                'I design for change: typed code, modular architecture, tests where it counts.',
-                "I'm comfortable across the stack: Next.js/React, Node, Postgres, vector search, basic cloud.",
-                "I've shipped AI features (RAG, assistants) on small projects and know the pitfalls (latency, evals, adoption).",
-                'I document decisions so future you (or teammates) can move fast without me.',
-              ].map((point, i) => (
+              {[0, 1, 2, 3, 4, 5].map((i) => (
                 <li key={i} className='flex gap-2'>
                   <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
-                  <span>{point}</span>
+                  <span>{t(`strongFit.points.${i}` as any)}</span>
                 </li>
               ))}
             </ul>
@@ -90,35 +85,36 @@ export default function AboutPage() {
         {/* Principles I work by */}
         <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className='text-3xl'>Principles I work by</CardTitle>
+            <CardTitle className='text-3xl'>{t('principles.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className='grid gap-4 md:grid-cols-3'>
               {[
                 {
-                  title: 'Clarity > Cleverness',
-                  desc: 'Readable, typed, predictable code beats magic. Future-proof means future-readable.',
+                  key: '0',
                   icon: BookOpen,
                 },
                 {
-                  title: 'Measure What Matters',
-                  desc: 'Latency, uptime, adoption. I pick 2-3 metrics and build around them.',
+                  key: '1',
                   icon: Gauge,
                 },
                 {
-                  title: "Owner's Mindset",
-                  desc: "I optimize for the long-term health of your product, not just 'done'.",
+                  key: '2',
                   icon: ShieldCheck,
                 },
-              ].map((p, i) => (
-                <Card key={i} className='p-4'>
+              ].map((p) => (
+                <Card key={p.key} className='p-4'>
                   <CardHeader className='pb-2'>
                     <div className='bg-primary/10 mb-2 flex h-10 w-10 items-center justify-center rounded-xl'>
                       <p.icon className='text-primary h-5 w-5' />
                     </div>
-                    <CardTitle className='text-lg'>{p.title}</CardTitle>
+                    <CardTitle className='text-lg'>
+                      {t(`principles.items.${p.key}.title` as any)}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent className='text-foreground/70 pt-0'>{p.desc}</CardContent>
+                  <CardContent className='text-foreground/70 pt-0'>
+                    {t(`principles.items.${p.key}.description` as any)}
+                  </CardContent>
                 </Card>
               ))}
             </div>
@@ -128,36 +124,30 @@ export default function AboutPage() {
         {/* Experience Snapshot (real, concise) */}
         <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className='text-3xl'>Experience Snapshot</CardTitle>
+            <CardTitle className='text-3xl'>{t('experience.title')}</CardTitle>
           </CardHeader>
           <CardContent className='text-foreground/70'>
             <div className='grid gap-4 md:grid-cols-3'>
               <div className='rounded-xl p-4'>
                 <div className='mb-2 flex items-center gap-3'>
                   <TerminalSquare className='text-primary h-5 w-5' />
-                  <div className='text-foreground font-medium'>Frontend & Platform</div>
+                  <div className='text-foreground font-medium'>{t('experience.items.0.title')}</div>
                 </div>
-                <p>
-                  React/Next.js (App Router), TypeScript, Tailwind, shadcn/ui, TanStack Query,
-                  CI/CD.
-                </p>
+                <p>{t('experience.items.0.description')}</p>
               </div>
               <div className='rounded-xl p-4'>
                 <div className='mb-2 flex items-center gap-3'>
                   <Code2 className='text-primary h-5 w-5' />
-                  <div className='text-foreground font-medium'>Backend & Data</div>
+                  <div className='text-foreground font-medium'>{t('experience.items.1.title')}</div>
                 </div>
-                <p>Node.js, Postgres/Neon, REST, auth, file storage, background jobs, logging.</p>
+                <p>{t('experience.items.1.description')}</p>
               </div>
               <div className='rounded-xl p-4'>
                 <div className='mb-2 flex items-center gap-3'>
                   <Award className='text-primary h-5 w-5' />
-                  <div className='text-foreground font-medium'>AI</div>
+                  <div className='text-foreground font-medium'>{t('experience.items.2.title')}</div>
                 </div>
-                <p>
-                  RAG/assistants, prompt & context, evals basics, latency budgets, product adoption
-                  focus.
-                </p>
+                <p>{t('experience.items.2.description')}</p>
               </div>
             </div>
           </CardContent>
@@ -166,26 +156,56 @@ export default function AboutPage() {
         {/* Tools I use daily */}
         <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className='text-3xl'>Tools I use daily</CardTitle>
+            <CardTitle className='text-3xl'>{t('tools.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
               {[
                 {
-                  category: 'Frontend',
-                  skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+                  category: t('tools.categories.0.category'),
+                  skills: [
+                    t('tools.categories.0.skills.0'),
+                    t('tools.categories.0.skills.1'),
+                    t('tools.categories.0.skills.2'),
+                    t('tools.categories.0.skills.3'),
+                  ],
                 },
-                { category: 'Backend', skills: ['Node.js', 'PostgreSQL (Neon)', 'REST APIs'] },
                 {
-                  category: 'AI & Data',
-                  skills: ['Vercel AI SDK', 'OpenAI SDK', 'Vector Search (Upstash/PGVector)'],
+                  category: t('tools.categories.1.category'),
+                  skills: [
+                    t('tools.categories.1.skills.0'),
+                    t('tools.categories.1.skills.1'),
+                    t('tools.categories.1.skills.2'),
+                  ],
                 },
                 {
-                  category: 'Cloud',
-                  skills: ['Vercel', 'AWS (basics)', 'Supabase/Firebase (as needed)'],
+                  category: t('tools.categories.2.category'),
+                  skills: [
+                    t('tools.categories.2.skills.0'),
+                    t('tools.categories.2.skills.1'),
+                    t('tools.categories.2.skills.2'),
+                  ],
                 },
-                { category: 'DevX', skills: ['GitHub Actions', 'Docker', 'ESLint/Prettier'] },
-                { category: 'Collab', skills: ['Figma', 'Linear/ClickUp', 'Notion'] },
+                {
+                  category: t('tools.categories.3.category'),
+                  skills: [
+                    t('tools.categories.3.skills.0'),
+                    t('tools.categories.3.skills.1'),
+                    t('tools.categories.3.skills.2'),
+                  ],
+                },
+                {
+                  category: t('tools.categories.4.category'),
+                  skills: [
+                    t('tools.categories.4.skills.0'),
+                    t('tools.categories.4.skills.1'),
+                    t('tools.categories.4.skills.2'),
+                  ],
+                },
+                {
+                  category: t('tools.categories.5.category'),
+                  skills: [t('tools.categories.5.skills.0'), t('tools.categories.5.skills.1')],
+                },
               ].map((item, index) => (
                 <Card key={index} className='p-4'>
                   <CardHeader className='pb-2'>
@@ -209,7 +229,7 @@ export default function AboutPage() {
         {/* Story (short & relevant) */}
         <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className='text-3xl'>My story (short)</CardTitle>
+            <CardTitle className='text-3xl'>{t('story.title')}</CardTitle>
           </CardHeader>
           <CardContent className='text-foreground/70 leading-relaxed'>
             <div className='space-y-6'>
@@ -218,12 +238,10 @@ export default function AboutPage() {
                   <GraduationCap className='text-primary h-6 w-6' />
                 </div>
                 <div>
-                  <div className='text-primary mb-1 text-sm font-semibold'>2018 → Today</div>
-                  <p>
-                    I fell in love with the craft of building fast, reliable web apps. Over time I
-                    focused on TypeScript/Next.js and pragmatic AI — not hype, just features users
-                    adopt.
-                  </p>
+                  <div className='text-primary mb-1 text-sm font-semibold'>
+                    {t('story.timeline.0.period')}
+                  </div>
+                  <p>{t('story.timeline.0.description')}</p>
                 </div>
               </div>
 
@@ -232,12 +250,10 @@ export default function AboutPage() {
                   <Briefcase className='text-primary h-6 w-6' />
                 </div>
                 <div>
-                  <div className='text-primary mb-1 text-sm font-semibold'>Recent</div>
-                  <p>
-                    Built MVPs and AI proofs on small projects; learned to cut scope, design for
-                    change, and keep latency budgets honest. I care about developer ergonomics and
-                    long-term maintainability.
-                  </p>
+                  <div className='text-primary mb-1 text-sm font-semibold'>
+                    {t('story.timeline.1.period')}
+                  </div>
+                  <p>{t('story.timeline.1.description')}</p>
                 </div>
               </div>
 
@@ -247,12 +263,9 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <div className='text-primary mb-1 text-sm font-semibold'>
-                    What this means for you
+                    {t('story.timeline.2.period')}
                   </div>
-                  <p>
-                    You get someone who moves quickly without breaking tomorrow, communicates
-                    clearly, and treats your product like an owner.
-                  </p>
+                  <p>{t('story.timeline.2.description')}</p>
                 </div>
               </div>
             </div>
@@ -262,20 +275,14 @@ export default function AboutPage() {
         {/* Eligibility Checklist (for hiring managers) */}
         <Card className='mb-12 p-8'>
           <CardHeader>
-            <CardTitle className='text-3xl'>Eligibility checklist</CardTitle>
+            <CardTitle className='text-3xl'>{t('eligibility.title')}</CardTitle>
           </CardHeader>
           <CardContent className='text-foreground/70'>
             <ul className='space-y-2'>
-              {[
-                'Can deliver an MVP baseline with clean, typed code and CI.',
-                'Comfortable integrating AI features where they truly help users.',
-                'Understands product trade-offs; scopes ruthlessly for momentum.',
-                'Writes docs and ADRs so future work is faster.',
-                'Collaborates well with PM/Design; async by default, quick when needed.',
-              ].map((x, i) => (
+              {[0, 1, 2, 3, 4].map((i) => (
                 <li key={i} className='flex gap-2'>
                   <CheckCircle2 className='text-primary mt-1 h-4 w-4' />
-                  <span>{x}</span>
+                  <span>{t(`eligibility.items.${i}` as any)}</span>
                 </li>
               ))}
             </ul>
@@ -285,16 +292,13 @@ export default function AboutPage() {
         {/* Light CTA — still about fit, not selling */}
         <Card className='p-8 text-center'>
           <CardHeader>
-            <CardTitle className='text-3xl'>Want the no-fluff version?</CardTitle>
+            <CardTitle className='text-3xl'>{t('cta.title')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className='text-foreground/70 mx-auto mb-6 max-w-2xl'>
-              If you value speed, clarity, and ownership — I'm a good match. Happy to walk through
-              code or past work.
-            </p>
+            <p className='text-foreground/70 mx-auto mb-6 max-w-2xl'>{t('cta.description')}</p>
             <Button asChild className='transition-all duration-300 hover:-translate-y-0.5'>
-              <Link href={`/?prompt=${encodeURIComponent('Can we book a 15-min call?')}`}>
-                Book a 15-min call
+              <Link href={`/?prompt=${encodeURIComponent(t('cta.buttonPrompt'))}`}>
+                {t('cta.button')}
               </Link>
             </Button>
           </CardContent>

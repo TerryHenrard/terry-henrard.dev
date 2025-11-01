@@ -1,0 +1,73 @@
+{
+  "mvpFoundry": {
+    "badge": "MVP Foundry",
+    "hero": {
+      "title": "Lancez un vrai MVP en 4-6 semaines",
+      "description": "Construit pour gagner vos premiers utilisateurs et la confiance des investisseurs. Périmètre clair, preuve hebdomadaire et passation propre pour que votre équipe puisse avancer sans moi."
+    },
+    "outcomes": {
+      "0": {
+        "title": "Une démo qui convertit",
+        "description": "Un parcours clair de 5 minutes qui montre la valeur rapidement — pour les appels commerciaux et investisseurs."
+      },
+      "1": {
+        "title": "Une qualité que l'on ressent",
+        "description": "Rapide, stable, utilisable. Aucun bug bloquant dans les premières semaines en production."
+      },
+      "2": {
+        "title": "Inversion du risque",
+        "description": "Métrique ou échéance manquée ? Je continue de travailler gratuitement jusqu'à ce que nous l'atteignions."
+      }
+    },
+    "plan": {
+      "title": "Le plan MVP",
+      "duration": "4-6 semaines",
+      "description": "Tout ce dont vous avez besoin pour livrer un MVP convaincant, intégrer les premiers utilisateurs et obtenir votre prochain \"oui\".",
+      "sections": {
+        "0": {
+          "title": "Ce qui est livré le jour 1",
+          "items": {
+            "0": "Inscription/connexion et un parcours utilisateur #1 de bout en bout",
+            "1": "Accueil clair qui guide la prochaine étape",
+            "2": "Rapide sur mobile et accessible"
+          }
+        },
+        "1": {
+          "title": "Élan intégré",
+          "items": {
+            "0": "Voyez où les gens cliquent et se bloquent",
+            "1": "Emails de bienvenue et de mot de passe qui arrivent",
+            "2": "Modifiez les textes/images clés sans développeur"
+          }
+        },
+        "2": {
+          "title": "Passation et filet de sécurité",
+          "items": {
+            "0": "Carte produit d'une page + guide d'exploitation simple",
+            "1": "Session de passation enregistrée d'1 heure",
+            "2": "Filet de sécurité correction de bugs : 30 jours (extensible avec le Plan de maintenance)"
+          }
+        }
+      }
+    },
+    "howWeWork": {
+      "0": {
+        "title": "Planifier → Construire → Lancer",
+        "description": "2-3 jours pour verrouiller les résultats et le périmètre → 3-4 semaines de construction → 3-5 jours de polissage, test et lancement."
+      },
+      "1": {
+        "title": "Mises à jour sans surprise",
+        "description": "Vidéo hebdomadaire de 5 minutes + checklist simple + \"prochaines étapes\". Vous savez toujours où vous en êtes."
+      },
+      "2": {
+        "title": "Définition de terminé",
+        "description": "Premiers utilisateurs invités, démo répétée et plan de retour arrière simple en place."
+      }
+    },
+    "cta": {
+      "primary": "Commencer par le plan MVP de 2-3 jours",
+      "secondary": "Réserver un appel rapide",
+      "footer": "Après le lancement, maintenez l'élan avec <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">le Plan de maintenance et d'hébergement</Link>."
+    }
+  }
+}

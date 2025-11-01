@@ -1,0 +1,6 @@
+{
+  "localeSwitcher": {
+    "label": "Changer de langue",
+    "locale": "{locale, select, en {English} fr {Français} other {Inconnu}}"
+  }
+}

@@ -21,8 +21,6 @@
   ],
   "cSpell.language": "en,fr",
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "i18n-ally.localesPaths": [
-    "features/i18n/messages"
-  ],
+  "i18n-ally.localesPaths": ["features/i18n/messages"],
   "i18n-ally.keystyle": "nested"
 }

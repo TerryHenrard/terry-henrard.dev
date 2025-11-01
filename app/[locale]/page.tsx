@@ -11,12 +11,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   setRequestLocale(locale);
 
   const t = await getTranslations('home');
-  console.log(t('title'));
 
   return (
     <main className='container mx-auto h-[calc(100vh-4rem)] py-4'>
       <Link href='/about' className='underline'>
-        About
+        {t('nav.about')}
       </Link>
       <div className='relative z-10 h-full'>
         <Card className='h-full border-0 bg-transparent shadow-none'>

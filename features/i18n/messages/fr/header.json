@@ -1,0 +1,33 @@
+{
+  "header": {
+    "title": "L'assistant de Terry",
+    "nav": {
+      "experience": "Mon Expérience",
+      "services": {
+        "trigger": "Mes services",
+        "title": "Services",
+        "description": "Explorez la large gamme de services que je propose pour vous aider à atteindre vos objectifs",
+        "items": {
+          "audit": {
+            "title": "Audit",
+            "description": "Création de sites web réactifs et dynamiques adaptés à vos besoins"
+          },
+          "mvpFoundry": {
+            "title": "Forge MVP",
+            "description": "de zéro à un produit utilisable en 4 à 6 semaines"
+          },
+          "aiSprint": {
+            "title": "Sprint IA",
+            "description": "livrer une vraie fonctionnalité IA en 14 jours, pas des mois"
+          },
+          "careAndHosting": {
+            "title": "Plan de Maintenance & Hébergement",
+            "description": "Création de sites web réactifs et dynamiques adaptés à vos besoins"
+          }
+        }
+      },
+      "about": "À Propos",
+      "contact": "Connectons-nous"
+    }
+  }
+}

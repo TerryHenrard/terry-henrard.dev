@@ -1,0 +1,73 @@
+{
+  "mvpFoundry": {
+    "badge": "MVP Foundry",
+    "hero": {
+      "title": "Launch a real MVP in 4-6 weeks",
+      "description": "Built to win first users and investor confidence. Clear scope, weekly proof, and a clean handover so your team can run without me."
+    },
+    "outcomes": {
+      "0": {
+        "title": "A demo that converts",
+        "description": "A crisp 5-minute walk-through that shows value fast — for sales and investor calls."
+      },
+      "1": {
+        "title": "Quality you can feel",
+        "description": "Fast, stable, usable. No show-stopping bugs in the first weeks in the wild."
+      },
+      "2": {
+        "title": "Risk-reversal",
+        "description": "Miss the agreed metric or deadline? I keep working free until we hit it."
+      }
+    },
+    "plan": {
+      "title": "The MVP Plan",
+      "duration": "4-6 weeks",
+      "description": "Everything you need to ship a convincing MVP, onboard first users, and earn your next \"yes\".",
+      "sections": {
+        "0": {
+          "title": "What ships day one",
+          "items": {
+            "0": "Sign-up/sign-in and a #1 user journey end-to-end",
+            "1": "Clear home that guides the next step",
+            "2": "Fast on mobile and accessible"
+          }
+        },
+        "1": {
+          "title": "Momentum built-in",
+          "items": {
+            "0": "See where people click and get stuck",
+            "1": "Welcome & password emails that land",
+            "2": "Edit key texts/images without a dev"
+          }
+        },
+        "2": {
+          "title": "Handover & safety net",
+          "items": {
+            "0": "One-page product map + simple runbook",
+            "1": "Recorded 1-hour handover session",
+            "2": "Bug-fix safety net: 30 days (extendable with Care Plan)"
+          }
+        }
+      }
+    },
+    "howWeWork": {
+      "0": {
+        "title": "Plan → Build → Launch",
+        "description": "2-3 days to lock outcomes & scope → 3-4 weeks build → 3-5 days polish, test & ship."
+      },
+      "1": {
+        "title": "Zero-surprise updates",
+        "description": "Weekly 5-minute video + simple checklist + \"what's next\". You always know the score."
+      },
+      "2": {
+        "title": "Definition of Done",
+        "description": "First users invited, demo rehearsed, and a simple rollback plan in place."
+      }
+    },
+    "cta": {
+      "primary": "Start with the 2-3 day MVP Plan",
+      "secondary": "Book a quick call",
+      "footer": "After launch, keep momentum with <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">the Care &amp; Hosting Plan</Link>."
+    }
+  }
+}

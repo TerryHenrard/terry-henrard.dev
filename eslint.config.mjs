@@ -16,13 +16,22 @@ const eslintConfig = defineConfig([
   {
     rules: {
       'react/no-unescaped-entities': 'off',
+      'react/jsx-no-literals': [
+        'error',
+        {
+          noStrings: true,
+          ignoreProps: true,
+          allowedStrings: [],
+        },
+      ],
       'no-restricted-imports': [
         'error',
         {
           paths: [
             {
               name: 'next/link',
-              message: 'Please use Link from @/features/i18n/lib/navigation for internationalized routing.',
+              message:
+                'Please use Link from @/features/i18n/lib/navigation for internationalized routing.',
             },
           ],
         },

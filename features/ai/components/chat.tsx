@@ -2,6 +2,8 @@
 
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, lastAssistantMessageIsCompleteWithToolCalls } from 'ai';
 import { MessageSquare } from 'lucide-react';
@@ -28,19 +30,22 @@ import { Response } from './ai-elements/response';
 import { Suggestion, Suggestions } from './ai-elements/suggestion';
 import { PhoneCallRequestForm } from './phone-call-request-form';
 
-const starterPrompts = [
-  'Show me your services with timelines & deliverables.',
-  'What can you build for a B2B SaaS in 14 days?',
-  'Can you build an AI assistant for my website?',
-  'I want an mvp for my startup idea.',
-  'Can we book a quick call?',
-];
-
 export default function Chat() {
+  const t = useTranslations('home.chat');
+  const tHome = useTranslations('home');
+  const tPhone = useTranslations('phoneCallRequestForm');
   const [text, setText] = useState('');
   const [isInputDisabled, setIsInputDisabled] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const starterPrompts = [
+    t('suggestions.1'),
+    t('suggestions.2'),
+    t('suggestions.3'),
+    t('suggestions.4'),
+    t('suggestions.5'),
+  ];
 
   const { messages, sendMessage, status, addToolResult, error, stop } = useChat<ChatMessage>({
     transport: new DefaultChatTransport({ api: '/api/ai/chat' }),
@@ -74,7 +79,9 @@ export default function Chat() {
   };
 
   const handleSuggestionClick = (suggestion: string) => {
-    firePrompt(suggestion);
+    // Extract the actual suggestion text (remove the "1. " prefix)
+    const actualSuggestion = suggestion.replace(/^\d+\.\s*/, '');
+    firePrompt(actualSuggestion);
   };
 
   const onTextareaKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (e) => {
@@ -83,7 +90,7 @@ export default function Chat() {
     // Send first starter prompt on Enter (no Shift) when empty.
     if (empty && e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      firePrompt(starterPrompts[0]);
+      firePrompt(t('suggestions.1'));
       return;
     }
 
@@ -97,8 +104,8 @@ export default function Chat() {
     // Number keys to trigger suggestions 1-5 when empty.
     if (empty && /^[1-5]$/.test(e.key)) {
       e.preventDefault();
-      const idx = Number(e.key) - 1;
-      firePrompt(starterPrompts[idx]);
+      const idx = Number(e.key);
+      firePrompt(t(`suggestions.${idx}` as any));
     }
   };
 
@@ -109,9 +116,9 @@ export default function Chat() {
 
   useEffect(() => {
     if (error) {
-      toast.error('An error occurred. Please try again.', { duration: 5000 });
+      toast.error(t('errors.generic'), { duration: 5000 });
     }
-  }, [error]);
+  }, [error, t]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -135,8 +142,8 @@ export default function Chat() {
             <div>
               <ConversationEmptyState
                 icon={<MessageSquare className='size-12' />}
-                title='Ask me anything about Terry'
-                description='Press Enter to start or tap a suggestion below. You can also press 1-5 to pick a prompt.'
+                title={t('emptyState.title')}
+                description={t('emptyState.description')}
               />
               <Suggestions className='mx-auto flex max-w-xl flex-wrap items-center justify-center'>
                 {starterPrompts.map((suggestion, i) => (
@@ -164,7 +171,7 @@ export default function Chat() {
                           case 'input-streaming':
                             return (
                               <div key={callId}>
-                                <p>Requesting phone call...</p>
+                                <p>{tPhone('requesting')}</p>
                               </div>
                             );
                           case 'input-available':
@@ -187,9 +194,7 @@ export default function Chat() {
                           case 'output-error':
                             return (
                               <div key={callId}>
-                                <Response>
-                                  Sorry, something went wrong scheduling your call.
-                                </Response>
+                                <Response>{tPhone('error')}</Response>
                               </div>
                             );
                         }
@@ -217,7 +222,7 @@ export default function Chat() {
             ref={textareaRef}
             value={text}
             disabled={isInputDisabled}
-            placeholder='Press Enter to start • Type or paste anything • Press 1-5 to pick a prompt'
+            placeholder={t('placeholder')}
           />
         </PromptInputBody>
         <PromptInputFooter>
@@ -227,10 +232,7 @@ export default function Chat() {
       </PromptInput>
 
       <div className='mt-4 flex items-center justify-center'>
-        <p className='text-muted-foreground text-xs'>
-          Don't take what AI tells you for granted. It can make mistakes. It's for demonstration
-          purposes only.
-        </p>
+        <p className='text-muted-foreground text-xs'>{tHome('disclaimer')}</p>
       </div>
     </div>
   );

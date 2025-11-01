@@ -1,3 +1,5 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+
 import {
   CalendarClock,
   ClipboardCheck,
@@ -13,7 +15,14 @@ import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
 import { Link } from '@/features/i18n/lib/navigation';
 
-export default function AuditServicesPage() {
+export default async function AuditServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale as 'en' | 'fr');
+  const t = await getTranslations('audit');
   return (
     <main className='relative container mx-auto min-h-[calc(100vh-4rem)] overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>
@@ -24,23 +33,18 @@ export default function AuditServicesPage() {
               <div>
                 <Badge className='mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium'>
                   <FileSearch className='h-3 w-3' />
-                  Audits
+                  {t('badge')}
                 </Badge>
                 <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
-                  Make your next sprint a winning bet
+                  {t('hero.title')}
                 </h1>
                 <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
-                  Two short, research-led engagements that remove guesswork and de-risk your
-                  roadmap. You leave with decision-ready assets you can use — even if we don't work
-                  together.
+                  {t('hero.description')}
                 </p>
-                <p className='text-foreground/60 mt-3'>
-                  <strong>
-                    <em>Guarantee:</em>
-                  </strong>{' '}
-                  if we miss the agreed success metric or deadline because of me, I keep working at{' '}
-                  <strong className='underline'>no extra cost</strong>.
-                </p>
+                <p
+                  className='text-foreground/60 mt-3'
+                  dangerouslySetInnerHTML={{ __html: t.raw('hero.guarantee') }}
+                />
               </div>
             </CardContent>
           </Card>
@@ -54,40 +58,32 @@ export default function AuditServicesPage() {
               <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
                 <ClipboardCheck className='text-primary h-6 w-6' />
               </div>
-              <h2 className='mb-1 text-2xl font-bold'>MVP Readiness Plan</h2>
-              <p className='text-foreground/70 mb-4 text-sm'>2-3 days</p>
+              <h2 className='mb-1 text-2xl font-bold'>{t('offers.mvpReadiness.title')}</h2>
+              <p className='text-foreground/70 mb-4 text-sm'>{t('offers.mvpReadiness.duration')}</p>
               <p className='text-foreground/70 mb-4 leading-relaxed'>
-                Align stakeholders, lock the scope, and know exactly what "good" looks like before
-                writing a line of code.
+                {t('offers.mvpReadiness.description')}
               </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2'>
-                <li>
-                  <strong>Outcome map:</strong> users, jobs-to-be-done & success metrics
-                </li>
-                <li>
-                  <strong>Scope line:</strong>{' '}
-                  <span className='font-medium'>Must / Should / Later</span> (zero-surprise backlog)
-                </li>
-                <li>
-                  <strong>Architecture & decision record:</strong> (so choices won't get
-                  re-litigated)
-                </li>
-                <li>
-                  <strong>Risk & dependency grid:</strong> with owner + mitigation
-                </li>
-                <li>
-                  <strong>Launch criteria & demo script:</strong> for first 10 users
-                </li>
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <li
+                    key={i}
+                    dangerouslySetInnerHTML={{
+                      __html: t.raw(`offers.mvpReadiness.items.${i}` as any),
+                    }}
+                  />
+                ))}
               </ul>
             </CardContent>
             <CardFooter className='gap-3'>
               <Button asChild>
-                <Link href='/services/mvp-foundry'>Move to MVP</Link>
+                <Link href='/services/mvp-foundry'>{t('offers.mvpReadiness.cta.primary')}</Link>
               </Button>
               <Button asChild variant='outline'>
-                <Link href={`/?prompt=${encodeURIComponent('Book a quick call')}`}>
+                <Link
+                  href={`/?prompt=${encodeURIComponent(t('offers.mvpReadiness.cta.secondary'))}`}
+                >
                   <Phone className='mr-1' />
-                  Book a quick call
+                  {t('offers.mvpReadiness.cta.secondary')}
                 </Link>
               </Button>
             </CardFooter>
@@ -99,38 +95,30 @@ export default function AuditServicesPage() {
               <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
                 <Sparkles className='text-primary h-6 w-6' />
               </div>
-              <h2 className='mb-1 text-2xl font-bold'>AI Readiness Audit</h2>
-              <p className='text-foreground/70 mb-4 text-sm'>~1 week</p>
+              <h2 className='mb-1 text-2xl font-bold'>{t('offers.aiReadiness.title')}</h2>
+              <p className='text-foreground/70 mb-4 text-sm'>{t('offers.aiReadiness.duration')}</p>
               <p className='text-foreground/70 mb-4 leading-relaxed'>
-                Identify one AI feature worth shipping, prove feasibility, and set guardrails so
-                it's safe, useful, and cost-controlled in production.
+                {t('offers.aiReadiness.description')}
               </p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2'>
-                <li>
-                  <strong>case studies</strong> to illustrate potential impact
-                </li>
-                <li>
-                  <strong>Use-case shortlist:</strong> with effort/impact & "one-feature" pick
-                </li>
-                <li>
-                  <strong>Retrieval/model options:</strong> with safety rules & fallbacks
-                </li>
-                <li>
-                  <strong>Success metric + eval plan:</strong> (what we'll measure to call it a win)
-                </li>
-                <li>
-                  <strong>2-hour developer workshop:</strong> to transfer patterns
-                </li>
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <li
+                    key={i}
+                    dangerouslySetInnerHTML={{
+                      __html: t.raw(`offers.aiReadiness.items.${i}` as any),
+                    }}
+                  />
+                ))}
               </ul>
             </CardContent>
             <CardFooter className='gap-3'>
               <Button asChild>
-                <Link href='/services/ai-sprint'>Run an AI Sprint</Link>
+                <Link href='/services/ai-sprint'>{t('offers.aiReadiness.cta.primary')}</Link>
               </Button>
               <Button asChild variant='outline'>
                 <Link href='mailto:terry.henrard@outlook.com'>
                   <Mail className='mr-1' />
-                  Email me
+                  {t('offers.aiReadiness.cta.secondary')}
                 </Link>
               </Button>
             </CardFooter>
@@ -139,42 +127,25 @@ export default function AuditServicesPage() {
 
         {/* How it works — fast, tangible, risk-first */}
         <div className='mb-12 grid gap-6 md:grid-cols-3'>
-          <Card className='rounded-3xl p-8'>
-            <CardContent>
-              <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
-                <CalendarClock className='text-primary h-6 w-6' />
-              </div>
-              <h3 className='mb-2 text-xl font-semibold'>Fast & focused</h3>
-              <p className='text-foreground/70 leading-relaxed'>
-                Short timeboxes, clear agenda, concrete deliverables. Cut 2-4 weeks of
-                back-and-forth.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className='rounded-3xl p-8'>
-            <CardContent>
-              <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
-                <FileSearch className='text-primary h-6 w-6' />
-              </div>
-              <h3 className='mb-2 text-xl font-semibold'>Use-anywhere assets</h3>
-              <p className='text-foreground/70 leading-relaxed'>
-                Docs you can hand to your team, attach to investor decks, or turn into tickets
-                tomorrow.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className='rounded-3xl p-8'>
-            <CardContent>
-              <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
-                <Shield className='text-primary h-6 w-6' />
-              </div>
-              <h3 className='mb-2 text-xl font-semibold'>Risk first</h3>
-              <p className='text-foreground/70 leading-relaxed'>
-                Surface blockers early — data access, compliance, staffing — so delivery stays
-                predictable.
-              </p>
-            </CardContent>
-          </Card>
+          {[
+            { icon: CalendarClock, key: '0' },
+            { icon: FileSearch, key: '1' },
+            { icon: Shield, key: '2' },
+          ].map((item) => (
+            <Card key={item.key} className='rounded-3xl p-8'>
+              <CardContent>
+                <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
+                  <item.icon className='text-primary h-6 w-6' />
+                </div>
+                <h3 className='mb-2 text-xl font-semibold'>
+                  {t(`howItWorks.${item.key}.title` as any)}
+                </h3>
+                <p className='text-foreground/70 leading-relaxed'>
+                  {t(`howItWorks.${item.key}.description` as any)}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Guarantees & Availability */}
@@ -184,10 +155,9 @@ export default function AuditServicesPage() {
               <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
                 <Shield className='text-primary h-6 w-6' />
               </div>
-              <h3 className='mb-2 text-xl font-semibold'>Risk-reversal</h3>
+              <h3 className='mb-2 text-xl font-semibold'>{t('guarantees.riskReversal.title')}</h3>
               <p className='text-foreground/70 leading-relaxed'>
-                If the agreed audit deliverables aren't immediately actionable, I keep working at no
-                extra cost until they are. Clear outcomes over fine print.
+                {t('guarantees.riskReversal.description')}
               </p>
             </CardContent>
           </Card>
@@ -196,10 +166,9 @@ export default function AuditServicesPage() {
               <div className='bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl'>
                 <CalendarClock className='text-primary h-6 w-6' />
               </div>
-              <h3 className='mb-2 text-xl font-semibold'>Limited slots</h3>
+              <h3 className='mb-2 text-xl font-semibold'>{t('guarantees.limitedSlots.title')}</h3>
               <p className='text-foreground/70 leading-relaxed'>
-                I run a small number of audits per week to keep quality high. If this week is full,
-                we'll schedule the next available slot.
+                {t('guarantees.limitedSlots.description')}
               </p>
             </CardContent>
           </Card>
@@ -209,21 +178,18 @@ export default function AuditServicesPage() {
         <div className='mb-2 flex flex-col items-center gap-3 text-center'>
           <div className='flex flex-col items-center gap-3 sm:flex-row'>
             <Button asChild>
-              <Link href='/services/mvp-foundry'>Looking for an mvp?</Link>
+              <Link href='/services/mvp-foundry'>{t('cta.primary')}</Link>
             </Button>
             <Button asChild variant='outline'>
-              <Link href={`/?prompt=${encodeURIComponent('Book a quick call')}`}>
-                Book a quick call
+              <Link href={`/?prompt=${encodeURIComponent(t('cta.secondary'))}`}>
+                {t('cta.secondary')}
               </Link>
             </Button>
           </div>
-          <p className='text-foreground/60 text-sm'>
-            After launch, keep momentum with{' '}
-            <Link className='underline underline-offset-4' href='/services/care-and-hosting-plan'>
-              the Care &amp; Hosting Plan
-            </Link>
-            .
-          </p>
+          <p
+            className='text-foreground/60 text-sm'
+            dangerouslySetInnerHTML={{ __html: t.raw('cta.footer') }}
+          />
         </div>
       </div>
     </main>

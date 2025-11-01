@@ -1,0 +1,85 @@
+{
+  "experience": {
+    "timeline": {
+      "0": {
+        "year": "2025 - Présent",
+        "title": "Développeur Web spécialisé en IA et MVP",
+        "company": "Freelance",
+        "description": "Développement d'applications web alimentées par l'IA utilisant Next.js, React et TypeScript. Ajout de fonctionnalités intelligentes pour améliorer l'expérience utilisateur et faire gagner du temps à mes clients.",
+        "tags": {
+          "0": "IA",
+          "1": "Next.js",
+          "2": "React",
+          "3": "TypeScript",
+          "4": "Tailwind CSS"
+        }
+      },
+      "1": {
+        "year": "2023 - 2025",
+        "title": "Co-Fondateur & CTO",
+        "company": "VISIT ME",
+        "description": "Construction et maintenance d'une plateforme SaaS full-stack — conception de l'infrastructure des schémas de base de données au code de production et aux opérations continues.",
+        "tags": {
+          "0": "IA",
+          "1": "Next.js",
+          "2": "React",
+          "3": "TypeScript",
+          "4": "Tailwind CSS"
+        }
+      },
+      "2": {
+        "year": "2024 - 2025",
+        "title": "Développeur Stagiaire",
+        "company": "Thomas & Piron",
+        "description": "Travaillé sur l'intégration d'agents IA en temps réel dans le service après-vente. Lorsque les clients appellent, une IA les aide à répondre à leurs questions rapidement et avec précision directement au téléphone.",
+        "tags": {
+          "0": "IA",
+          "1": "Docker",
+          "2": "TypesScript",
+          "3": "Azure",
+          "4": "React",
+          "5": "C#"
+        }
+      },
+      "3": {
+        "year": "2024 - 2025",
+        "title": "Développeur Stagiaire",
+        "company": "Microsoft Innovate Create",
+        "description": "Travaillé sur des projets de développement web et acquis de l'expérience avec les technologies IA. (Je suis tombé amoureux de l'IA ici !)",
+        "tags": {
+          "0": "IA",
+          "1": "React",
+          "2": "TypesScript",
+          "3": "C#",
+          "4": "Azure",
+          "5": "Docker"
+        }
+      },
+      "4": {
+        "year": "2022 - 2024",
+        "title": "Étudiant Développeur",
+        "company": "École Technique Supérieure",
+        "description": "Construction de plusieurs projets web intégrant des fonctionnalités IA dans le cadre de mes cours.",
+        "tags": {
+          "0": "Python",
+          "1": "C#",
+          "2": "C",
+          "3": "Java",
+          "4": "React Native"
+        }
+      },
+      "5": {
+        "year": "2018 - 2022",
+        "title": "Développeur Amateur",
+        "company": "Autodidacte",
+        "description": "Exploration du développement web et de l'IA à travers des projets personnels et des cours en ligne. Depuis mon adolescence, je suis passionné par le codage et la technologie.",
+        "tags": {
+          "0": "HTML",
+          "1": "CSS",
+          "2": "JavaScript",
+          "3": "Python"
+        }
+      }
+    }
+  }
+}

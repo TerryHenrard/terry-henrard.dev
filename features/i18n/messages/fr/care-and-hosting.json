@@ -1,0 +1,84 @@
+{
+  "careAndHosting": {
+    "badge": "Maintenance & Hébergement",
+    "availabilityBadge": "Nous limitons à 8 clients actifs — disponibilité limitée",
+    "hero": {
+      "title": "Production sereine. Coût fixe. Zéro surprise.",
+      "description": "Gardez votre produit <strong>en ligne, rapide et fiable</strong>. Nous prenons en charge les incidents, les mises à jour et les petites améliorations pour que votre équipe puisse livrer. Vous obtenez des <strong>SLA clairs, moins d'incendies</strong> et des rapports prêts pour le conseil."
+    },
+    "trust": {
+      "text": "Tous mes services sont soutenus par <span class=\"font-semibold\">AWS (Amazon)</span> & <span class=\"font-semibold\">Azure (Microsoft)</span>"
+    },
+    "outcomes": {
+      "0": {
+        "title": "Toujours disponible",
+        "description": "Contrôles proactifs + vraies personnes de garde → <strong>meilleure disponibilité</strong>, moins de panique."
+      },
+      "1": {
+        "title": "Produit plus rapide",
+        "description": "Optimisations de performance et victoires rapides qui <strong>réduisent les temps de chargement</strong> et le rebond."
+      },
+      "2": {
+        "title": "Moins d'incendies",
+        "description": "Mises à jour, sécurité et hygiène gérées → <strong>moins de casse</strong> et de retravail."
+      },
+      "3": {
+        "title": "Clarté pour les parties prenantes",
+        "description": "Rapport mensuel : analytics, % disponibilité, erreurs, vitesse et progrès — <strong>pas de devinettes</strong>."
+      }
+    },
+    "plans": {
+      "lite": {
+        "title": "Lite — \"Lights On\"",
+        "bestFor": "Idéal pour : fondateurs solo gardant les choses stables.",
+        "items": {
+          "0": "Résultat : <strong>Dormez mieux</strong>—sachez immédiatement quand quelque chose ne va pas.",
+          "1": "Surveillance 24/7 avec routage d'alertes vers notre équipe.",
+          "2": "Contrôles automatisés : <strong>sauvegardes de base de données quotidiennes</strong>.",
+          "3": "PDF mensuel : <strong>% disponibilité</strong>, <strong>erreurs par page</strong> et <strong>principaux générateurs de coûts IA</strong>.",
+          "4": "Corrections de bugs : <strong>illimitées</strong> (dans le périmètre).",
+          "5": "<strong>1 jour dev / mois</strong> pour petites corrections et améliorations.",
+          "6": "Réponse : sous <strong>2 jours ouvrables</strong> (CET)."
+        },
+        "cta": "Vérifier la disponibilité"
+      },
+      "pro": {
+        "title": "Pro — \"Production Care\"",
+        "bestFor": "Idéal pour : équipes produit avec applications en production.",
+        "items": {
+          "0": "Résultat : <strong>Livrez plus vite</strong> avec moins de risques.",
+          "1": "Tout ce qui est dans Lite.",
+          "2": "<strong>3 jours dev / mois</strong> pour corrections ou petites fonctionnalités.",
+          "3": "Contrôle des coûts IA et plafonds d'alertes révisés mensuellement.",
+          "4": "Réponse : sous <strong>24 heures ouvrables</strong> (CET)."
+        },
+        "cta": "Réserver un créneau Pro"
+      },
+      "venture": {
+        "title": "Venture — \"Ops & Crédibilité\"",
+        "bestFor": "Idéal pour : équipes SaaS visant investisseurs et conseils.",
+        "items": {
+          "0": "Résultat : Fiabilité et rapidité <strong>prêtes pour les investisseurs</strong>.",
+          "1": "Tout ce qui est dans Pro.",
+          "2": "<strong>5 jours dev / mois</strong> (fonctionnalités + améliorations).",
+          "3": "Surveillance renforcée des dépenses IA et rapports mensuels de style exécutif.",
+          "4": "Réponse : sous <strong>2 heures</strong> (heures ouvrables, CET)."
+        },
+        "cta": "Postuler pour Venture"
+      }
+    },
+    "guarantees": {
+      "title": "Garanties simples et solides",
+      "items": {
+        "0": "<strong>Promesse disponibilité/réponse :</strong> Si nous manquons un SLA écrit (disponibilité ou réponse), votre <strong>prochain mois est gratuit</strong> et nous incluons un plan d'action corrective.",
+        "1": "<strong>Bouclier bugs :</strong> Nous corrigeons les bugs critiques découverts pendant votre fenêtre de plan sans frais supplémentaires.",
+        "2": "<strong>Annuler à tout moment :</strong> mois par mois. Restez parce que ça se rentabilise."
+      }
+    },
+    "cta": {
+      "primary": "Commencer par le plan MVP de 2-3 jours",
+      "secondary": "Réserver un appel rapide",
+      "footer": "Après le lancement, maintenez l'élan avec <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">le Plan de maintenance et d'hébergement</Link>."
+    }
+  }
+}
