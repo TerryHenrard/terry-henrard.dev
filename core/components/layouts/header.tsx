@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useIsMobile } from '@/core/hooks/use-mobile';
 import { Link } from '@/features/i18n/lib/navigation';
 
@@ -31,31 +33,9 @@ function ListItem({
   );
 }
 
-const services: { title: string; href: string; description: string }[] = [
-  {
-    title: 'Audit',
-    href: '/services/audit',
-    description: 'Building responsive and dynamic websites tailored to your needs',
-  },
-  {
-    title: 'MVP Foundry',
-    href: '/services/mvp-foundry',
-    description: 'from zero to a usable product in 4 to 6 weeks',
-  },
-  {
-    title: 'AI Sprint',
-    href: '/services/ai-sprint',
-    description: 'deliver true AI functionality in 14 days, not months',
-  },
-  {
-    title: 'Care & Hosting Plan',
-    href: '/services/care-and-hosting-plan',
-    description: 'Building responsive and dynamic websites tailored to your needs',
-  },
-];
-
 export default function Header() {
   const isMobile = useIsMobile();
+  const t = useTranslations();
 
   return (
     <header className='bg-secondary/50 fixed top-0 right-0 left-0 z-50 h-16 border-b p-4 transition-colors duration-300'>
@@ -69,20 +49,20 @@ export default function Header() {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link href='/' className='text-xl font-bold'>
-                    Terry's assistant
+                    {t('header.title')}
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href='/experience'>My Experience</Link>
+                  <Link href='/experience'>{t('header.nav.experience')}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger className='bg-transparent'>
-                  My services
+                  {t('header.nav.services.trigger')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className='grid w-2xl grid-cols-3 gap-2'>
@@ -92,32 +72,50 @@ export default function Header() {
                           href='/services'
                           className='flex h-full w-full flex-col justify-end p-4'
                         >
-                          <div className='text-lg font-bold'>Services</div>
+                          <div className='text-lg font-bold'>{t('header.nav.services.title')}</div>
                           <p className='text-muted-foreground text-sm'>
-                            Explore the wide range of services I offer to help you achieve your
-                            goals
+                            {t('header.nav.services.description')}
                           </p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    {services.map((service) => (
-                      <ListItem key={service.title} title={service.title} href={service.href}>
-                        {service.description}
-                      </ListItem>
-                    ))}
+                    <ListItem
+                      title={t('header.nav.services.items.audit.title')}
+                      href='/services/audit'
+                    >
+                      {t('header.nav.services.items.audit.description')}
+                    </ListItem>
+                    <ListItem
+                      title={t('header.nav.services.items.mvpFoundry.title')}
+                      href='/services/mvp-foundry'
+                    >
+                      {t('header.nav.services.items.mvpFoundry.description')}
+                    </ListItem>
+                    <ListItem
+                      title={t('header.nav.services.items.aiSprint.title')}
+                      href='/services/ai-sprint'
+                    >
+                      {t('header.nav.services.items.aiSprint.description')}
+                    </ListItem>
+                    <ListItem
+                      title={t('header.nav.services.items.careAndHosting.title')}
+                      href='/services/care-and-hosting-plan'
+                    >
+                      {t('header.nav.services.items.careAndHosting.description')}
+                    </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href='/about'>About Me</Link>
+                  <Link href='/about'>{t('header.nav.about')}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href='/contact'>Let's Connect</Link>
+                  <Link href='/contact'>{t('header.nav.contact')}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

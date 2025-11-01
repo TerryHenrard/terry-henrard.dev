@@ -13,7 +13,7 @@ import Header from '@/core/components/layouts/header';
 import Providers from '@/core/components/providers';
 import { routing } from '@/features/i18n/lib/routing';
 
-import './globals.css';
+import '../globals.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,10 +31,10 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'home' });
+  const t = await getTranslations({ locale });
 
   return {
-    title: t('title'),
+    title: t('home.title'),
   };
 }
 

@@ -1,65 +1,23 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { Badge } from '@/core/components/ui/badge';
 import { Card, CardContent } from '@/core/components/ui/card';
 
-const timelineItems: {
-  year: string;
-  title: string;
-  company: string;
-  description: string;
-  tags: string[];
-}[] = [
-  {
-    year: '2025 - Present',
-    title: 'Web Developer specialized in AI and MVP',
-    company: 'Freelance',
-    description:
-      'Developing AI-powered web applications using Next.js, React, and TypeScript. Adding intelligent features to enhance user experience and save time to my clients.',
-    tags: ['AI', 'Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-  },
-  {
-    year: '2023 - 2025',
-    title: 'Co-Founder & CTO',
-    company: 'VISIT ME',
-    description:
-      'Built and maintained a full-stack SaaS platform — designed infrastructure from database schemas to production codebase and ongoing operations.',
-    tags: ['AI', 'Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-  },
-  {
-    year: '2024 - 2025',
-    title: 'Intern Developer',
-    company: 'Thomas & Piron',
-    description:
-      'Worked on integrating realtime AI agents into after-sales service. When clients call, an AI helps answer their questions quickly and accurately directly on the phone.',
-    tags: ['AI', 'Docker', 'TypesScript', 'Azure', 'React', 'C#'],
-  },
-  {
-    year: '2024 - 2025',
-    title: 'Intern Developer',
-    company: 'Microsoft Innovate Create',
-    description:
-      'Worked on web development projects and gained experience with AI technologies. (Fell in love with AI here!)',
-    tags: ['AI', 'React', 'TypesScript', 'C#', 'Azure', 'Docker'],
-  },
-  {
-    year: '2022 - 2024',
-    title: 'Student Developer',
-    company: 'Tech High School',
-    description: 'Built several web projects integrating AI features as part of my coursework.',
-    tags: ['Python', 'C#', 'C', 'Java', 'React Native'],
-  },
-  {
-    year: '2018 - 2022',
-    title: 'Hobbyist Developer',
-    company: 'Self-Taught',
-    description:
-      "Explored web development and AI through personal projects and online courses. Since my early teens, I've been passionate about coding and technology.",
-    tags: ['HTML', 'CSS', 'JavaScript', 'Python'],
-  },
-];
-
 export default function ExperiencePage() {
+  const t = useTranslations('experience.timeline');
+
+  const timelineItems = [0, 1, 2, 3, 4, 5].map((idx) => ({
+    year: t(`${idx}.year` as any),
+    title: t(`${idx}.title` as any),
+    company: t(`${idx}.company` as any),
+    description: t(`${idx}.description` as any),
+    tags: Object.keys((t.raw(`${idx}.tags` as any) as Record<string, string>) || {}).map((key) =>
+      t(`${idx}.tags.${key}` as any)
+    ),
+  }));
+
   return (
     <main className='relative overflow-hidden'>
       <div className='relative z-10 container mx-auto min-h-[calc(100vh-4rem)] border-0 bg-transparent p-8 py-4 shadow-none'>

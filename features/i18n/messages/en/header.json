@@ -1,0 +1,33 @@
+{
+  "header": {
+    "title": "Terry's assistant",
+    "nav": {
+      "experience": "My Experience",
+      "services": {
+        "trigger": "My services",
+        "title": "Services",
+        "description": "Explore the wide range of services I offer to help you achieve your goals",
+        "items": {
+          "audit": {
+            "title": "Audit",
+            "description": "Building responsive and dynamic websites tailored to your needs"
+          },
+          "mvpFoundry": {
+            "title": "MVP Foundry",
+            "description": "from zero to a usable product in 4 to 6 weeks"
+          },
+          "aiSprint": {
+            "title": "AI Sprint",
+            "description": "deliver true AI functionality in 14 days, not months"
+          },
+          "careAndHosting": {
+            "title": "Care & Hosting Plan",
+            "description": "Building responsive and dynamic websites tailored to your needs"
+          }
+        }
+      },
+      "about": "About Me",
+      "contact": "Let's Connect"
+    }
+  }
+}

@@ -17,6 +17,16 @@ const withNextIntl = createNextIntlPlugin({
     createMessagesDeclaration: [
       './features/i18n/messages/en/home.json',
       './features/i18n/messages/en/about.json',
+      './features/i18n/messages/en/contact.json',
+      './features/i18n/messages/en/experience.json',
+      './features/i18n/messages/en/services.json',
+      './features/i18n/messages/en/ai-sprint.json',
+      './features/i18n/messages/en/audit.json',
+      './features/i18n/messages/en/mvp-foundry.json',
+      './features/i18n/messages/en/care-and-hosting.json',
+      './features/i18n/messages/en/phone-call-request-form.json',
+      './features/i18n/messages/en/header.json',
+      './features/i18n/messages/en/marketing.json',
     ],
   },
 });

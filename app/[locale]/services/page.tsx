@@ -1,4 +1,6 @@
-import type { ElementType, ReactNode } from 'react';
+import type { ElementType } from 'react';
+
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { Brain, FileSearch, Hammer, type LucideIcon, ShieldCheck, Sparkles } from 'lucide-react';
 
@@ -7,63 +9,52 @@ import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
 import { Link } from '@/features/i18n/lib/navigation';
 
-export default function ServicesPage() {
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: 'en' | 'fr' }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('services');
+
   const services: {
     title: string;
     href: string;
-    description: ReactNode;
+    description: string;
     icon: LucideIcon;
     cta: string;
   }[] = [
     {
-      title: 'Audit',
+      title: t('items.0.title'),
       href: '/services/audit',
-      description: (
-        <>
-          In a few days, get a clear plan you can defend: what to build first, what it will cost,
-          where the risks are, and the shortest path to results.
-        </>
-      ),
+      description: t.raw('items.0.description'),
       icon: FileSearch,
-      cta: 'Explore audits',
+      cta: t('items.0.cta'),
     },
     {
-      title: 'MVP Foundry',
+      title: t('items.1.title'),
       href: '/services/mvp-foundry',
-      description: (
-        <>
-          Launch a <strong>usable MVP in 4-6 weeks</strong> so you can book demos, validate with
-          real users, and unlock the next round of budget with confidence.
-        </>
-      ),
+      description: t.raw('items.1.description'),
       icon: Hammer,
-      cta: 'See packages',
+      cta: t('items.1.cta'),
     },
     {
-      title: 'AI Feature Sprint',
+      title: t('items.2.title'),
       href: '/services/ai-sprint',
-      description: (
-        <>
-          In <strong>14 days</strong>, add one feature your users feel instantly — faster answers,
-          fewer steps, or automatic summaries — to boost adoption and retention.
-        </>
-      ),
+      description: t.raw('items.2.description'),
       icon: Brain,
-      cta: 'Run a sprint',
+      cta: t('items.2.cta'),
     },
     {
-      title: 'Care & Hosting Plan',
+      title: t('items.3.title'),
       href: '/services/care-and-hosting-plan',
-      description: (
-        <>
-          Stay online and worry-free: quick fixes, monthly tune-ups, clear reports, and
-          <strong> predictable costs</strong> so you sleep at night.
-        </>
-      ),
+      description: t.raw('items.3.description'),
       icon: ShieldCheck,
-      cta: 'View plans',
+      cta: t('items.3.cta'),
     },
   ];
+
   return (
     <main className='relative container mx-auto min-h-[calc(100vh-4rem)] overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>
@@ -74,22 +65,18 @@ export default function ServicesPage() {
               <div>
                 <Badge className='mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium'>
                   <Sparkles className='h-3 w-3' />
-                  Services
+                  {t('badge')}
                 </Badge>
                 <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
-                  Outcomes in weeks — backed by a simple guarantee.
+                  {t('hero.title')}
                 </h1>
                 <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
-                  Four focused offers. Start small to get clarity, launch a usable product fast, add
-                  one high-impact feature, and keep everything healthy without surprises.
+                  {t('hero.description')}
                 </p>
-                <p className='text-foreground/60 mt-3'>
-                  <strong>
-                    <em>Guarantee:</em>
-                  </strong>{' '}
-                  if we miss the agreed success metric or deadline because of me, I keep working at{' '}
-                  <strong className='underline'>no extra cost</strong>.
-                </p>
+                <p
+                  className='text-foreground/60 mt-3'
+                  dangerouslySetInnerHTML={{ __html: t.raw('hero.guarantee') }}
+                />
               </div>
             </CardContent>
           </Card>
@@ -109,7 +96,10 @@ export default function ServicesPage() {
                     <Icon className='text-primary h-6 w-6' />
                   </div>
                   <h2 className='mb-2 text-2xl font-bold'>{service.title}</h2>
-                  <p className='text-foreground/70 mb-4 leading-relaxed'>{service.description}</p>
+                  <p
+                    className='text-foreground/70 mb-4 leading-relaxed'
+                    dangerouslySetInnerHTML={{ __html: service.description }}
+                  />
                 </CardContent>
                 <CardFooter>
                   <Button asChild>

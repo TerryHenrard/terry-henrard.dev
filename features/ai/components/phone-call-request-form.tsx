@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addDays, format, setHours, setMinutes } from 'date-fns';
 import { Calendar, Phone } from 'lucide-react';
@@ -46,6 +48,7 @@ export function PhoneCallRequestForm({
   messages,
   setIsInputDisabled,
 }: PhoneCallRequestFormProps) {
+  const t = useTranslations('phoneCallRequestForm');
   const form = useForm<PhoneCallRequestForm>({
     resolver: zodResolver(phoneCallRequestFormSchema),
     defaultValues: { name: '', phone: '', datetime: '' },
@@ -64,11 +67,11 @@ export function PhoneCallRequestForm({
         throw new Error(`Failed to send notification: ${result.statusText}`);
       }
     } catch {
-      toast.error('There was an error scheduling your call. Please try again later.');
+      toast.error(t('errorToast'));
       addToolResult({
         tool: 'displayPhoneCallRequestForm',
         toolCallId: callId,
-        output: `Sorry, we couldn't schedule your call at this time. Please try to contact Terry directly.`,
+        output: t('cannotSchedule'),
       });
       setIsInputDisabled(false);
       return;
@@ -78,10 +81,10 @@ export function PhoneCallRequestForm({
     addToolResult({
       tool: 'displayPhoneCallRequestForm',
       toolCallId: callId,
-      output: `Phone call booked with ${data.name} (${data.phone}) on ${date} at ${time}.`,
+      output: t('booked', { name: data.name, phone: data.phone, date, time }),
     });
 
-    toast.success('Your call has been scheduled successfully, Terry has been notified!');
+    toast.success(t('successToast'));
     setIsInputDisabled(false);
   });
 
@@ -89,7 +92,7 @@ export function PhoneCallRequestForm({
     addToolResult({
       tool: 'displayPhoneCallRequestForm',
       toolCallId: callId,
-      output: `The phone call request has been purposely cancelled by the user clicking the cancel button.`,
+      output: t('cancelled'),
     });
     setIsInputDisabled(false);
   };
@@ -102,14 +105,9 @@ export function PhoneCallRequestForm({
           <CardHeader className='pb-4'>
             <div className='flex items-center gap-2'>
               <Phone className='text-primary h-5 w-5' />
-              <CardTitle className='text-lg'>Schedule a Call</CardTitle>
+              <CardTitle className='text-lg'>{t('card.title')}</CardTitle>
             </div>
-            <CardDescription>
-              Fill out the details below to request a phone call with Terry or call me directly at{' '}
-              <a href='tel:+32498146651' className='text-blue-500 underline'>
-                +32 498 14 66 51
-              </a>
-            </CardDescription>
+            <CardDescription dangerouslySetInnerHTML={{ __html: t.raw('card.description') }} />
           </CardHeader>
           <CardContent className='space-y-4'>
             <div className='space-y-2'>
@@ -118,12 +116,12 @@ export function PhoneCallRequestForm({
                 control={form.control}
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor={field.name}>Your name</FieldLabel>
+                    <FieldLabel htmlFor={field.name}>{t('card.fields.name.label')}</FieldLabel>
                     <Input
                       {...field}
                       id={field.name}
                       aria-invalid={fieldState.invalid}
-                      placeholder='John Doe'
+                      placeholder={t('card.fields.name.placeholder')}
                       autoComplete='name'
                     />
                     {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -137,13 +135,13 @@ export function PhoneCallRequestForm({
                 control={form.control}
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor={field.name}>Phone Number</FieldLabel>
+                    <FieldLabel htmlFor={field.name}>{t('card.fields.phone.label')}</FieldLabel>
                     <Input
                       {...field}
                       id={field.name}
                       type='tel'
                       aria-invalid={fieldState.invalid}
-                      placeholder='+32 123 456 789'
+                      placeholder={t('card.fields.phone.placeholder')}
                       autoComplete='tel'
                       className='w-full'
                     />
@@ -160,7 +158,7 @@ export function PhoneCallRequestForm({
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor={field.name} className='flex items-center gap-2'>
                       <Calendar className='h-4 w-4' />
-                      Preferred Date & Time
+                      {t('card.fields.datetime.label')}
                     </FieldLabel>
                     <Input
                       {...field}
@@ -177,9 +175,7 @@ export function PhoneCallRequestForm({
                         "yyyy-MM-dd'T'HH:mm"
                       )}
                     />
-                    <FieldDescription>
-                      Select a date and time between 8:00 AM and 6:00 PM within the next 30 days.
-                    </FieldDescription>
+                    <FieldDescription>{t('card.fields.datetime.description')}</FieldDescription>
                     {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                   </Field>
                 )}
@@ -194,7 +190,7 @@ export function PhoneCallRequestForm({
               onClick={handleCancel}
               disabled={form.formState.isSubmitting}
             >
-              Cancel
+              {t('card.buttons.cancel')}
             </Button>
             <Button
               type='submit'
@@ -204,12 +200,12 @@ export function PhoneCallRequestForm({
               {form.formState.isSubmitting ? (
                 <>
                   <Spinner />
-                  Scheduling...
+                  {t('card.buttons.submitting')}
                 </>
               ) : (
                 <>
                   <Phone className='mr-2 h-4 w-4' />
-                  Schedule Call
+                  {t('card.buttons.submit')}
                 </>
               )}
             </Button>
