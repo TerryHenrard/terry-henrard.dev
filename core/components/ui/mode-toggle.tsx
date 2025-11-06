@@ -11,14 +11,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/core/components/ui/dropdown-menu';
+import { firstToUpper } from '@/core/lib/utils';
+
+type Theme = 'light' | 'dark' | 'system';
+
+const modes: Theme[] = ['light', 'dark', 'system'];
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
 
-  const toggleTheme = (
-    event: React.MouseEvent<HTMLElement>,
-    theme: 'light' | 'dark' | 'system'
-  ) => {
+  const toggleTheme = (event: React.MouseEvent<HTMLElement>, newTheme: Theme) => {
     if ('startViewTransition' in document) {
       const x = event ? event.clientX : window.innerWidth / 2;
       const y = event ? event.clientY : window.innerHeight / 2;
@@ -26,9 +28,9 @@ export function ModeToggle() {
       document.documentElement.style.setProperty('--x', `${x}px`);
       document.documentElement.style.setProperty('--y', `${y}px`);
 
-      document.startViewTransition(() => setTheme(() => theme));
+      document.startViewTransition(() => setTheme(() => newTheme));
     } else {
-      setTheme(() => theme);
+      setTheme(() => newTheme);
     }
   };
 
@@ -42,11 +44,15 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
-        <DropdownMenuItem onClick={(event) => toggleTheme(event, 'light')}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={(event) => toggleTheme(event, 'dark')}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={(event) => toggleTheme(event, 'system')}>
-          System
-        </DropdownMenuItem>
+        {modes.map((mode) => (
+          <DropdownMenuItem
+            key={mode}
+            onClick={(event) => toggleTheme(event, mode)}
+            disabled={theme === mode}
+          >
+            {firstToUpper(mode)}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
