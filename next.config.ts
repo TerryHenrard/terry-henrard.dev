@@ -4,10 +4,9 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   reactCompiler: true,
   typedRoutes: true,
+  poweredByHeader: false,
   experimental: {
     turbopackFileSystemCacheForDev: true,
-    // turbopackFileSystemCacheForBuild: true,
-    typedEnv: true,
   },
 };
 

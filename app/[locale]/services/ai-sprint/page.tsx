@@ -15,6 +15,7 @@ import {
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
+import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
 import FOMOCard from '@/features/marketing/fomo-card';
 import GuaranteeHeadline from '@/features/marketing/guarantee-headline';
@@ -201,11 +202,7 @@ export default async function AISprintPage() {
             <Button asChild>
               <Link href='/services/audit'>{t('cta.primary')}</Link>
             </Button>
-            <Button asChild variant='outline'>
-              <Link href={`/?prompt=${encodeURIComponent(t('cta.secondary'))}`}>
-                {t('cta.secondary')}
-              </Link>
-            </Button>
+            <CtaTriggerPhoneCallRequest variant={'outline'} />
           </div>
           <p
             className='text-foreground/60 text-sm'

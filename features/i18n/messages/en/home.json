@@ -7,8 +7,7 @@
     "disclaimer": "Don't take what AI tells you for granted. It can make mistakes. It's for demonstration purposes only.",
     "chat": {
       "emptyState": {
-        "title": "Ask me anything about Terry",
-        "description": "Press Enter to start or tap a suggestion below. You can also press 1-5 to pick a prompt."
+        "title": "Ask me anything about Terry"
       },
       "suggestions": {
         "1": "Show me your services with timelines & deliverables.",

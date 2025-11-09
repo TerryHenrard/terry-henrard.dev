@@ -11,6 +11,7 @@ import { Toaster } from 'sonner';
 import Background from '@/core/components/layouts/background';
 import Header from '@/core/components/layouts/header';
 import Providers from '@/core/components/providers';
+import FloatingChatbox from '@/features/ai/components/floating-chatbox';
 import { routing } from '@/features/i18n/lib/routing';
 
 import '../globals.css';
@@ -66,6 +67,8 @@ export default async function RootLayout({
           <Header />
           <Background />
           {children}
+          {/* Floating Chatbox */}
+          <FloatingChatbox />
           <Toaster position='top-center' />
         </Providers>
       </body>
