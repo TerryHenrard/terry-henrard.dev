@@ -1,10 +1,6 @@
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import { Card, CardContent } from '@/core/components/ui/card';
-import Chat from '@/features/ai/components/chat';
-import { Link } from '@/features/i18n/lib/navigation';
-
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
   // Enable static rendering
@@ -13,17 +9,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   const t = await getTranslations('home');
 
   return (
-    <main className='container mx-auto h-[calc(100vh-4rem)] py-4'>
-      <Link href='/about' className='underline'>
-        {t('nav.about')}
-      </Link>
-      <div className='relative z-10 h-full'>
-        <Card className='h-full border-0 bg-transparent shadow-none'>
-          <CardContent className='h-full'>
-            <Chat />
-          </CardContent>
-        </Card>
-      </div>
+    <main className='container mx-auto min-h-[calc(100vh-4rem)] py-8'>
+      {/* Hero Section - content will be added later */}
+      <section className='flex min-h-[calc(100vh-8rem)] items-center justify-center'>
+        <div className='text-center'>{/* Hero content placeholder */}</div>
+      </section>
     </main>
   );
 }

@@ -722,7 +722,7 @@ export const PromptInput = ({
         type='file'
       />
       <form className={cn('w-full', className)} onSubmit={handleSubmit} {...props}>
-        <InputGroup>{children}</InputGroup>
+        <InputGroup className='flex-row! items-end!'>{children}</InputGroup>
       </form>
     </>
   );

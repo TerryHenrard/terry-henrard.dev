@@ -1,18 +1,11 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import {
-  CalendarClock,
-  ClipboardCheck,
-  FileSearch,
-  Mail,
-  Phone,
-  Shield,
-  Sparkles,
-} from 'lucide-react';
+import { CalendarClock, ClipboardCheck, FileSearch, Mail, Shield, Sparkles } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
+import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
 
 export default async function AuditServicesPage({
@@ -78,14 +71,7 @@ export default async function AuditServicesPage({
               <Button asChild>
                 <Link href='/services/mvp-foundry'>{t('offers.mvpReadiness.cta.primary')}</Link>
               </Button>
-              <Button asChild variant='outline'>
-                <Link
-                  href={`/?prompt=${encodeURIComponent(t('offers.mvpReadiness.cta.secondary'))}`}
-                >
-                  <Phone className='mr-1' />
-                  {t('offers.mvpReadiness.cta.secondary')}
-                </Link>
-              </Button>
+              <CtaTriggerPhoneCallRequest variant={'outline'} />
             </CardFooter>
           </Card>
 
@@ -180,11 +166,7 @@ export default async function AuditServicesPage({
             <Button asChild>
               <Link href='/services/mvp-foundry'>{t('cta.primary')}</Link>
             </Button>
-            <Button asChild variant='outline'>
-              <Link href={`/?prompt=${encodeURIComponent(t('cta.secondary'))}`}>
-                {t('cta.secondary')}
-              </Link>
-            </Button>
+            <CtaTriggerPhoneCallRequest variant={'outline'} />
           </div>
           <p
             className='text-foreground/60 text-sm'

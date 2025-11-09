@@ -7,6 +7,8 @@ import { Button } from '@/core/components/ui/button';
 import { firstToUpper } from '@/core/lib/utils';
 import { Link } from '@/features/i18n/lib/navigation';
 
+import CtaTriggerPhoneCallRequest from '../ai/components/cta-trigger-phone-call-request';
+
 interface FOMOCardProps {
   variant: 'mvp-foundry' | 'ai-sprint';
 }
@@ -30,9 +32,8 @@ export default function FOMOCard({ variant }: FOMOCardProps) {
         </span>
       </div>
       <div className='flex items-center gap-2'>
-        <Button asChild>
-          <Link href={`/?prompt=${encodeURIComponent(promptText)}`}>{t('cta.call')}</Link>
-        </Button>
+        <CtaTriggerPhoneCallRequest />
+
         <Button asChild variant='outline'>
           <Link href='/services/audit'>{t('cta.audit')}</Link>
         </Button>

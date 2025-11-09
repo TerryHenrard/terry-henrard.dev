@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useEffectEvent, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 
@@ -9,6 +9,7 @@ import { DefaultChatTransport, lastAssistantMessageIsCompleteWithToolCalls } fro
 import { MessageSquare } from 'lucide-react';
 import { toast } from 'sonner';
 
+import { useFloatingChatStore } from '../stores/floating-chat.store';
 import { ChatMessage } from '../tools';
 import {
   Conversation,
@@ -16,7 +17,7 @@ import {
   ConversationEmptyState,
   ConversationScrollButton,
 } from './ai-elements/conversation';
-import { Message, MessageAvatar, MessageContent } from './ai-elements/message';
+import { Message, MessageContent } from './ai-elements/message';
 import {
   PromptInput,
   PromptInputBody,
@@ -34,8 +35,11 @@ export default function Chat() {
   const t = useTranslations('home.chat');
   const tHome = useTranslations('home');
   const tPhone = useTranslations('phoneCallRequestForm');
-  const [text, setText] = useState('');
   const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const [text, setText] = useState('');
+
+  const externalPrompt = useFloatingChatStore((state) => state.prompt);
+  const clearExternalPrompt = useFloatingChatStore((state) => state.setPrompt);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -58,10 +62,6 @@ export default function Chat() {
     },
   });
 
-  const onFirePrompt = useEffectEvent((prompt: string) => {
-    sendMessage({ text: prompt });
-  });
-
   const firePrompt = (prompt: string) => {
     sendMessage({ text: prompt });
   };
@@ -70,6 +70,11 @@ export default function Chat() {
     const hasText = Boolean(message.text);
     const hasAttachments = Boolean(message.files?.length);
     if (!(hasText || hasAttachments)) return;
+
+    // Prevent sending new messages while AI is responding
+    if (status === 'streaming' || status === 'submitted') {
+      return;
+    }
 
     sendMessage({
       text: message.text || 'Sent with attachments',
@@ -88,7 +93,7 @@ export default function Chat() {
     const empty = text.trim().length === 0;
 
     // Send first starter prompt on Enter (no Shift) when empty.
-    if (empty && e.key === 'Enter' && !e.shiftKey) {
+    if (messages.length === 0 && empty && e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       firePrompt(t('suggestions.1'));
       return;
@@ -120,17 +125,13 @@ export default function Chat() {
     }
   }, [error, t]);
 
+  // Fire message when prompt is set from the store (e.g., from CTA button)
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const prompt = decodeURIComponent(params.get('prompt') || '');
-
-    if (prompt) {
-      onFirePrompt(prompt);
-      params.delete('prompt');
-      const newPath = window.location.pathname + (params.toString() ? `?${params.toString()}` : '');
-      window.history.replaceState(null, '', newPath);
+    if (externalPrompt) {
+      sendMessage({ text: externalPrompt });
+      clearExternalPrompt(null);
     }
-  }, []);
+  }, [externalPrompt, clearExternalPrompt, sendMessage]);
 
   return (
     <div className='flex h-full flex-col justify-between'>
@@ -143,9 +144,9 @@ export default function Chat() {
               <ConversationEmptyState
                 icon={<MessageSquare className='size-12' />}
                 title={t('emptyState.title')}
-                description={t('emptyState.description')}
+                description=''
               />
-              <Suggestions className='mx-auto flex max-w-xl flex-wrap items-center justify-center'>
+              <Suggestions className='mx-auto flex max-w-min flex-wrap items-center justify-center'>
                 {starterPrompts.map((suggestion, i) => (
                   <Suggestion
                     key={suggestion}
@@ -153,6 +154,7 @@ export default function Chat() {
                     onClick={handleSuggestionClick}
                     // Prefix with the shortcut number for clarity
                     suggestion={`${i + 1}. ${suggestion}`}
+                    className='text-xs'
                   />
                 ))}
               </Suggestions>
@@ -160,7 +162,10 @@ export default function Chat() {
           ) : (
             messages.map((message) => (
               <Message from={message.role} key={message.id}>
-                <MessageContent>
+                <MessageContent
+                  variant={'flat'}
+                  className={message.role === 'assistant' ? 'rounded-none' : ''}
+                >
                   {message.parts.map((part, i) => {
                     switch (part.type) {
                       case 'text':
@@ -204,9 +209,9 @@ export default function Chat() {
                     }
                   })}
                 </MessageContent>
-                {message.role === 'assistant' && (
+                {/* {message.role === 'assistant' && (
                   <MessageAvatar name='Terry Henrard' src='/terry-henrard.jpg' />
-                )}
+                )} */}
               </Message>
             ))
           )}
@@ -225,9 +230,18 @@ export default function Chat() {
             placeholder={t('placeholder')}
           />
         </PromptInputBody>
-        <PromptInputFooter>
+        <PromptInputFooter className='w-auto'>
           <PromptInputTools />
-          <PromptInputSubmit disabled={(!text && !status) || isInputDisabled} status={status} />
+          <PromptInputSubmit
+            disabled={(!text && !status) || isInputDisabled}
+            status={status}
+            onClick={(e) => {
+              if (status === 'streaming' || status === 'submitted') {
+                e.preventDefault();
+                stop();
+              }
+            }}
+          />
         </PromptInputFooter>
       </PromptInput>
 

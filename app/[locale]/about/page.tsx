@@ -15,9 +15,8 @@ import {
 } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
-import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/core/components/ui/card';
-import { Link } from '@/features/i18n/lib/navigation';
+import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'fr' }> }) {
   const { locale } = await params;
@@ -296,11 +295,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </CardHeader>
           <CardContent>
             <p className='text-foreground/70 mx-auto mb-6 max-w-2xl'>{t('cta.description')}</p>
-            <Button asChild className='transition-all duration-300 hover:-translate-y-0.5'>
-              <Link href={`/?prompt=${encodeURIComponent(t('cta.buttonPrompt'))}`}>
-                {t('cta.button')}
-              </Link>
-            </Button>
+            <CtaTriggerPhoneCallRequest />
           </CardContent>
         </Card>
       </div>
