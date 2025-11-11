@@ -5,7 +5,24 @@
       "about": "À propos"
     },
     "disclaimer": "Ne prenez pas pour acquis ce que l'IA vous dit. Elle peut faire des erreurs. C'est à des fins de démonstration uniquement.",
+    "hero": {
+      "title": {
+        "prefix": "Livrez",
+        "highlight": "10x",
+        "suffix": "Plus Vite avec Moi"
+      },
+      "description": "Je construis et livre des MVPs, ajoute des fonctionnalités IA utiles, et garde votre app rapide et sécurisée. Objectif raté ? Je continue à travailler",
+      "descriptionHighlight": "sans coût supplémentaire",
+      "descriptionSuffix": "jusqu'à ce que vous atteigniez vos objectifs.",
+      "cta": {
+        "contact": "Contactez-moi"
+      },
+      "image": {
+        "alt": "Objet Abstrait"
+      }
+    },
     "chat": {
+      "introMessage": "Salut, je suis l'assistant IA de Terry. Comment puis-je vous aider ?",
       "emptyState": {
         "title": "Posez-moi n'importe quelle question sur Terry"
       },
