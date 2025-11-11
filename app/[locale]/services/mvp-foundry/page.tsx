@@ -7,8 +7,8 @@ import { Button } from '@/core/components/ui/button';
 import { Card, CardContent } from '@/core/components/ui/card';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
-import FOMOCard from '@/features/marketing/fomo-card';
-import GuaranteeHeadline from '@/features/marketing/guarantee-headline';
+import FOMOCard from '@/features/marketing/components/fomo-card';
+import GuaranteeHeadline from '@/features/marketing/components/guarantee-headline';
 
 export default async function MVPFoundryPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -117,10 +117,18 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
             </Button>
             <CtaTriggerPhoneCallRequest variant={'outline'} />
           </div>
-          <p
-            className='text-foreground/60 text-sm'
-            dangerouslySetInnerHTML={{ __html: t.raw('cta.footer') }}
-          />
+          <p className='text-foreground/60 text-sm'>
+            {t.rich('cta.footer', {
+              link: (chunks: React.ReactNode) => (
+                <Link
+                  href='/services/care-and-hosting-plan'
+                  className='underline underline-offset-4'
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </p>
         </div>
       </div>
     </main>

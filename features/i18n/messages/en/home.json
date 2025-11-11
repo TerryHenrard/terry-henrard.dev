@@ -6,6 +6,7 @@
     },
     "disclaimer": "Don't take what AI tells you for granted. It can make mistakes. It's for demonstration purposes only.",
     "hero": {
+      "availableBadge": "Available Now",
       "title": {
         "prefix": "Ship",
         "highlight": "10x",

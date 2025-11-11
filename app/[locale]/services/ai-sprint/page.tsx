@@ -1,24 +1,15 @@
 import type { Route } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import {
-  Brain,
-  CheckCircle2,
-  Gauge,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Target,
-  Timer,
-} from 'lucide-react';
+import { CheckCircle2, Gauge, Rocket, Sparkles, Target, Timer } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
-import FOMOCard from '@/features/marketing/fomo-card';
-import GuaranteeHeadline from '@/features/marketing/guarantee-headline';
+import FOMOCard from '@/features/marketing/components/fomo-card';
+import GuaranteeHeadline from '@/features/marketing/components/guarantee-headline';
 
 export default async function AISprintPage() {
   const t = await getTranslations('aiSprint');
@@ -35,15 +26,21 @@ export default async function AISprintPage() {
                   {t('badge')}
                 </Badge>
 
-                <h1
-                  className='mb-4 text-4xl font-bold text-balance md:text-6xl'
-                  dangerouslySetInnerHTML={{ __html: t.raw('hero.title') }}
-                />
+                <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
+                  {t.rich('hero.title', {
+                    mark: (chunks: React.ReactNode) => (
+                      <span className='decoration-primary/50 underline underline-offset-4'>
+                        {chunks}
+                      </span>
+                    ),
+                  })}
+                </h1>
 
-                <p
-                  className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'
-                  dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }}
-                />
+                <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
+                  {t.rich('hero.description', {
+                    b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                  })}
+                </p>
 
                 <GuaranteeHeadline />
               </div>
@@ -93,11 +90,15 @@ export default async function AISprintPage() {
             <CardContent className='p-0'>
               <h2 className='mb-3 text-2xl font-bold'>{t('deliverables.title')}</h2>
               <ul className='text-foreground/80 space-y-2'>
-                <li dangerouslySetInnerHTML={{ __html: t.raw('deliverables.items.0') }} />
-                <li dangerouslySetInnerHTML={{ __html: t.raw('deliverables.items.1') }} />
-                <li dangerouslySetInnerHTML={{ __html: t.raw('deliverables.items.2') }} />
-                <li dangerouslySetInnerHTML={{ __html: t.raw('deliverables.items.3') }} />
-                <li dangerouslySetInnerHTML={{ __html: t.raw('deliverables.items.4') }} />
+                <li>{t('deliverables.items.0')}</li>
+                <li>{t('deliverables.items.1')}</li>
+                <li>{t('deliverables.items.2')}</li>
+                <li>{t('deliverables.items.3')}</li>
+                <li>
+                  {t.rich('deliverables.items.4', {
+                    b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                  })}
+                </li>
               </ul>
             </CardContent>
           </Card>
@@ -155,43 +156,40 @@ export default async function AISprintPage() {
               <h2 className='mb-4 text-2xl font-bold'>{t('metrics.title')}</h2>
               <div className='grid gap-4 md:grid-cols-2'>
                 <ul className='text-foreground/80 space-y-2'>
-                  <li dangerouslySetInnerHTML={{ __html: t.raw('metrics.items.0') }} />
-                  <li dangerouslySetInnerHTML={{ __html: t.raw('metrics.items.1') }} />
-                  <li dangerouslySetInnerHTML={{ __html: t.raw('metrics.items.2') }} />
+                  <li>
+                    {t.rich('metrics.items.0', {
+                      b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                    })}
+                  </li>
+                  <li>
+                    {t.rich('metrics.items.1', {
+                      b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                    })}
+                  </li>
+                  <li>
+                    {t.rich('metrics.items.2', {
+                      b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                    })}
+                  </li>
                 </ul>
                 <ul className='text-foreground/80 space-y-2'>
-                  <li dangerouslySetInnerHTML={{ __html: t.raw('metrics.items.3') }} />
-                  <li dangerouslySetInnerHTML={{ __html: t.raw('metrics.items.4') }} />
-                  <li dangerouslySetInnerHTML={{ __html: t.raw('metrics.items.5') }} />
+                  <li>
+                    {t.rich('metrics.items.3', {
+                      b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                    })}
+                  </li>
+                  <li>
+                    {t.rich('metrics.items.4', {
+                      b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                    })}
+                  </li>
+                  <li>
+                    {t.rich('metrics.items.5', {
+                      b: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                    })}
+                  </li>
                 </ul>
               </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Guarantee & Scarcity */}
-        <section className='mb-10 grid gap-6 md:grid-cols-2'>
-          <Card className='rounded-3xl p-8'>
-            <CardContent className='p-0'>
-              <div className='mb-3 flex items-center gap-2'>
-                <ShieldCheck className='text-primary h-5 w-5' />
-                <h2 className='text-2xl font-bold'>{t('guarantee.title')}</h2>
-              </div>
-              <p className='text-foreground/80'>{t('guarantee.description')}</p>
-            </CardContent>
-          </Card>
-
-          <Card className='rounded-3xl p-8'>
-            <CardContent className='p-0'>
-              <div className='mb-3 flex items-center gap-2'>
-                <Brain className='text-primary h-5 w-5' />
-                <h2 className='text-2xl font-bold'>{t('whoFor.title')}</h2>
-              </div>
-              <ul className='text-foreground/80 space-y-2'>
-                <li>{t('whoFor.items.0')}</li>
-                <li>{t('whoFor.items.1')}</li>
-                <li>{t('whoFor.items.2')}</li>
-              </ul>
             </CardContent>
           </Card>
         </section>
@@ -204,10 +202,18 @@ export default async function AISprintPage() {
             </Button>
             <CtaTriggerPhoneCallRequest variant={'outline'} />
           </div>
-          <p
-            className='text-foreground/60 text-sm'
-            dangerouslySetInnerHTML={{ __html: t.raw('cta.footer') }}
-          />
+          <p className='text-foreground/60 text-sm'>
+            {t.rich('cta.footer', {
+              link: (chunks: React.ReactNode) => (
+                <Link
+                  href='/services/care-and-hosting-plan'
+                  className='underline underline-offset-4'
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </p>
         </div>
       </div>
     </main>

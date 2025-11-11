@@ -2,91 +2,91 @@
   "aiSprint": {
     "badge": "AI Feature Sprint",
     "hero": {
-      "title": "Ship <span class=\"decoration-primary/50 underline underline-offset-4\">one real AI feature</span> in 14 days — measured, safe, and usable.",
-      "description": "We pick <strong>one KPI that matter</strong> (fewer steps, faster answers, higher self-serve), and we ship a production feature your users actually feel.",
-      "guarantee": "<strong><em>Guarantee:</em></strong> if we miss the agreed success metric or deadline because of me, I keep working at <strong class=\"underline\">no extra cost</strong>."
+      "title": "Ship <mark>a real AI feature</mark> in 14 days — measured, safe, and usable.",
+      "description": "We pick <b>one metric that matters</b> (fewer steps, faster answers, more self-service) and ship a production feature your users will actually feel.",
+      "guarantee": "<em>Guarantee:</em> if I miss the agreed metric or deadline due to me, I keep working at <u>no extra cost</u>."
     },
     "fomo": {
       "slots": "2 slots left this month",
-      "message": "Limited capacity to ensure quality delivery"
+      "message": "Limited capacity to ensure quality"
     },
     "outcomes": {
       "0": {
-        "title": "Reduce time-to-answer",
-        "description": "Cut handling time on a key flow (support, ops, docs) so people get what they need faster."
+        "title": "Cut response time",
+        "description": "Shorten a key flow (support, ops, docs) to get what's needed faster."
       },
       "1": {
-        "title": "Increase self-serve",
-        "description": "Deflect tickets with clear, cited answers or draft better replies in one click."
+        "title": "Increase self-service",
+        "description": "Deflect with clear cited answers or one-click drafts."
       },
       "2": {
-        "title": "Remove manual steps",
-        "description": "Automate a painful task (summaries, extraction, classification) that slows the team."
+        "title": "Remove manual tasks",
+        "description": "Automate a painful task (summarize, extract, classify) slowing the team down."
       }
     },
     "deliverables": {
       "title": "What you get in 14 days",
       "items": {
-        "0": "• One shipped AI feature (RAG chat, agentic workflow, or smart assist) tied to a KPI.",
-        "1": "• Safety rails: access control, limits, fallbacks, and human-in-the-loop when needed.",
-        "2": "• Usage dashboard & simple analytics to see adoption, latency and feedback.",
-        "3": "• Clear docs + a 30-min recorded handover so your team can extend confidently.",
-        "4": "• <strong>Bug Shield 30-day</strong>: critical fixes included post-launch."
+        "0": "• One shipped AI feature (RAG chat, agentic workflow, or smart assist) tied to a metric.",
+        "1": "• Guardrails: access control, rate limits, fallbacks, and human-in-the-loop if needed.",
+        "2": "• Usage dashboard and simple analytics for adoption, latency, and feedback.",
+        "3": "• Clear docs + 30-min recorded handover to extend with confidence.",
+        "4": "• <b>30-day Bug Shield</b>: critical fixes included post-launch."
       }
     },
     "notIncluded": {
-      "title": "What this is not",
+      "title": "What this isn't",
       "items": {
         "0": "• Not \"AI for AI's sake\". We refuse features users won't feel.",
-        "1": "• Not a 3-month research project. It's a focused build that ships.",
-        "2": "• Not custom LLM training. We use proven building blocks to go fast."
+        "1": "• Not a 3-month research project. Focused build that ships.",
+        "2": "• Not custom LLM training. We move fast with proven building blocks."
       }
     },
     "process": {
-      "title": "The 14-Day Plan",
+      "title": "The 14-day plan",
       "phases": {
         "0": {
           "title": "Days 1-2 · Scope",
-          "description": "Pick the KPI, user flow and \"definition of done\". Confirm data access & success threshold."
+          "description": "Pick the metric, flow, and definition of done. Confirm data access and success threshold."
         },
         "1": {
           "title": "Days 3-10 · Build",
-          "description": "Implement, demo mid-sprint, put guardrails in, and wire basic usage tracking."
+          "description": "Implement, mid-sprint demo, add guardrails, and wire up usage tracking."
         },
         "2": {
           "title": "Days 11-14 · Prove & Launch",
-          "description": "Polish UX, add fallbacks, run checks, ship to production, and review early metrics."
+          "description": "Polish UX, add fallbacks, verify, ship to production, and read first metrics."
         }
       },
-      "cta": "Reserve a sprint slot"
+      "cta": "Book a sprint slot"
     },
     "metrics": {
       "title": "How we measure success",
       "items": {
-        "0": "• <strong>Adoption</strong>: % of target users who used the feature this week.",
-        "1": "• <strong>Faster flow</strong>: median time saved vs. baseline task.",
-        "2": "• <strong>Quality</strong>: user \"was this helpful?\" score & flagged errors.",
-        "3": "• <strong>Cost control</strong>: per-usage cost stays within agreed ceiling.",
-        "4": "• <strong>Reliability</strong>: p95 response under target; no critical incidents.",
-        "5": "• <strong>Business impact</strong>: 1 simple metric (e.g., ticket deflection rate)."
+        "0": "• <b>Adoption</b>: % of target users who used the feature this week.",
+        "1": "• <b>Faster flow</b>: median time saved vs. baseline.",
+        "2": "• <b>Quality</b>: \"was this helpful?\" score and reported errors.",
+        "3": "• <b>Cost control</b>: cost per use under agreed ceiling.",
+        "4": "• <b>Reliability</b>: p95 under target; no critical incidents.",
+        "5": "• <b>Business impact</b>: 1 simple metric (e.g., ticket deflection rate)."
       }
     },
     "guarantee": {
       "title": "Simple guarantee",
-      "description": "If we miss the agreed KPI or deadline due to me, I'll keep working at no extra cost until we hit it. Clear, fair, and aligned."
+      "description": "If I miss the agreed metric or deadline due to me, I keep working at no extra cost until we hit it. Clear and aligned."
     },
     "whoFor": {
       "title": "Who this is for",
       "items": {
         "0": "• B2B SaaS teams with a clear flow to improve and a single decision-maker.",
-        "1": "• You can provide access to the data we need (or a sample export).",
-        "2": "• You're okay with a tight feedback loop and two short check-ins per week."
+        "1": "• Access to required data is possible (or sample export).",
+        "2": "• Agree to a tight feedback loop and two short check-ins per week."
       }
     },
     "cta": {
-      "primary": "Start with the 1 week AI Audit",
-      "secondary": "Book a quick call",
-      "footer": "After launch, keep momentum with <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">the Care &amp; Hosting Plan</Link>."
+      "primary": "Start with the 1-week AI Audit",
+      "secondary": "Book a call",
+      "footer": "After launch, keep momentum with <link>the Care & Hosting Plan</link>."
     }
   }
 }

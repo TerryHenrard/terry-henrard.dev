@@ -2,9 +2,9 @@
   "aiSprint": {
     "badge": "Sprint Fonctionnalité IA",
     "hero": {
-      "title": "Livrez <span class=\"decoration-primary/50 underline underline-offset-4\">une vraie fonctionnalité IA</span> en 14 jours — mesurée, sûre et utilisable.",
-      "description": "Nous choisissons <strong>un KPI qui compte</strong> (moins d'étapes, réponses plus rapides, plus d'autonomie), et nous livrons une fonctionnalité de production que vos utilisateurs ressentent réellement.",
-      "guarantee": "<strong><em>Garantie :</em></strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <strong class=\"underline\">sans frais supplémentaires</strong>."
+      "title": "Livrez <mark>une vraie fonctionnalité IA</mark> en 14 jours — mesurée, sûre et utilisable.",
+      "description": "Nous choisissons <b>un KPI qui compte</b> (moins d'étapes, réponses plus rapides, plus d'autonomie), et nous livrons une fonctionnalité de production que vos utilisateurs ressentent réellement.",
+      "guarantee": "<em>Garantie :</em> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <u>sans frais supplémentaires</u>."
     },
     "fomo": {
       "slots": "2 créneaux restants ce mois-ci",
@@ -31,7 +31,7 @@
         "1": "• Rails de sécurité : contrôle d'accès, limites, solutions de repli, et humain dans la boucle si nécessaire.",
         "2": "• Tableau de bord d'utilisation & analyses simples pour voir l'adoption, la latence et les retours.",
         "3": "• Documentation claire + une passation enregistrée de 30 min pour que votre équipe puisse étendre en toute confiance.",
-        "4": "• <strong>Bouclier Bug 30 jours</strong> : corrections critiques incluses après le lancement."
+        "4": "• <b>Bouclier Bug 30 jours</b> : corrections critiques incluses après le lancement."
       }
     },
     "notIncluded": {
@@ -63,12 +63,12 @@
     "metrics": {
       "title": "Comment nous mesurons le succès",
       "items": {
-        "0": "• <strong>Adoption</strong> : % d'utilisateurs cibles qui ont utilisé la fonctionnalité cette semaine.",
-        "1": "• <strong>Flux plus rapide</strong> : temps médian économisé par rapport à la tâche de référence.",
-        "2": "• <strong>Qualité</strong> : score utilisateur \"était-ce utile ?\" & erreurs signalées.",
-        "3": "• <strong>Contrôle des coûts</strong> : le coût par utilisation reste dans le plafond convenu.",
-        "4": "• <strong>Fiabilité</strong> : réponse p95 sous la cible ; aucun incident critique.",
-        "5": "• <strong>Impact business</strong> : 1 métrique simple (par ex., taux de déviation des tickets)."
+        "0": "• <b>Adoption</b> : % d'utilisateurs cibles qui ont utilisé la fonctionnalité cette semaine.",
+        "1": "• <b>Flux plus rapide</b> : temps médian économisé par rapport à la tâche de référence.",
+        "2": "• <b>Qualité</b> : score utilisateur \"était-ce utile ?\" & erreurs signalées.",
+        "3": "• <b>Contrôle des coûts</b> : le coût par utilisation reste dans le plafond convenu.",
+        "4": "• <b>Fiabilité</b> : réponse p95 sous la cible ; aucun incident critique.",
+        "5": "• <b>Impact business</b> : 1 métrique simple (par ex., taux de déviation des tickets)."
       }
     },
     "guarantee": {
@@ -86,7 +86,7 @@
     "cta": {
       "primary": "Commencez par l'Audit IA de 1 semaine",
       "secondary": "Réserver un appel rapide",
-      "footer": "Après le lancement, maintenez l'élan avec <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">le Plan de Maintenance &amp; Hébergement</Link>."
+      "footer": "Après le lancement, maintenez l'élan avec <link>le Plan de Maintenance & Hébergement</link>."
     }
   }
 }

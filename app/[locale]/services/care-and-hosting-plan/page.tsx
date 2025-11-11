@@ -38,10 +38,11 @@ export default async function CareAndHostingPlanPage({
                 <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
                   {t('hero.title')}
                 </h1>
-                <p
-                  className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'
-                  dangerouslySetInnerHTML={{ __html: t.raw('hero.description') }}
-                />
+                <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
+                  {t.rich('hero.description', {
+                    strong: (chunks: React.ReactNode) => <strong>{chunks}</strong>,
+                  })}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -49,10 +50,11 @@ export default async function CareAndHostingPlanPage({
 
         {/* Trust row — Backed by AWS & Azure */}
         <div className='bg-background/60 mb-6 inline-flex items-center gap-4 rounded-2xl border px-4 py-2 backdrop-blur'>
-          <span
-            className='text-foreground/70 text-xs font-medium'
-            dangerouslySetInnerHTML={{ __html: t.raw('trust.text') }}
-          />
+          <span className='text-foreground/70 text-xs font-medium'>
+            {t.rich('trust.text', {
+              strong: (chunks: React.ReactNode) => <span className='font-semibold'>{chunks}</span>,
+            })}
+          </span>
           <span className='bg-foreground/10 h-4 w-px' />
           <div className='flex items-center gap-3'>
             <Image
@@ -86,12 +88,9 @@ export default async function CareAndHostingPlanPage({
                   <item.icon className='text-primary h-5 w-5' />
                 </div>
                 <h4 className='mb-1 font-semibold'>{t(`outcomes.${item.key}.title` as any)}</h4>
-                <p
-                  className='text-foreground/70 text-sm'
-                  dangerouslySetInnerHTML={{
-                    __html: t.raw(`outcomes.${item.key}.description` as any),
-                  }}
-                />
+                <p className='text-foreground/70 text-sm'>
+                  {t(`outcomes.${item.key}.description` as any)}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -105,11 +104,8 @@ export default async function CareAndHostingPlanPage({
               <h3 className='mb-2 text-xl font-bold'>{t('plans.lite.title')}</h3>
               <p className='text-foreground/70 mb-3 text-sm'>{t('plans.lite.bestFor')}</p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
-                {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                  <li
-                    key={i}
-                    dangerouslySetInnerHTML={{ __html: t.raw(`plans.lite.items.${i}` as any) }}
-                  />
+                {[0, 1, 2, 3].map((i) => (
+                  <li key={i}>{t(`plans.lite.items.${i}` as any)}</li>
                 ))}
               </ul>
             </CardContent>
@@ -127,10 +123,7 @@ export default async function CareAndHostingPlanPage({
               <p className='text-foreground/70 mb-3 text-sm'>{t('plans.pro.bestFor')}</p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
                 {[0, 1, 2, 3, 4].map((i) => (
-                  <li
-                    key={i}
-                    dangerouslySetInnerHTML={{ __html: t.raw(`plans.pro.items.${i}` as any) }}
-                  />
+                  <li key={i}>{t(`plans.pro.items.${i}` as any)}</li>
                 ))}
               </ul>
             </CardContent>
@@ -148,10 +141,7 @@ export default async function CareAndHostingPlanPage({
               <p className='text-foreground/70 mb-3 text-sm'>{t('plans.venture.bestFor')}</p>
               <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
                 {[0, 1, 2, 3, 4].map((i) => (
-                  <li
-                    key={i}
-                    dangerouslySetInnerHTML={{ __html: t.raw(`plans.venture.items.${i}` as any) }}
-                  />
+                  <li key={i}>{t(`plans.venture.items.${i}` as any)}</li>
                 ))}
               </ul>
             </CardContent>
@@ -171,10 +161,7 @@ export default async function CareAndHostingPlanPage({
           </div>
           <ul className='text-foreground/80 list-inside list-disc space-y-2 text-sm'>
             {[0, 1, 2].map((i) => (
-              <li
-                key={i}
-                dangerouslySetInnerHTML={{ __html: t.raw(`guarantees.items.${i}` as any) }}
-              />
+              <li key={i}>{t(`guarantees.items.${i}` as any)}</li>
             ))}
           </ul>
         </div>
@@ -187,10 +174,15 @@ export default async function CareAndHostingPlanPage({
             </Button>
             <CtaTriggerPhoneCallRequest variant={'outline'} />
           </div>
-          <p
-            className='text-foreground/60 text-sm'
-            dangerouslySetInnerHTML={{ __html: t.raw('cta.footer') }}
-          />
+          <p className='text-foreground/60 text-sm'>
+            {t.rich('cta.footer', {
+              link: (chunks: React.ReactNode) => (
+                <Link href='/services/ai-sprint' className='underline underline-offset-4'>
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </p>
         </div>
       </div>
     </main>

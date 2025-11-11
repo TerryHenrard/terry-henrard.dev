@@ -7,6 +7,7 @@ import { Button } from '@/core/components/ui/button';
 import { TextEffect } from '@/core/components/ui/text-effect';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
+import CurrentlyAvailablePing from '@/features/marketing/components/currently-available-ping';
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -22,9 +23,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         <div className=''>
           <div className='relative mx-auto flex max-w-6xl flex-col px-6 lg:flex-row lg:items-center'>
             <div className='mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left'>
+              <motion.div
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, filter: 'blur(0px)' }}
+                transition={{ delay: 1.5, duration: 1, ease: 'easeOut' }}
+              >
+                <CurrentlyAvailablePing
+                  className='mb-6'
+                  variant={'secondary'}
+                  text={t('hero.availableBadge')}
+                />
+              </motion.div>
+
               <h1>
                 <TextEffect
-                  as='text'
+                  as='span'
                   preset='fade-in-blur'
                   speedReveal={1.1}
                   speedSegment={0.3}

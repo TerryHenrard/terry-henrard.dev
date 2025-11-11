@@ -7,7 +7,7 @@ import { Button } from '@/core/components/ui/button';
 import { firstToUpper } from '@/core/lib/utils';
 import { Link } from '@/features/i18n/lib/navigation';
 
-import CtaTriggerPhoneCallRequest from '../ai/components/cta-trigger-phone-call-request';
+import CtaTriggerPhoneCallRequest from '../../ai/components/cta-trigger-phone-call-request';
 
 interface FOMOCardProps {
   variant: 'mvp-foundry' | 'ai-sprint';

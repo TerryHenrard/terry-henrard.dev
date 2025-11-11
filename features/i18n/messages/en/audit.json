@@ -2,72 +2,53 @@
   "audit": {
     "badge": "Audits",
     "hero": {
-      "title": "Make your next sprint a winning bet",
-      "description": "Two short, research-led engagements that remove guesswork and de-risk your roadmap. You leave with decision-ready assets you can use — even if we don't work together.",
-      "guarantee": "<strong><em>Guarantee:</em></strong> if we miss the agreed success metric or deadline because of me, I keep working at <strong class=\"underline\">no extra cost</strong>."
+      "title": "Make the next sprint a safe bet",
+      "description": "Two short audits. Clear plan. Lower risk. Assets you can use right away.",
+      "guarantee": "<em>Guarantee:</em> if I miss the agreed metric or deadline due to me, I keep working at <u>no extra cost</u>."
     },
     "offers": {
       "mvpReadiness": {
         "title": "MVP Readiness Plan",
         "duration": "2-3 days",
-        "description": "Align stakeholders, lock the scope, and know exactly what \"good\" looks like before writing a line of code.",
+        "description": "Align, lock scope, define \"done\".",
         "items": {
-          "0": "<strong>Outcome map:</strong> users, jobs-to-be-done & success metrics",
-          "1": "<strong>Scope line:</strong> <span class=\"font-medium\">Must / Should / Later</span> (zero-surprise backlog)",
-          "2": "<strong>Architecture & decision record:</strong> (so choices won't get re-litigated)",
-          "3": "<strong>Risk & dependency grid:</strong> with owner + mitigation",
-          "4": "<strong>Launch criteria & demo script:</strong> for first 10 users"
+          "0": "<b>Outcome map</b> (users, JTBD, metrics)",
+          "1": "<b>Scope line</b> (Must / Should / Later)",
+          "2": "<b>Launch criteria</b> + demo script"
         },
-        "cta": {
-          "primary": "Move to MVP",
-          "secondary": "Book a quick call"
-        }
+        "cta": { "primary": "Move to MVP", "secondary": "Book a call" }
       },
       "aiReadiness": {
         "title": "AI Readiness Audit",
-        "duration": "~1 week",
-        "description": "Identify one AI feature worth shipping, prove feasibility, and set guardrails so it's safe, useful, and cost-controlled in production.",
+        "duration": "≈ 1 week",
+        "description": "Pick one AI feature. Prove it. Ship safely.",
         "items": {
-          "0": "<strong>case studies</strong> to illustrate potential impact",
-          "1": "<strong>Use-case shortlist:</strong> with effort/impact & \"one-feature\" pick",
-          "2": "<strong>Retrieval/model options:</strong> with safety rules & fallbacks",
-          "3": "<strong>Success metric + eval plan:</strong> (what we'll measure to call it a win)",
-          "4": "<strong>2-hour developer workshop:</strong> to transfer patterns"
+          "0": "<b>Use-case shortlist</b> + one pick",
+          "1": "<b>Model/RAG options</b> with guardrails",
+          "2": "<b>Success metric</b> + eval plan"
         },
-        "cta": {
-          "primary": "Run an AI Sprint",
-          "secondary": "Email me"
-        }
+        "cta": { "primary": "Run an AI Sprint", "secondary": "Email me" }
       }
     },
     "howItWorks": {
-      "0": {
-        "title": "Fast & focused",
-        "description": "Short timeboxes, clear agenda, concrete deliverables. Cut 2-4 weeks of back-and-forth."
-      },
-      "1": {
-        "title": "Use-anywhere assets",
-        "description": "Docs you can hand to your team, attach to investor decks, or turn into tickets tomorrow."
-      },
-      "2": {
-        "title": "Risk first",
-        "description": "Surface blockers early — data access, compliance, staffing — so delivery stays predictable."
-      }
+      "0": { "title": "Fast", "description": "Timeboxed. Clear agenda." },
+      "1": { "title": "Tangible", "description": "Docs you can ship with." },
+      "2": { "title": "Risk-first", "description": "Surface blockers early." }
     },
     "guarantees": {
       "riskReversal": {
         "title": "Risk-reversal",
-        "description": "If the agreed audit deliverables aren't immediately actionable, I keep working at no extra cost until they are. Clear outcomes over fine print."
+        "description": "Not actionable? I keep working at no extra cost."
       },
       "limitedSlots": {
         "title": "Limited slots",
-        "description": "I run a small number of audits per week to keep quality high. If this week is full, we'll schedule the next available slot."
+        "description": "A few audits per week for quality."
       }
     },
     "cta": {
-      "primary": "Looking for an mvp?",
-      "secondary": "Book a quick call",
-      "footer": "After launch, keep momentum with <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">the Care &amp; Hosting Plan</Link>."
+      "primary": "Looking for an MVP?",
+      "secondary": "Book a call",
+      "footer": "After launch, keep momentum with <link>the Care & Hosting Plan</link>."
     }
   }
 }
