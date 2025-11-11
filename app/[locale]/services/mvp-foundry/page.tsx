@@ -1,3 +1,4 @@
+import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { BarChart3, CheckCircle2, Hammer, Rocket, ShieldCheck, Sparkles } from 'lucide-react';
@@ -10,10 +11,12 @@ import { Link } from '@/features/i18n/lib/navigation';
 import FOMOCard from '@/features/marketing/components/fomo-card';
 import GuaranteeHeadline from '@/features/marketing/components/guarantee-headline';
 
-export default async function MVPFoundryPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function MVPFoundryPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
-  setRequestLocale(locale as 'en' | 'fr');
+  setRequestLocale(locale);
+
   const t = await getTranslations('mvpFoundry');
+
   return (
     <main className='relative container mx-auto min-h-[calc(100vh-4rem)] overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl px-4 py-8'>

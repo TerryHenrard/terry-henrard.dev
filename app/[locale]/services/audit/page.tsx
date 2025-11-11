@@ -1,3 +1,4 @@
+import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { CalendarClock, ClipboardCheck, FileSearch, Mail, Shield, Sparkles } from 'lucide-react';
@@ -7,14 +8,16 @@ import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
+import GuaranteeHeadline from '@/features/marketing/components/guarantee-headline';
 
 export default async function AuditServicesPage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale as 'en' | 'fr');
+  setRequestLocale(locale);
+
   const t = await getTranslations('audit');
 
   return (
@@ -32,12 +35,7 @@ export default async function AuditServicesPage({
                 {t('hero.title')}
               </h1>
               <p className='text-foreground/70 text-lg md:text-xl'>{t('hero.description')}</p>
-              <p className='text-foreground/60 mt-3 font-medium'>
-                {t.rich('hero.guarantee', {
-                  em: (chunks) => <em>{chunks}</em>,
-                  u: (chunks) => <span className='underline'>{chunks}</span>,
-                })}
-              </p>
+              <GuaranteeHeadline />
             </CardContent>
           </Card>
         </div>
@@ -149,21 +147,6 @@ export default async function AuditServicesPage({
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className='mb-6 grid gap-6 md:grid-cols-2'>
-          <Card className='rounded-3xl p-7'>
-            <CardContent>
-              <h3 className='mb-1 text-lg font-semibold'>{t('guarantees.riskReversal.title')}</h3>
-              <p className='text-foreground/70'>{t('guarantees.riskReversal.description')}</p>
-            </CardContent>
-          </Card>
-          <Card className='rounded-3xl p-7'>
-            <CardContent>
-              <h3 className='mb-1 text-lg font-semibold'>{t('guarantees.limitedSlots.title')}</h3>
-              <p className='text-foreground/70'>{t('guarantees.limitedSlots.description')}</p>
-            </CardContent>
-          </Card>
         </div>
 
         {/* CTA */}

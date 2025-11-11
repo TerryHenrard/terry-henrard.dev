@@ -9,46 +9,51 @@
     "offers": {
       "mvpReadiness": {
         "title": "Plan de préparation MVP",
-        "duration": "2-3 jours",
-        "description": "Aligner, verrouiller le scope, définir le « done ».",
+        "duration": "3 jours",
+        "description": "Savoir quoi livrer en 30-60 jours.",
         "items": {
-          "0": "<b>Carte des résultats</b> (utilisateurs, JTBD, métriques)",
-          "1": "<b>Ligne de périmètre</b> (Must / Should / Later)",
-          "2": "<b>Critères de lancement</b> + script de démo"
+          "0": "<b>Top 10 actions</b> classées effort/impact",
+          "1": "<b>Feuille de route 30-60 jours</b> (séquencée, réaliste)",
+          "2": "<b>Backlog importable</b> (Must / Should / Later)"
         },
-        "cta": { "primary": "Passer au MVP", "secondary": "Réserver un appel" }
+        "cta": {
+          "primary": "Passer au MVP",
+          "secondary": "Réserver un appel"
+        }
       },
       "aiReadiness": {
-        "title": "Audit de préparation IA",
-        "duration": "≈ 1 semaine",
-        "description": "Choisir une feature IA. La prouver. Livrer en sécurité.",
+        "title": "Plan de préparation à l'IA",
+        "duration": "5 jours",
+        "description": "Choisir une feature IA utile. La prouver. La livrer en sécurité.",
         "items": {
-          "0": "<b>Shortlist de cas d'usage</b> + un choix",
-          "1": "<b>Options modèle/RAG</b> avec garde-fous",
-          "2": "<b>Métrique de succès</b> + plan d'évaluation"
+          "0": "<b>Shortlist cas d'usage</b> alignés métier + 1 choix prioritaire",
+          "1": "<b>Architecture cible</b> + plan de test et garde-fous",
+          "2": "<b>KPI de succès</b> + <b>mini-prototype</b> démontrable"
         },
-        "cta": { "primary": "Lancer un sprint IA", "secondary": "M'écrire" }
+        "cta": {
+          "primary": "Lancer un sprint IA",
+          "secondary": "M'écrire"
+        }
       }
     },
     "howItWorks": {
-      "0": { "title": "Rapide", "description": "Timeboxé. Agenda clair." },
-      "1": { "title": "Concret", "description": "Docs prêtes à livrer." },
-      "2": { "title": "Risque d'abord", "description": "Bloqueurs révélés tôt." }
-    },
-    "guarantees": {
-      "riskReversal": {
-        "title": "Garantie anti-risque",
-        "description": "Pas actionnable ? Je continue sans frais."
+      "0": {
+        "title": "Rapide",
+        "description": "Timeboxé. Agenda clair."
       },
-      "limitedSlots": {
-        "title": "Places limitées",
-        "description": "Quelques audits par semaine pour garder la qualité."
+      "1": {
+        "title": "Concret",
+        "description": "Docs prêtes à exécuter."
+      },
+      "2": {
+        "title": "Risque d'abord",
+        "description": "Bloqueurs révélés tôt."
       }
     },
     "cta": {
       "primary": "Vous cherchez un MVP ?",
       "secondary": "Réserver un appel",
-      "footer": "Après le lancement, gardez le rythme avec <link>le plan Care & Hosting</link>."
+      "footer": "Après le lancement, gardez le rythme avec <link>le plan de maitnenance et d'hébergement</link>."
     }
   }
 }

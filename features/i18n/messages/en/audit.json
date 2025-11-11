@@ -2,53 +2,58 @@
   "audit": {
     "badge": "Audits",
     "hero": {
-      "title": "Make the next sprint a safe bet",
-      "description": "Two short audits. Clear plan. Lower risk. Assets you can use right away.",
-      "guarantee": "<em>Guarantee:</em> if I miss the agreed metric or deadline due to me, I keep working at <u>no extra cost</u>."
+      "title": "Make your next sprint a safe bet",
+      "description": "Two short audits. Clear plan. Less risk. Deliverables you can use immediately.",
+      "guarantee": "<em>Guarantee:</em> if I miss the agreed objective or deadline due to me, I keep working at <u>no extra cost</u>."
     },
     "offers": {
       "mvpReadiness": {
         "title": "MVP Readiness Plan",
-        "duration": "2-3 days",
-        "description": "Align, lock scope, define \"done\".",
+        "duration": "3 days",
+        "description": "Know exactly what to ship in 30–60 days.",
         "items": {
-          "0": "<b>Outcome map</b> (users, JTBD, metrics)",
-          "1": "<b>Scope line</b> (Must / Should / Later)",
-          "2": "<b>Launch criteria</b> + demo script"
+          "0": "<b>Top 10 actions</b> ranked by effort/impact",
+          "1": "<b>30–60 day roadmap</b> (sequenced, realistic)",
+          "2": "<b>Importable backlog</b> (Must / Should / Later)"
         },
-        "cta": { "primary": "Move to MVP", "secondary": "Book a call" }
+        "cta": {
+          "primary": "Move to MVP",
+          "secondary": "Book a call"
+        }
       },
       "aiReadiness": {
-        "title": "AI Readiness Audit",
-        "duration": "≈ 1 week",
-        "description": "Pick one AI feature. Prove it. Ship safely.",
+        "title": "AI Readiness Plan",
+        "duration": "5 days",
+        "description": "Pick a useful AI feature. Prove it. Ship it safely.",
         "items": {
-          "0": "<b>Use-case shortlist</b> + one pick",
-          "1": "<b>Model/RAG options</b> with guardrails",
-          "2": "<b>Success metric</b> + eval plan"
+          "0": "<b>Shortlist of use cases</b> aligned to the business + 1 priority choice",
+          "1": "<b>Target architecture</b> + test plan and guardrails",
+          "2": "<b>Success KPI</b> + <b>demonstrable mini-prototype</b>"
         },
-        "cta": { "primary": "Run an AI Sprint", "secondary": "Email me" }
+        "cta": {
+          "primary": "Start an AI sprint",
+          "secondary": "Message me"
+        }
       }
     },
     "howItWorks": {
-      "0": { "title": "Fast", "description": "Timeboxed. Clear agenda." },
-      "1": { "title": "Tangible", "description": "Docs you can ship with." },
-      "2": { "title": "Risk-first", "description": "Surface blockers early." }
-    },
-    "guarantees": {
-      "riskReversal": {
-        "title": "Risk-reversal",
-        "description": "Not actionable? I keep working at no extra cost."
+      "0": {
+        "title": "Fast",
+        "description": "Timeboxed. Clear agenda."
       },
-      "limitedSlots": {
-        "title": "Limited slots",
-        "description": "A few audits per week for quality."
+      "1": {
+        "title": "Actionable",
+        "description": "Docs ready to execute."
+      },
+      "2": {
+        "title": "Risk first",
+        "description": "Blockers surfaced early."
       }
     },
     "cta": {
       "primary": "Looking for an MVP?",
       "secondary": "Book a call",
-      "footer": "After launch, keep momentum with <link>the Care & Hosting Plan</link>."
+      "footer": "After launch, keep the pace with <link>the Care & Hosting plan</link>."
     }
   }
 }

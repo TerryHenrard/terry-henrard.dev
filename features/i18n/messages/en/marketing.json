@@ -1,6 +1,6 @@
 {
   "fomoCard": {
-    "limitedSpots": "Limited spots",
+    "limitedSpots": "1 spot left",
     "message": {
       "intro": "I take",
       "mvpFoundry": "max 2 MVP builds/month.",
@@ -15,6 +15,6 @@
     }
   },
   "guarantee": {
-    "text": "<strong>Guarantee:</strong> if we miss the agreed success metric or deadline because of me, I keep working at <span class=\"font-bold underline\">no extra cost</span> until it's met. Bug-fix safety net after launch included."
+    "text": "<strong>Guarantee:</strong> if I miss the agreed success metric or deadline due to me, I keep working at <span>no extra cost</span> until it's met. Bug-fix safety net after launch included."
   }
 }

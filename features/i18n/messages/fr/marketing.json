@@ -1,6 +1,6 @@
 {
   "fomoCard": {
-    "limitedSpots": "Places limitées",
+    "limitedSpots": "1 place restante",
     "message": {
       "intro": "Je prends",
       "mvpFoundry": "max 2 constructions MVP/mois.",
@@ -15,6 +15,6 @@
     }
   },
   "guarantee": {
-    "text": "<strong>Garantie :</strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <span class=\"font-bold underline\">sans frais supplémentaires</span> jusqu'à ce que ce soit atteint. Filet de sécurité pour les corrections de bugs après le lancement inclus."
+    "text": "<strong>Garantie :</strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <span>sans frais supplémentaires</span> jusqu'à ce que ce qu'elle soit atteinte. Filet de sécurité pour les corrections de bugs après le lancement inclus."
   }
 }
