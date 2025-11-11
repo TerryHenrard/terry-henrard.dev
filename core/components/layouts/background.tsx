@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { AnimatedBackground } from '@/features/marketing/animated-background';
+
 interface BackgroundProps {
   imageSrc?: string;
   blurClass?: 'backdrop-blur-xl' | 'backdrop-blur-2xl' | 'backdrop-blur-3xl';
@@ -22,6 +24,7 @@ export default function Background({
         />
       </div>
       <div className={`absolute inset-0 ${blurClass} bg-background/60`} />
+      <AnimatedBackground />
     </div>
   );
 }

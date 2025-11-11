@@ -40,6 +40,8 @@ export default function Chat() {
 
   const externalPrompt = useFloatingChatStore((state) => state.prompt);
   const clearExternalPrompt = useFloatingChatStore((state) => state.setPrompt);
+  const shouldShowIntro = useFloatingChatStore((state) => state.shouldShowIntro);
+  const setShouldShowIntro = useFloatingChatStore((state) => state.setShouldShowIntro);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -51,16 +53,17 @@ export default function Chat() {
     t('suggestions.5'),
   ];
 
-  const { messages, sendMessage, status, addToolResult, error, stop } = useChat<ChatMessage>({
-    transport: new DefaultChatTransport({ api: '/api/ai/chat' }),
-    sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
-    async onToolCall({ toolCall }) {
-      if (toolCall.dynamic) return;
-      if (toolCall.toolName === 'displayPhoneCallRequestForm') {
-        setIsInputDisabled(true);
-      }
-    },
-  });
+  const { messages, sendMessage, status, addToolResult, error, stop, setMessages } =
+    useChat<ChatMessage>({
+      transport: new DefaultChatTransport({ api: '/api/ai/chat' }),
+      sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
+      async onToolCall({ toolCall }) {
+        if (toolCall.dynamic) return;
+        if (toolCall.toolName === 'displayPhoneCallRequestForm') {
+          setIsInputDisabled(true);
+        }
+      },
+    });
 
   const firePrompt = (prompt: string) => {
     sendMessage({ text: prompt });
@@ -132,6 +135,26 @@ export default function Chat() {
       clearExternalPrompt(null);
     }
   }, [externalPrompt, clearExternalPrompt, sendMessage]);
+
+  // Show intro message when chat is opened automatically
+  useEffect(() => {
+    if (shouldShowIntro && messages.length === 0) {
+      // Add assistant message directly to messages array
+      setMessages([
+        {
+          id: 'intro-message',
+          role: 'assistant',
+          parts: [
+            {
+              type: 'text',
+              text: t('introMessage'),
+            },
+          ],
+        },
+      ]);
+      setShouldShowIntro(false);
+    }
+  }, [shouldShowIntro, messages.length, setMessages, t, setShouldShowIntro]);
 
   return (
     <div className='flex h-full flex-col justify-between'>

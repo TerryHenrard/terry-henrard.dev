@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/core/components/ui/card';
 export default function ExperiencePage() {
   const t = useTranslations('experience.timeline');
 
-  const timelineItems = [0, 1, 2, 3, 4, 5].map((idx) => ({
+  const timelineItems = [0, 1, 2, 3, 4].map((idx) => ({
     year: t(`${idx}.year` as any),
     title: t(`${idx}.title` as any),
     company: t(`${idx}.company` as any),

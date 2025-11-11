@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { MessageSquare, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -12,6 +14,22 @@ import Chat from './chat';
 export default function FloatingChatbox() {
   const isOpen = useFloatingChatStore((state) => state.isOpen);
   const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
+  const hasShownIntro = useFloatingChatStore((state) => state.hasShownIntro);
+  const setHasShownIntro = useFloatingChatStore((state) => state.setHasShownIntro);
+  const setShouldShowIntro = useFloatingChatStore((state) => state.setShouldShowIntro);
+
+  useEffect(() => {
+    // Only show intro once per session
+    if (hasShownIntro) return;
+
+    const timer = setTimeout(() => {
+      setShouldShowIntro(!isOpen);
+      setIsOpen(true);
+      setHasShownIntro(true);
+    }, 10000); // 10 seconds
+
+    return () => clearTimeout(timer);
+  }, [hasShownIntro, setIsOpen, setShouldShowIntro, setHasShownIntro, isOpen]);
 
   return (
     <>
