@@ -1,72 +1,107 @@
 {
   "mvpFoundry": {
-    "badge": "MVP Foundry",
+    "badge": "MVP Start",
     "hero": {
-      "title": "Launch a real MVP in 4 weeks",
-      "description": "Built to win first users and trust. Tight scope, weekly proof, clean handover."
+      "title": "I transform your idea into a concrete, usable, and sellable product",
+      "subtitle": "In 4 weeks, not months",
+      "description": "Get a real first version that your users can test and pay for."
     },
-    "outcomes": {
-      "0": {
-        "title": "A demo that converts",
-        "description": "Five minutes to clear value for sales and investors."
-      },
-      "1": {
-        "title": "Quality you can feel",
-        "description": "Fast, stable, usable. No show-stoppers in week one."
-      },
-      "2": {
-        "title": "Risk-reversal",
-        "description": "Miss the agreed metric or deadline? I keep working free."
-      }
-    },
-    "plan": {
-      "title": "The MVP Plan",
-      "duration": "4-6 weeks",
-      "description": "Everything to ship, onboard first users, and earn the next yes.",
-      "sections": {
+    "whatIsIncluded": {
+      "title": "What's included",
+      "items": {
         "0": {
-          "title": "What ships day one",
-          "items": {
-            "0": "Sign-up/sign-in + #1 journey end-to-end",
-            "1": "Clear home that guides the next step",
-            "2": "Fast on mobile and accessible"
-          }
+          "title": "Express workshop",
+          "description": "½ day to scope your product and priorities"
         },
         "1": {
-          "title": "Momentum built-in",
-          "items": {
-            "0": "See clicks and friction points",
-            "1": "Welcome and password emails that land",
-            "2": "Edit key copy/media without a dev"
-          }
+          "title": "Rapid design",
+          "description": "Sign-up page, main journey, minimal back-office"
         },
         "2": {
-          "title": "Handover & safety net",
-          "items": {
-            "0": "One-page product map + simple runbook",
-            "1": "Recorded 1-hour handover",
-            "2": "Bug-fix safety net: 30 days (extendable)"
-          }
+          "title": "Essential integrations",
+          "description": "Your data and tools (payment, email, CRM…)"
+        },
+        "3": {
+          "title": "User testing",
+          "description": "Real tests and adjustments based on feedback"
+        },
+        "4": {
+          "title": "Tracking dashboard",
+          "description": "Feedback, conversions, cost per user"
         }
       }
     },
-    "howWeWork": {
-      "0": {
-        "title": "Plan → Build → Launch",
-        "description": "2-3 days lock outcomes & scope → 3-4 weeks build → 3-5 days polish and ship."
-      },
-      "1": {
-        "title": "Zero-surprise updates",
-        "description": "Weekly 5-minute video, checklist, and next steps."
-      },
-      "2": {
-        "title": "Definition of Done",
-        "description": "First users invited, demo rehearsed, rollback ready."
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "A functional product, online, ready to be shown, tested, or sold.",
+      "summary": "You go from idea to market, without wasting time on unnecessary features."
+    },
+    "guarantees": {
+      "title": "My guarantees",
+      "items": {
+        "0": {
+          "title": "Fast-Track 14 days",
+          "description": "A functional 1st version delivered in 4 weeks. If missed, I keep working at no extra charge until full implementation."
+        },
+        "1": {
+          "title": "Measurable results",
+          "description": "Each MVP is tied to clear metrics (sign-ups, sales, feedback…). If missed, I continue at no extra charge."
+        },
+        "2": {
+          "title": "Zero jargon",
+          "description": "Everything is explained in plain language, without unnecessary technicality. If you don't understand the deliverable: free follow-up session."
+        },
+        "3": {
+          "title": "Guaranteed confidentiality",
+          "description": "Your data stays on your accounts, your servers, your models."
+        },
+        "4": {
+          "title": "Bug Killer",
+          "description": "No critical bugs in production within 30 days. If any, free correction."
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "0": {
+          "question": "What does the service consist of, concretely?",
+          "answer": "I design, develop, and deliver the real first version of your digital product — simple, clear, and testable by your users."
+        },
+        "1": {
+          "question": "What's the difference from a \"mockup\" or \"prototype\"?",
+          "answer": "A mockup doesn't sell anything. An MVP works, measures, and helps you learn fast before investing more."
+        },
+        "2": {
+          "question": "How long does it take?",
+          "answer": "4 weeks."
+        },
+        "3": {
+          "question": "Do I need to have a precise idea already?",
+          "answer": "No. The scoping workshop is precisely for clarifying the need and priorities."
+        },
+        "4": {
+          "question": "Can we combine with your maintenance plan?",
+          "answer": "Yes, MVP Start integrates perfectly with my Care & Hosting Plan."
+        }
+      }
+    },
+    "glossary": {
+      "title": "Glossary",
+      "items": {
+        "0": {
+          "term": "MVP (Minimum Viable Product)",
+          "definition": "First usable version of a product, focused on core features, designed to quickly validate the idea with real users and gather feedback."
+        },
+        "1": {
+          "term": "User Testing",
+          "definition": "Process of evaluating a product by testing it with real users to identify usability issues and gather insights before full launch."
+        }
       }
     },
     "cta": {
-      "primary": "Start with the 2-3 day MVP Plan",
-      "secondary": "Book a quick call",
+      "primary": "Start my MVP",
+      "secondary": "Book a call",
       "footer": "After launch, keep momentum with <link>the Care & Hosting Plan</link>."
     }
   }

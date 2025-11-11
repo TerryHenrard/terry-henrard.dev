@@ -3,82 +3,119 @@
     "badge": "Care & Hosting",
     "availabilityBadge": "We cap active clients at 8 — availability is limited",
     "hero": {
-      "title": "Sleep-easy production. Fixed cost. Zero surprises.",
-      "description": "Keep your product <strong>online, fast, and trustworthy</strong>. We take ownership of incidents, updates, and small improvements so your team can ship. You get <strong>clear SLAs, fewer fires,</strong> and board-ready reporting."
+      "title": "Your app fast, secure and up-to-date, every month — without you thinking about it.",
+      "description": "I watch over your site/app 24/7, I secure it, I back it up, and I improve it every month — <strong>to avoid outages and bad surprises</strong>.",
+      "subtitle": "24/7 monitoring, tested backups, continuous small improvements. Zero budget surprises."
     },
-    "trust": {
-      "text": "All my services are backed by <span class=\"font-semibold\">AWS (Amazon)</span> & <span class=\"font-semibold\">Azure (Microsoft)</span>"
-    },
-    "outcomes": {
+    "benefits": {
       "0": {
-        "title": "Always-on",
-        "description": "Proactive checks + real people on call → <strong>higher uptime</strong>, less scrambling."
+        "title": "Peace of mind",
+        "description": "Sleep soundly knowing if something goes wrong, we see it and act on it."
       },
       "1": {
-        "title": "Faster product",
-        "description": "Performance tune-ups and quick wins that <strong>cut load times</strong> and bounce."
+        "title": "Secure & up-to-date",
+        "description": "Security updates, best practices applied, and regular maintenance."
       },
       "2": {
-        "title": "Fewer fires",
-        "description": "Updates, security, and hygiene handled → <strong>less breakage</strong> and rework."
+        "title": "Continuous evolution",
+        "description": "Your app keeps evolving with monthly improvements and fixes."
       },
       "3": {
-        "title": "Clarity for stakeholders",
-        "description": "Monthly report: analytics, uptime %, errors, speed, and progress — <strong>no guessing</strong>."
+        "title": "Complete visibility",
+        "description": "Monthly report: what happened, recommendations, analysis, errors, improvements, next steps."
       }
     },
     "plans": {
-      "lite": {
-        "title": "Lite — \"Lights On\"",
-        "bestFor": "Best for: solo founders keeping things stable.",
+      "title": "3 Plans, sold separately and scalable",
+      "subtitle": "Choose the plan that matches your needs and evolve as you grow.",
+      "lightsOn": {
+        "title": "Lights On",
+        "goal": "Sleep soundly: if something goes wrong, we see it and act on it.",
+        "included": "What's included",
         "items": {
-          "0": "Outcome: <strong>Sleep easier</strong>—know immediately when something's wrong.",
-          "1": "24/7 monitoring with alert routing to our team.",
-          "2": "Automated controls: <strong>daily database backups</strong>.",
-          "3": "Monthly PDF: <strong>uptime %</strong>, <strong>errors per page</strong>, and <strong>top AI spend drivers</strong>.",
-          "4": "Bug fixes: <strong>unlimited</strong> (within scope).",
-          "5": "<strong>1 dev day / month</strong> for small fixes & improvements.",
-          "6": "Response: within <strong>2 business days</strong> (CET)."
+          "0": "Continuous monitoring: downtime, errors, slowdowns",
+          "1": "Security updates and best practices",
+          "2": "Tested backups and restoration if needed",
+          "3": "Secondary line (response time within 2 business days)"
         },
-        "cta": "Check availability"
+        "outcome": {
+          "label": "In summary",
+          "text": "Your app hosted and secure, with total peace of mind and a monthly report."
+        },
+        "cta": "Choose Lights On",
+        "ctaPrompt": "I am interested in the \"Lights On\" care and hosting plan. Can we book a quick call to discuss?"
       },
-      "pro": {
-        "title": "Pro — \"Production Care\"",
-        "bestFor": "Best for: product teams running live apps.",
+      "steadyGrowth": {
+        "title": "Steady Growth",
+        "goal": "Every month, we fix, smooth the experience, and gain speed.",
+        "included": "Everything in Lights On, plus",
         "items": {
-          "0": "Outcome: <strong>Ship faster</strong> with less risk.",
-          "1": "Everything in Lite.",
-          "2": "<strong>3 dev days / month</strong> for fixes or small features.",
-          "3": "AI cost control & alert caps reviewed monthly.",
-          "4": "Response: within <strong>24 business hours</strong> (CET)."
+          "0": "New feature development (1 day/month)",
+          "1": "Regular updates",
+          "2": "Primary line (response time within 24 hours)",
+          "3": "Roadmap for upcoming months (features)"
         },
-        "cta": "Reserve a Pro slot"
+        "outcome": {
+          "label": "In summary",
+          "text": "Your app stays stable, fast, and improves without hassle."
+        },
+        "cta": "Choose Steady Growth",
+        "ctaPrompt": "I am interested in the \"Steady Growth\" care and hosting plan. Can we book a quick call to discuss?"
       },
-      "venture": {
-        "title": "Venture — \"Ops & Credibility\"",
-        "bestFor": "Best for: SaaS teams aiming for investors & boards.",
+      "velocity": {
+        "title": "Velocity",
+        "goal": "Give rhythm, deliver real features every month.",
+        "included": "Everything in Steady Growth, plus",
         "items": {
-          "0": "Outcome: <strong>Investor-ready</strong> reliability and speed.",
-          "1": "Everything in Pro.",
-          "2": "<strong>5 dev days / month</strong> (features + improvements).",
-          "3": "Strengthened AI spend monitoring and monthly executive-style reporting.",
-          "4": "Response: within <strong>2 hours</strong> (business hours, CET)."
+          "0": "New feature development (5 days/month)",
+          "1": "Quarterly debrief (where we're going, what we continue, what we stop)",
+          "2": "Primary line (response time within 2 hours)",
+          "3": "Same roadmap as Steady Growth"
         },
-        "cta": "Apply for Venture"
+        "outcome": {
+          "label": "In summary",
+          "text": "A reliable delivery rhythm, without overloading the team."
+        },
+        "cta": "Choose Velocity",
+        "ctaPrompt": "I am interested in the \"Velocity\" care and hosting plan. Can we book a quick call to discuss?"
       }
     },
     "guarantees": {
-      "title": "Simple, strong guarantees",
+      "title": "Strong guarantees",
+      "subtitle": "Clear commitments to give you peace of mind.",
       "items": {
-        "0": "<strong>Uptime/Response Promise:</strong> If we miss a written SLA (uptime or response), your <strong>next month is free</strong> and we include a corrective action plan.",
-        "1": "<strong>Bug Shield:</strong> We fix critical bugs discovered during your plan window at no extra cost.",
-        "2": "<strong>Cancel anytime:</strong> month-to-month. Stay because it pays for itself."
+        "0": {
+          "title": "Zero-Down Pledge",
+          "promise": "Any production outage is detected & alerted.",
+          "ifMissed": "If missed: 1 month free"
+        },
+        "1": {
+          "title": "First response on time",
+          "promise": "First response within the time corresponding to your plan.",
+          "ifMissed": "If missed: 1 month free"
+        },
+        "2": {
+          "title": "Express integration — 7 days",
+          "promise": "Complete setup within 7 business days.",
+          "ifMissed": "If missed: 1 month free"
+        },
+        "3": {
+          "title": "Cumulative dev hours",
+          "promise": "Unused development hours roll over to the next month and so on.",
+          "ifMissed": "Guaranteed"
+        },
+        "4": {
+          "title": "Bug Killer",
+          "promise": "Any critical bug reported is fixed within 48 business hours.",
+          "ifMissed": "If missed: 1 month free"
+        }
       }
     },
     "cta": {
-      "primary": "Start with the 2-3 day MVP Plan",
-      "secondary": "Book a quick call",
-      "footer": "After launch, keep momentum with <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">the Care &amp; Hosting Plan</Link>."
+      "headline": "Your app fast, secure and up-to-date, every month — without you thinking about it.",
+      "subheadline": "24/7 monitoring, tested backups, continuous small improvements. Zero budget surprises.",
+      "primary": "Start now (45 min call)",
+      "secondary": "Contact me"
     }
   }
 }

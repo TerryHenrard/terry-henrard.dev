@@ -8,8 +8,8 @@ import { useFloatingChatStore } from '../stores/floating-chat.store';
 
 export default function CtaTriggerPhoneCallRequest(props: ShadcnButtonProps) {
   const t = useTranslations('about');
-  const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
 
+  const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
   const setPrompt = useFloatingChatStore((state) => state.setPrompt);
 
   return (

@@ -1,71 +1,106 @@
 {
   "mvpFoundry": {
-    "badge": "MVP Foundry",
+    "badge": "MVP Start",
     "hero": {
-      "title": "Lancer un vrai MVP en 4 semaines",
-      "description": "Conçu pour gagner les premiers utilisateurs et la confiance. Périmètre serré, preuve hebdomadaire, passation claire."
+      "title": "Je transforme votre idée en produit concret, utilisable et vendable",
+      "subtitle": "En 4 semaines, pas en quelques mois",
+      "description": "Avoir une première version réelle que vos utilisateurs peuvent tester et payer."
     },
-    "outcomes": {
-      "0": {
-        "title": "Une démo qui convertit",
-        "description": "Cinq minutes pour montrer la valeur aux ventes et aux investisseurs."
-      },
-      "1": {
-        "title": "Une qualité tangible",
-        "description": "Rapide, stable, utilisable. Aucun blocage critique la première semaine."
-      },
-      "2": {
-        "title": "Garantie anti-risque",
-        "description": "Objectif ou délai manqué de mon fait ? Je continue gratuitement."
-      }
-    },
-    "plan": {
-      "title": "Le plan MVP",
-      "duration": "4-6 semaines",
-      "description": "Tout pour livrer, onboarder les premiers utilisateurs et obtenir le prochain « oui ».",
-      "sections": {
+    "whatIsIncluded": {
+      "title": "Ce qui est compris",
+      "items": {
         "0": {
-          "title": "Ce qui part jour 1",
-          "items": {
-            "0": "Inscription/connexion + parcours #1 de bout en bout",
-            "1": "Accueil clair qui guide l'étape suivante",
-            "2": "Rapide sur mobile et accessible"
-          }
+          "title": "Atelier express",
+          "description": "½ journée pour cadrer le produit et vos priorités"
         },
         "1": {
-          "title": "Momentum intégré",
-          "items": {
-            "0": "Voir les clics et les points de friction",
-            "1": "Emails de bienvenue et de mot de passe qui arrivent",
-            "2": "Modifier les textes/images clés sans dev"
-          }
+          "title": "Conception rapide",
+          "description": "Page d'inscription, parcours principal, back-office minimal"
         },
         "2": {
-          "title": "Passation & filet de sécurité",
-          "items": {
-            "0": "Carte produit sur une page + runbook simple",
-            "1": "Session de passation enregistrée (1 h)",
-            "2": "Filet correctifs 30 jours (prolongeable)"
-          }
+          "title": "Intégrations essentielles",
+          "description": "Vos données et outils (paiement, mail, CRM…)"
+        },
+        "3": {
+          "title": "Test utilisateur",
+          "description": "Tests réels et ajustements basés sur les retours"
+        },
+        "4": {
+          "title": "Tableau de suivi",
+          "description": "Feedback, conversions, coût par utilisateur"
         }
       }
     },
-    "howWeWork": {
-      "0": {
-        "title": "Plan → Build → Launch",
-        "description": "2-3 jours pour verrouiller résultats & périmètre → 3-4 semaines de build → 3-5 jours de polish et mise en prod."
-      },
-      "1": {
-        "title": "Zéro surprise",
-        "description": "Vidéo hebdo 5 minutes, checklist et prochaines étapes."
-      },
-      "2": {
-        "title": "Definition of Done",
-        "description": "Premiers utilisateurs invités, démo répétée, rollback prêt."
+    "whatYouGet": {
+      "title": "Ce que vous obtenez",
+      "description": "Un produit fonctionnel, en ligne, prêt à être montré, testé ou vendu.",
+      "summary": "Vous passez de l'idée au marché, sans perdre de temps en fonctionnalités inutiles."
+    },
+    "guarantees": {
+      "title": "Mes garanties",
+      "items": {
+        "0": {
+          "title": "Fast-Track 14 jours",
+          "description": "Une 1ʳᵉ version fonctionnelle livrée en 4 semaines. Si raté, je continue de travailler sans frais supplémentaire jusqu'à l'implémentation complète."
+        },
+        "1": {
+          "title": "Résultat mesurable",
+          "description": "Chaque MVP est relié à des chiffres clairs (inscriptions, ventes, feedback…). Si raté, je continue sans frais supplémentaire."
+        },
+        "2": {
+          "title": "Zéro jargon",
+          "description": "Tout est expliqué en langage simple, sans technicité inutile. Si vous ne comprenez pas le livrable : session de reprise offerte."
+        },
+        "3": {
+          "title": "Confidentialité garantie",
+          "description": "Vos données restent sur vos comptes, vos serveurs, vos modèles."
+        },
+        "4": {
+          "title": "Bug Killer",
+          "description": "Aucun bug critique en production dans les 30 jours. Si raté, correction sans frais supplémentaire."
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": {
+        "0": {
+          "question": "En quoi consiste le service, concrètement ?",
+          "answer": "Je conçois, développe et livre la première version réelle de votre produit digital — simple, claire et testable par vos utilisateurs."
+        },
+        "1": {
+          "question": "Quelle est la différence avec une \"maquette\" ou un \"prototype\" ?",
+          "answer": "Une maquette ne vend rien. Un MVP fonctionne, mesure, et vous fait apprendre vite avant d'investir plus."
+        },
+        "2": {
+          "question": "Combien de temps ça prend ?",
+          "answer": "4 semaines."
+        },
+        "3": {
+          "question": "Faut-il déjà avoir une idée précise ?",
+          "answer": "Non. L'atelier de cadrage sert justement à clarifier le besoin et les priorités."
+        },
+        "4": {
+          "question": "Peut-on combiner avec votre plan de maintenance ?",
+          "answer": "Oui, MVP Start s'intègre parfaitement à mon Plan de Maintenance & Hébergement."
+        }
+      }
+    },
+    "glossary": {
+      "title": "Glossaire",
+      "items": {
+        "0": {
+          "term": "MVP (Produit Minimum Viable)",
+          "definition": "Première version utilisable d'un produit, concentrée sur les fonctionnalités essentielles, conçue pour valider rapidement l'idée avec de vrais utilisateurs et recueillir des retours."
+        },
+        "1": {
+          "term": "Test Utilisateur",
+          "definition": "Processus d'évaluation d'un produit en le testant avec de vrais utilisateurs pour identifier les problèmes d'utilisabilité et recueillir des insights avant le lancement complet."
+        }
       }
     },
     "cta": {
-      "primary": "Commencer par le plan MVP 2-3 jours",
+      "primary": "Démarrer mon MVP",
       "secondary": "Réserver un appel",
       "footer": "Après le lancement, gardez l'élan avec <link>le plan Care & Hosting</link>."
     }

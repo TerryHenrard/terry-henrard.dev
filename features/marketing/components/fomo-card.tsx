@@ -17,7 +17,7 @@ export default function FOMOCard({ variant }: FOMOCardProps) {
   const t = useTranslations('fomoCard');
 
   const variantText = variant === 'mvp-foundry' ? t('message.mvpFoundry') : t('message.aiSprint');
-  const promptText = variant === 'mvp-foundry' ? t('cta.mvpPrompt') : t('cta.aiSprintPrompt');
+  const variantCTA = variant === 'mvp-foundry' ? t('cta.mvp-audit') : t('cta.ai-audit');
 
   return (
     <div className='mb-10 flex flex-col items-center justify-between gap-3 rounded-2xl border p-4 md:flex-row md:p-5'>
@@ -38,7 +38,7 @@ export default function FOMOCard({ variant }: FOMOCardProps) {
         <CtaTriggerPhoneCallRequest />
 
         <Button asChild variant='outline'>
-          <Link href='/services/audit'>{t('cta.audit')}</Link>
+          <Link href='/services/audit'>{variantCTA}</Link>
         </Button>
       </div>
     </div>

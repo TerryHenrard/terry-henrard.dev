@@ -9,7 +9,8 @@
     },
     "cta": {
       "call": "Book a quick call",
-      "audit": "Start with the 2-3 day MVP Plan",
+      "mvp-audit": "Start with the 2-3 day MVP Plan",
+      "ai-audit" : "Start with the 5-day AI Plan",
       "mvpPrompt": "I want to book a call to discuss your MVP services.",
       "aiSprintPrompt": "I want to book a call to discuss your AI Sprint services."
     }

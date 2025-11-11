@@ -9,7 +9,8 @@
     },
     "cta": {
       "call": "Réserver un appel rapide",
-      "audit": "Commencer avec le Plan MVP de 2-3 jours",
+      "mvp-audit": "Commencer avec le Plan MVP de 3 jours",
+      "ai-audit" : "Commencer avec le Plan IA de 5 jours",
       "mvpPrompt": "Je veux réserver un appel pour discuter de vos services MVP.",
       "aiSprintPrompt": "Je veux réserver un appel pour discuter de vos services Sprint IA."
     }

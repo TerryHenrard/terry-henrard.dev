@@ -3,70 +3,119 @@
     "badge": "Maintenance & Hébergement",
     "availabilityBadge": "8 clients max — places limitées",
     "hero": {
-      "title": "Prod stable. Coût fixe. Zéro surprise.",
-      "description": "Votre site/app reste en ligne, rapide et sûr. Je surveille, je corrige et j’améliore chaque mois. <strong>SLA clairs</strong> et <strong>rapport 1 page</strong>."
+      "title": "Votre app rapide, sécurisée et à jour, chaque mois — sans y penser.",
+      "description": "Je surveille votre site/app 24/7, je le sécurise, je le sauvegarde et je l'améliore chaque mois — <strong>pour éviter les pannes et les mauvaises surprises</strong>.",
+      "subtitle": "Surveillance 24/7, sauvegardes testées, petites améliorations continues. Zéro surprise côté budget."
     },
-    "trust": {
-      "text": "Opéré sur <span class=\"font-semibold\">AWS</span> et <span class=\"font-semibold\">Azure</span>"
-    },
-    "outcomes": {
-      "0": { "title": "Toujours dispo", "description": "Surveillance 24/7 + alertes → <strong>incidents détectés</strong> vite." },
-      "1": { "title": "Plus rapide", "description": "Petites améliorations continues → <strong>pages plus rapides</strong>." },
-      "2": { "title": "Moins d’incidents", "description": "Mises à jour, sauvegardes, hygiène → <strong>moins de casse</strong>." },
-      "3": { "title": "Clair pour le board", "description": "Mensuel : uptime, erreurs, vitesse, priorités → <strong>vision nette</strong>." }
+    "benefits": {
+      "0": {
+        "title": "Tranquillité d'esprit",
+        "description": "Dormez sur vos deux oreilles : si quelque chose tourne mal, on le voit et on agit."
+      },
+      "1": {
+        "title": "Sécurisé & à jour",
+        "description": "Mises à jour de sécurité, bonnes pratiques appliquées et maintenance régulière."
+      },
+      "2": {
+        "title": "Évolution continue",
+        "description": "Votre app continue d'évoluer avec des améliorations et corrections mensuelles."
+      },
+      "3": {
+        "title": "Visibilité complète",
+        "description": "Rapport mensuel : ce qui s'est passé, recommandations, analyse, erreurs, améliorations, prochaines étapes."
+      }
     },
     "plans": {
-      "lite": {
+      "title": "3 Formules, vendues séparément et évolutives",
+      "subtitle": "Choisissez la formule qui correspond à vos besoins et évoluez au fur et à mesure.",
+      "lightsOn": {
         "title": "Lights On",
-        "bestFor": "Pour rester stable et sécurisé.",
-        "price": "199€ HT / mois",
+        "goal": "Dormez tranquille : si quelque chose tourne mal, on le voit et on agit.",
+        "included": "Ce qui est inclus",
         "items": {
-          "0": "Surveillance 24/7 (uptime, erreurs, lenteur).",
-          "1": "Mises à jour sécurité + <strong>sauvegardes testées</strong>.",
-          "2": "Rapport mensuel 1 page.",
-          "3": "Réponse <strong>≤ 2 jours ouvrés</strong> (CET)."
+          "0": "Surveillance continue : pannes, erreurs, ralentissements",
+          "1": "Mises à jour de sécurité et bonnes pratiques",
+          "2": "Sauvegardes testées et restauration si nécessaire",
+          "3": "Ligne secondaire (délai de réponse dans les 2 jours ouvrés)"
         },
-        "cta": "Vérifier une place"
+        "outcome": {
+          "label": "En résumé",
+          "text": "Votre app hébergée et sécurisée, avec une tranquillité d'esprit totale et un rapport mensuel."
+        },
+        "cta": "Choisir Lights On",
+        "ctaPrompt": "Je suis intéressé par la formule de maintenance et d'hébergement \"Lights On\". Pouvons-nous réserver un appel rapide pour en discuter ?"
       },
-      "pro": {
+      "steadyGrowth": {
         "title": "Steady Growth",
-        "bestFor": "Pour corriger et lisser l’expérience.",
-        "price": "799€ HT / mois",
+        "goal": "Chaque mois, on corrige, on lisse l'expérience et on gagne en vitesse.",
+        "included": "Tout ce qui est dans Lights On, plus",
         "items": {
-          "0": "Tout de Lights On.",
-          "1": "<strong>1 jour de dev / mois</strong> (petites évolutions).",
-          "2": "Mises à jour régulières.",
-          "3": "Réponse <strong>≤ 24 h ouvrées</strong> (CET)."
+          "0": "Développement de nouvelles fonctionnalités (1 jour/mois)",
+          "1": "Mises à jour régulières",
+          "2": "Ligne principale (délai de réponse dans les 24 heures)",
+          "3": "Feuille de route pour les prochains mois (fonctionnalités)"
         },
-        "cta": "Réserver ce plan"
+        "outcome": {
+          "label": "En résumé",
+          "text": "Votre app reste stable, rapide et s'améliore sans tracas."
+        },
+        "cta": "Choisir Steady Growth",
+        "ctaPrompt": "Je suis intéressé par la formule de maintenance et d'hébergement \"Steady Growth\". Pouvons-nous réserver un appel rapide pour en discuter ?"
       },
-      "venture": {
+      "velocity": {
         "title": "Velocity",
-        "bestFor": "Pour livrer des features chaque mois.",
-        "price": "999€ HT / mois",
+        "goal": "Donner du rythme, livrer de vraies fonctionnalités chaque mois.",
+        "included": "Tout ce qui est dans Steady Growth, plus",
         "items": {
-          "0": "Tout de Steady Growth.",
-          "1": "<strong>5 jours de dev / mois</strong>.",
-          "2": "Débrief trimestriel.",
-          "3": "Réponse <strong>≤ 2 h ouvrées</strong> (CET)."
+          "0": "Développement de nouvelles fonctionnalités (5 jours/mois)",
+          "1": "Débrief trimestriel (où on va, ce qu'on continue, ce qu'on arrête)",
+          "2": "Ligne principale (délai de réponse dans les 2 heures)",
+          "3": "Même feuille de route que Steady Growth"
         },
-        "cta": "Postuler"
+        "outcome": {
+          "label": "En résumé",
+          "text": "Un rythme de livraison fiable, sans surcharger l'équipe."
+        },
+        "cta": "Choisir Velocity",
+        "ctaPrompt": "Je suis intéressé par la formule de maintenance et d'hébergement \"Velocity\". Pouvons-nous réserver un appel rapide pour en discuter ?"
       }
     },
     "guarantees": {
-      "title": "Garanties simples",
+      "title": "Garanties solides",
+      "subtitle": "Des engagements clairs pour vous donner la tranquillité d'esprit.",
       "items": {
-        "0": "<strong>Zero-Down Pledge.</strong> Panne non détectée/alertée → <strong>1 mois offert</strong>.",
-        "1": "<strong>Première réponse dans les temps.</strong> Manqué → <strong>1 mois offert</strong>.",
-        "2": "<strong>Intégration express.</strong> Mise en place ≤ 7 jours ouvrés, sinon <strong>1 mois offert</strong>.",
-        "3": "<strong>Heures cumulables.</strong> Les heures non utilisées sont reportées.",
-        "4": "<strong>Bug Killer.</strong> Bug critique corrigé ≤ 48 h ouvrées, sinon <strong>1 mois offert</strong>."
+        "0": {
+          "title": "Zero-Down Pledge",
+          "promise": "Toute panne en production est détectée et signalée.",
+          "ifMissed": "Si manqué : 1 mois gratuit"
+        },
+        "1": {
+          "title": "Première réponse dans les temps",
+          "promise": "Première réponse dans le délai correspondant à votre formule.",
+          "ifMissed": "Si manqué : 1 mois gratuit"
+        },
+        "2": {
+          "title": "Intégration express — 7 jours",
+          "promise": "Installation complète en 7 jours ouvrés.",
+          "ifMissed": "Si manqué : 1 mois gratuit"
+        },
+        "3": {
+          "title": "Heures de dev cumulables",
+          "promise": "Les heures de développement non utilisées sont reportées au mois suivant et ainsi de suite.",
+          "ifMissed": "Garanti"
+        },
+        "4": {
+          "title": "Bug Killer",
+          "promise": "Tout bug critique signalé est corrigé dans les 48 heures ouvrées.",
+          "ifMissed": "Si manqué : 1 mois gratuit"
+        }
       }
     },
     "cta": {
-      "primary": "Démarrer maintenant (45 min)",
-      "secondary": "Voir un exemple de rapport",
-      "footer": "Prêt à accélérer ? Passez sur <Link class=\"underline underline-offset-4\" href=\"/services/ai\">la fonctionnalité IA en 14 jours</Link>."
+      "headline": "Votre app rapide, sécurisée et à jour, chaque mois — sans y penser.",
+      "subheadline": "Surveillance 24/7, sauvegardes testées, petites améliorations continues. Zéro surprise côté budget.",
+      "primary": "Démarrer maintenant (appel de 45 min)",
+      "secondary": "contactez moi"
     }
   }
 }

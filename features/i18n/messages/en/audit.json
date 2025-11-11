@@ -2,58 +2,141 @@
   "audit": {
     "badge": "Audits",
     "hero": {
-      "title": "Make your next sprint a safe bet",
-      "description": "Two short audits. Clear plan. Less risk. Deliverables you can use immediately.",
-      "guarantee": "<em>Guarantee:</em> if I miss the agreed objective or deadline due to me, I keep working at <u>no extra cost</u>."
+      "title": "I audit your product for a clear action plan in 2 to 5 days",
+      "subtitle": "A measurable plan over 30 to 60 days",
+      "description": "Improve speed, UX clarity, and the ability to ship a 1st MVP version (or an AI feature) without breaking the budget."
+    },
+    "whatIsIncluded": {
+      "title": "What I evaluate",
+      "items": {
+        "0": {
+          "title": "Business objectives & scope",
+          "description": "What must be true at launch, must-have vs nice-to-have"
+        },
+        "1": {
+          "title": "Architecture and technologies",
+          "description": "Technical choices, future debt, and implementation priorities"
+        },
+        "2": {
+          "title": "Business-aligned AI use cases",
+          "description": "Assistant, semantic search, extraction, summary, doc generation"
+        },
+        "3": {
+          "title": "Data & Infrastructure",
+          "description": "Access, quality, schemas, governance, latency, hosting costs"
+        },
+        "4": {
+          "title": "AI guardrails",
+          "description": "Observability, prompts, user feedback, error prevention"
+        }
+      }
+    },
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "Concrete deliverables, ready to execute, without unnecessary jargon.",
+      "summary": "You know what to build, how, how much it costs, and how to measure success."
     },
     "offers": {
+      "title": "Two complementary audits",
+      "deliverables": "Deliverables:",
       "mvpReadiness": {
-        "title": "MVP Readiness Plan",
+        "title": "MVP readiness plan",
         "duration": "3 days",
-        "description": "Know exactly what to ship in 30–60 days.",
-        "items": {
-          "0": "<b>Top 10 actions</b> ranked by effort/impact",
-          "1": "<b>30–60 day roadmap</b> (sequenced, realistic)",
-          "2": "<b>Importable backlog</b> (Must / Should / Later)"
+        "description": "Ensure your first version can be delivered quickly and without surprises.",
+        "deliverables": {
+          "0": "Top 10 actions prioritized (effort/impact)",
+          "1": "30 to 60-day roadmap",
+          "2": "Backlog ready to import"
         },
+        "summary": "You get a clear plan, execution order, and less rework",
         "cta": {
           "primary": "Move to MVP",
           "secondary": "Book a call"
         }
       },
       "aiReadiness": {
-        "title": "AI Readiness Plan",
+        "title": "AI readiness plan",
         "duration": "5 days",
-        "description": "Pick a useful AI feature. Prove it. Ship it safely.",
-        "items": {
-          "0": "<b>Shortlist of use cases</b> aligned to the business + 1 priority choice",
-          "1": "<b>Target architecture</b> + test plan and guardrails",
-          "2": "<b>Success KPI</b> + <b>demonstrable mini-prototype</b>"
+        "description": "Identify a useful, feasible, and measurable AI feature with a production plan.",
+        "deliverables": {
+          "0": "AI feature report (problem → journey → KPI → guardrails)",
+          "1": "Target architecture (diagram) and test plan",
+          "2": "Demonstrable lightweight prototype"
         },
+        "summary": "You know what to build, how, how much it costs, and how to measure success",
         "cta": {
           "primary": "Start an AI sprint",
           "secondary": "Message me"
         }
       }
     },
-    "howItWorks": {
-      "0": {
-        "title": "Fast",
-        "description": "Timeboxed. Clear agenda."
-      },
-      "1": {
-        "title": "Actionable",
-        "description": "Docs ready to execute."
-      },
-      "2": {
-        "title": "Risk first",
-        "description": "Blockers surfaced early."
+    "guarantees": {
+      "title": "My guarantees",
+      "items": {
+        "0": {
+          "title": "Deadline respected",
+          "description": "Delivery in 3 or 5 business days depending on the audit. If I miss the deadline due to me, I continue at no extra cost."
+        },
+        "1": {
+          "title": "Fast access & decisions",
+          "description": "You provide necessary access within 72h. A single point of contact validates choices within 48h."
+        },
+        "2": {
+          "title": "Actionable plan",
+          "description": "Top 10 actions ranked by effort/impact, ready to be executed by your team."
+        },
+        "3": {
+          "title": "Confidentiality guaranteed",
+          "description": "Your data and information remain strictly confidential."
+        },
+        "4": {
+          "title": "Revisions included",
+          "description": "Revision requests possible within 5 business days after report delivery."
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "0": {
+          "question": "How much time will you spend with us?",
+          "answer": "1 to 2 hours (kick-off + debrief). The rest of the time is dedicated to in-depth analysis and report writing."
+        },
+        "1": {
+          "question": "What if we don't have a data/AI team?",
+          "answer": "I propose implementations with gradual complexity (starter → advanced) adapted to your technical maturity."
+        },
+        "2": {
+          "question": "Can we buy both audits?",
+          "answer": "Yes, and I provide a unified plan (not two separate reports) with a coherent vision of your roadmap."
+        },
+        "3": {
+          "question": "What happens if we don't have access on time?",
+          "answer": "Any delay in response or access that blocks the continuity of the audit extends the delivery deadline accordingly."
+        },
+        "4": {
+          "question": "Are the recommendations guaranteed?",
+          "answer": "Yes, if applied as is or after joint validation of adaptations. Unilateral modifications void the guarantee for those points."
+        }
+      }
+    },
+    "glossary": {
+      "title": "Glossary",
+      "items": {
+        "0": {
+          "term": "First Version (MVP)",
+          "definition": "First usable version, focused on the essentials, to quickly validate the idea with real users."
+        },
+        "1": {
+          "term": "AI Guardrails",
+          "definition": "Set of rules to prevent errors (confidentiality, hallucinations, costs)."
+        }
       }
     },
     "cta": {
-      "primary": "Looking for an MVP?",
+      "primary": "Start an audit",
       "secondary": "Book a call",
-      "footer": "After launch, keep the pace with <link>the Care & Hosting plan</link>."
+      "footer": "After the audit, take action with <link>MVP development</link> or <link>the Care & Hosting plan</link>."
     }
   }
 }

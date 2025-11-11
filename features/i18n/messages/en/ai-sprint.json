@@ -1,91 +1,107 @@
 {
   "aiSprint": {
-    "badge": "AI Feature Sprint",
+    "badge": "AI Spark",
     "hero": {
-      "title": "Ship <mark>a real AI feature</mark> in 14 days — measured, safe, and usable.",
-      "description": "We pick <b>one metric that matters</b> (fewer steps, faster answers, more self-service) and ship a production feature your users will actually feel.",
-      "guarantee": "<em>Guarantee:</em> if I miss the agreed metric or deadline due to me, I keep working at <u>no extra cost</u>."
+      "title": "I add concrete, useful, and profitable AI features to your product",
+      "subtitle": "In 14 business days",
+      "description": "So your users save time and your team delivers more with less."
     },
-    "fomo": {
-      "slots": "2 slots left this month",
-      "message": "Limited capacity to ensure quality"
-    },
-    "outcomes": {
-      "0": {
-        "title": "Cut response time",
-        "description": "Shorten a key flow (support, ops, docs) to get what's needed faster."
-      },
-      "1": {
-        "title": "Increase self-service",
-        "description": "Deflect with clear cited answers or one-click drafts."
-      },
-      "2": {
-        "title": "Remove manual tasks",
-        "description": "Automate a painful task (summarize, extract, classify) slowing the team down."
-      }
-    },
-    "deliverables": {
-      "title": "What you get in 14 days",
+    "whatIsIncluded": {
+      "title": "What's included",
       "items": {
-        "0": "• One shipped AI feature (RAG chat, agentic workflow, or smart assist) tied to a metric.",
-        "1": "• Guardrails: access control, rate limits, fallbacks, and human-in-the-loop if needed.",
-        "2": "• Usage dashboard and simple analytics for adoption, latency, and feedback.",
-        "3": "• Clear docs + 30-min recorded handover to extend with confidence.",
-        "4": "• <b>30-day Bug Shield</b>: critical fixes included post-launch."
-      }
-    },
-    "notIncluded": {
-      "title": "What this isn't",
-      "items": {
-        "0": "• Not \"AI for AI's sake\". We refuse features users won't feel.",
-        "1": "• Not a 3-month research project. Focused build that ships.",
-        "2": "• Not custom LLM training. We move fast with proven building blocks."
-      }
-    },
-    "process": {
-      "title": "The 14-day plan",
-      "phases": {
         "0": {
-          "title": "Days 1-2 · Scope",
-          "description": "Pick the metric, flow, and definition of done. Confirm data access and success threshold."
+          "title": "Development & integration",
+          "description": "Connect to your existing data / APIs"
         },
         "1": {
-          "title": "Days 3-10 · Build",
-          "description": "Implement, mid-sprint demo, add guardrails, and wire up usage tracking."
+          "title": "User-friendly interface",
+          "description": "Simple and intuitive interface for your users"
         },
         "2": {
-          "title": "Days 11-14 · Prove & Launch",
-          "description": "Polish UX, add fallbacks, verify, ship to production, and read first metrics."
+          "title": "User testing",
+          "description": "Real tests and adjustments based on feedback"
+        },
+        "3": {
+          "title": "Tracking dashboard",
+          "description": "Results tracking and usage metrics"
         }
-      },
-      "cta": "Book a sprint slot"
-    },
-    "metrics": {
-      "title": "How we measure success",
-      "items": {
-        "0": "• <b>Adoption</b>: % of target users who used the feature this week.",
-        "1": "• <b>Faster flow</b>: median time saved vs. baseline.",
-        "2": "• <b>Quality</b>: \"was this helpful?\" score and reported errors.",
-        "3": "• <b>Cost control</b>: cost per use under agreed ceiling.",
-        "4": "• <b>Reliability</b>: p95 under target; no critical incidents.",
-        "5": "• <b>Business impact</b>: 1 simple metric (e.g., ticket deflection rate)."
       }
     },
-    "guarantee": {
-      "title": "Simple guarantee",
-      "description": "If I miss the agreed metric or deadline due to me, I keep working at no extra cost until we hit it. Clear and aligned."
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "An AI feature in production, used and measured.",
+      "summary": "Your product becomes smarter without complicating your stack."
     },
-    "whoFor": {
-      "title": "Who this is for",
+    "guarantees": {
+      "title": "My guarantees",
       "items": {
-        "0": "• B2B SaaS teams with a clear flow to improve and a single decision-maker.",
-        "1": "• Access to required data is possible (or sample export).",
-        "2": "• Agree to a tight feedback loop and two short check-ins per week."
+        "0": {
+          "title": "Fast-Track 14 days",
+          "description": "A functional 1st version delivered in 14 business days. If missed, I keep working at no extra charge until full implementation."
+        },
+        "1": {
+          "title": "Measurable results",
+          "description": "Each AI feature is tied to a business metric (time saved, conversion rate, satisfaction…). If missed, I continue at no extra charge."
+        },
+        "2": {
+          "title": "Zero jargon",
+          "description": "Everything is explained in plain language, without unnecessary technicality. If you don't understand the deliverable: free follow-up session."
+        },
+        "3": {
+          "title": "Guaranteed confidentiality",
+          "description": "Your data stays on your accounts, your servers, your models."
+        },
+        "4": {
+          "title": "Bug Killer",
+          "description": "No critical bugs in production within 30 days. If any, free correction."
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "0": {
+          "question": "What does your service consist of, concretely?",
+          "answer": "I help you find, design, and deliver a useful AI feature (assistant, search, summary, generation, etc.) — without fluff or costly experimentation."
+        },
+        "1": {
+          "question": "What's the difference from a simple \"AI Proof-of-concept (POC)\"?",
+          "answer": "The POC proves an idea; my service transforms it into a measurable result integrated into your product."
+        },
+        "2": {
+          "question": "How long does it take?",
+          "answer": "14 business days."
+        },
+        "3": {
+          "question": "Do I need to already have data?",
+          "answer": "No, but the more structured it is, the further we can go. Otherwise, I'll help you scope an initial foundation."
+        },
+        "4": {
+          "question": "Can we combine with your maintenance plan?",
+          "answer": "Yes, AI Spark integrates perfectly with my Care & Hosting Plan."
+        }
+      }
+    },
+    "glossary": {
+      "title": "Glossary",
+      "items": {
+        "0": {
+          "term": "AI Feature",
+          "definition": "An intelligent function integrated into your product that uses AI to automate, assist, or enhance the user experience (e.g., conversational assistant, automatic summarization, semantic search)."
+        },
+        "1": {
+          "term": "Business Metric",
+          "definition": "Quantifiable measure of feature performance (time saved, conversion rate, customer satisfaction, cost per use, etc.)."
+        },
+        "2": {
+          "term": "Proof-of-Concept (POC)",
+          "definition": "Technical demonstration that proves an idea or technology can work. Unlike a full feature, a POC is typically not production-ready and often lacks integration, security, and performance measurements."
+        }
       }
     },
     "cta": {
-      "primary": "Start with the 1-week AI Audit",
-      "secondary": "Book a call",
+      "primary": "Start with the Audit",
+      "secondary": "Schedule a discovery call",
       "footer": "After launch, keep momentum with <link>the Care & Hosting Plan</link>."
     }
   }
