@@ -7,11 +7,13 @@ import { AnimatePresence, motion } from 'motion/react';
 
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent } from '@/core/components/ui/card';
+import { useIsClient } from '@/core/hooks/use-is-client';
 
 import { useFloatingChatStore } from '../stores/floating-chat.store';
 import Chat from './chat';
 
 export default function FloatingChatbox() {
+  const isClient = useIsClient();
   const isOpen = useFloatingChatStore((state) => state.isOpen);
   const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
   const hasShownIntro = useFloatingChatStore((state) => state.hasShownIntro);
@@ -20,7 +22,7 @@ export default function FloatingChatbox() {
 
   useEffect(() => {
     // Only show intro once per session
-    if (hasShownIntro) return;
+    if (!isClient || hasShownIntro) return;
 
     const timer = setTimeout(() => {
       setShouldShowIntro(!isOpen);
@@ -29,7 +31,10 @@ export default function FloatingChatbox() {
     }, 10000); // 10 seconds
 
     return () => clearTimeout(timer);
-  }, [hasShownIntro, setIsOpen, setShouldShowIntro, setHasShownIntro, isOpen]);
+  }, [isClient, hasShownIntro, setIsOpen, setShouldShowIntro, setHasShownIntro, isOpen]);
+
+  // Don't render anything on the server
+  if (!isClient) return null;
 
   return (
     <>

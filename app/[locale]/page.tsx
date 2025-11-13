@@ -11,7 +11,6 @@ import CurrentlyAvailablePing from '@/features/marketing/components/currently-av
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
-  // Enable static rendering
   setRequestLocale(locale);
 
   const t = await getTranslations('home');

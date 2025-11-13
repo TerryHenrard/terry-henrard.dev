@@ -1,7 +1,8 @@
 {
   "header": {
-    "title": "Acceuil",
+    "title": "Accueil",
     "nav": {
+      "home": "Accueil",
       "experience": "Mon Expérience",
       "services": {
         "trigger": "Mes services",

@@ -10,6 +10,7 @@ import { Toaster } from 'sonner';
 
 import Background from '@/core/components/layouts/background';
 import Header from '@/core/components/layouts/header';
+import MobileHeader from '@/core/components/layouts/mobile-header';
 import Providers from '@/core/components/providers';
 import FloatingChatbox from '@/features/ai/components/floating-chatbox';
 import { routing } from '@/features/i18n/lib/routing';
@@ -64,6 +65,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
       >
         <Providers>
           <Header />
+          <MobileHeader />
           <Background />
           {children}
           <FloatingChatbox />
