@@ -6,6 +6,7 @@
     },
     "disclaimer": "Ne prenez pas pour acquis ce que l'IA vous dit. Elle peut faire des erreurs. C'est à des fins de démonstration uniquement.",
     "hero": {
+      "availableBadge": "Actuellement disponible",
       "title": {
         "prefix": "Livrez",
         "highlight": "10x",

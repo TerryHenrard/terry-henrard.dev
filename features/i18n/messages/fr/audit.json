@@ -2,72 +2,141 @@
   "audit": {
     "badge": "Audits",
     "hero": {
-      "title": "Faites de votre prochain sprint un pari gagnant",
-      "description": "Deux missions courtes, orientées recherche, qui éliminent les approximations et réduisent les risques de votre feuille de route. Vous repartez avec des livrables prêts à l'emploi — même si nous ne travaillons pas ensemble.",
-      "guarantee": "<strong><em>Garantie :</em></strong> si nous manquons la métrique de succès ou la date limite convenue de mon fait, je continue de travailler <strong class=\"underline\">sans frais supplémentaires</strong>."
+      "title": "J'audite votre produit pour un plan d'actions clair en 2 à 5 jours",
+      "subtitle": "Un plan mesurable sur 30 à 60 jours",
+      "description": "Améliorer la vitesse, la clarté UX et la capacité à livrer une 1ʳᵉ version MVP (ou une feature IA) sans casser le budget."
+    },
+    "whatIsIncluded": {
+      "title": "Ce que j'évalue",
+      "items": {
+        "0": {
+          "title": "Objectifs business & périmètre",
+          "description": "Ce qui doit être vrai au lancement, must-have vs nice-to-have"
+        },
+        "1": {
+          "title": "Architecture et technologies",
+          "description": "Choix techniques, dette future, et priorités d'implémentation"
+        },
+        "2": {
+          "title": "Cas d'usage IA alignés métier",
+          "description": "Assistant, recherche sémantique, extraction, résumé, génération de docs"
+        },
+        "3": {
+          "title": "Données & Infrastructure",
+          "description": "Accès, qualité, schémas, gouvernance, latence, coûts d'hébergement"
+        },
+        "4": {
+          "title": "Garde-fous IA",
+          "description": "Observabilité, prompts, retours utilisateurs, prévention des erreurs"
+        }
+      }
+    },
+    "whatYouGet": {
+      "title": "Ce que vous obtenez",
+      "description": "Des livrables concrets, prêts à exécuter, sans jargon inutile.",
+      "summary": "Vous savez quoi construire, comment, combien ça coûte et comment mesurer le succès."
     },
     "offers": {
+      "title": "Deux audits complémentaires",
+      "deliverables": "Livrables :",
       "mvpReadiness": {
         "title": "Plan de préparation MVP",
-        "duration": "2-3 jours",
-        "description": "Alignez les parties prenantes, verrouillez le périmètre et sachez exactement à quoi ressemble la \"réussite\" avant d'écrire une ligne de code.",
-        "items": {
-          "0": "<strong>Cartographie des résultats :</strong> utilisateurs, tâches à accomplir et métriques de succès",
-          "1": "<strong>Ligne de périmètre :</strong> <span class=\"font-medium\">Obligatoire / Souhaitable / Plus tard</span> (backlog sans surprise)",
-          "2": "<strong>Architecture & registre de décisions :</strong> (pour que les choix ne soient pas remis en question)",
-          "3": "<strong>Grille des risques & dépendances :</strong> avec responsable + atténuation",
-          "4": "<strong>Critères de lancement & script de démo :</strong> pour les 10 premiers utilisateurs"
+        "duration": "3 jours",
+        "description": "S'assurer que votre première version peut être livrée vite et sans surprises.",
+        "deliverables": {
+          "0": "Top 10 actions à prioriser (effort/impact)",
+          "1": "Feuille de route 30 à 60 jours (roadmap)",
+          "2": "Carnet des fonctionnalités prêt à importer (Backlog)"
         },
+        "summary": "Vous gagnez un plan clair, un ordre d'exécution et moins de rework",
         "cta": {
           "primary": "Passer au MVP",
-          "secondary": "Réserver un appel rapide"
+          "secondary": "Réserver un appel"
         }
       },
       "aiReadiness": {
-        "title": "Audit de préparation IA",
-        "duration": "~1 semaine",
-        "description": "Identifiez une fonctionnalité IA qui vaut la peine d'être lancée, prouvez sa faisabilité et définissez des garde-fous pour qu'elle soit sûre, utile et maîtrisée en production.",
-        "items": {
-          "0": "<strong>études de cas</strong> pour illustrer l'impact potentiel",
-          "1": "<strong>Liste restreinte de cas d'usage :</strong> avec effort/impact & choix de \"une fonctionnalité\"",
-          "2": "<strong>Options de récupération/modèle :</strong> avec règles de sécurité et solutions de secours",
-          "3": "<strong>Métrique de succès + plan d'évaluation :</strong> (ce que nous mesurerons pour appeler cela une victoire)",
-          "4": "<strong>Atelier développeur de 2 heures :</strong> pour transférer les modèles"
+        "title": "Plan de préparation à l'IA",
+        "duration": "5 jours",
+        "description": "Identifier une feature IA utile, faisable et mesurable avec plan de mise en production.",
+        "deliverables": {
+          "0": "Rapport fonctionnalité AI (problème → parcours → KPI → garde-fous)",
+          "1": "Architecture cible (diagramme) et plan de test",
+          "2": "Prototype léger démontrable"
         },
+        "summary": "Vous savez quoi construire, comment, combien ça coûte et comment mesurer le succès",
         "cta": {
           "primary": "Lancer un sprint IA",
-          "secondary": "M'envoyer un email"
+          "secondary": "M'écrire"
         }
       }
     },
-    "howItWorks": {
-      "0": {
-        "title": "Rapide et ciblé",
-        "description": "Créneaux courts, agenda clair, livrables concrets. Réduisez 2 à 4 semaines d'allers-retours."
-      },
-      "1": {
-        "title": "Actifs utilisables partout",
-        "description": "Des documents que vous pouvez remettre à votre équipe, joindre à des présentations investisseurs ou transformer en tickets demain."
-      },
-      "2": {
-        "title": "Risque d'abord",
-        "description": "Identifiez les blocages tôt — accès aux données, conformité, dotation — pour que la livraison reste prévisible."
+    "guarantees": {
+      "title": "Mes garanties",
+      "items": {
+        "0": {
+          "title": "Délai respecté",
+          "description": "Livraison en 3 ou 5 jours ouvrés selon l'audit. Si je manque l'échéance de mon fait, je continue sans frais supplémentaires."
+        },
+        "1": {
+          "title": "Accès & décisions rapides",
+          "description": "Vous fournissez les accès nécessaires sous 72h. Un référent unique valide les choix sous 48h."
+        },
+        "2": {
+          "title": "Plan actionnable",
+          "description": "Top 10 actions classées effort/impact, prêtes à être exécutées par votre équipe."
+        },
+        "3": {
+          "title": "Confidentialité garantie",
+          "description": "Vos données et informations restent strictement confidentielles."
+        },
+        "4": {
+          "title": "Révisions incluses",
+          "description": "Demande de révision possible dans les 5 jours ouvrés après livraison du rapport."
+        }
       }
     },
-    "guarantees": {
-      "riskReversal": {
-        "title": "Inversion du risque",
-        "description": "Si les livrables d'audit convenus ne sont pas immédiatement exploitables, je continue de travailler sans frais supplémentaires jusqu'à ce qu'ils le soient. Résultats clairs plutôt que petits caractères."
-      },
-      "limitedSlots": {
-        "title": "Créneaux limités",
-        "description": "Je réalise un petit nombre d'audits par semaine pour maintenir une qualité élevée. Si cette semaine est complète, nous planifierons le prochain créneau disponible."
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": {
+        "0": {
+          "question": "Combien de temps passerez-vous avec nous ?",
+          "answer": "1 heure à 2 heures (kick-off + débrief). Le reste du temps est consacré à l'analyse approfondie et la rédaction du rapport."
+        },
+        "1": {
+          "question": "Et si on n'a pas d'équipe data/IA ?",
+          "answer": "Je propose des implémentations à complexité graduelle (starter → avancé) adaptées à votre maturité technique."
+        },
+        "2": {
+          "question": "On peut acheter les deux audits ?",
+          "answer": "Oui, et je fournis un plan unique (pas deux rapports cloisonnés) avec une vision cohérente de votre feuille de route."
+        },
+        "3": {
+          "question": "Que se passe-t-il si on n'a pas les accès à temps ?",
+          "answer": "Tout retard de réponse ou d'accès qui bloque la continuité de l'audit prolonge d'autant le délai de livraison."
+        },
+        "4": {
+          "question": "Les recommandations sont-elles garanties ?",
+          "answer": "Oui, si elles sont appliquées telles quelles ou après validation conjointe d'adaptations. Les modifications unilatérales annulent la garantie pour ces points."
+        }
+      }
+    },
+    "glossary": {
+      "title": "Glossaire",
+      "items": {
+        "0": {
+          "term": "Première Version (MVP)",
+          "definition": "Première version utilisable, focalisée sur l'essentiel, pour valider l'idée rapidement auprès de vrais utilisateurs."
+        },
+        "1": {
+          "term": "Garde-fous IA",
+          "definition": "Ensemble de règles pour éviter les erreurs (confidentialité, hallucinations, coûts)."
+        }
       }
     },
     "cta": {
-      "primary": "Vous cherchez un MVP ?",
-      "secondary": "Réserver un appel rapide",
-      "footer": "Après le lancement, maintenez l'élan avec <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">le Plan de maintenance et d'hébergement</Link>."
+      "primary": "Démarrer un audit",
+      "secondary": "Réserver un appel",
+      "footer": "Après l'audit, passez à l'action avec <link>le développement d'un MVP</link> ou <link>le plan Care & Hosting</link>."
     }
   }
 }

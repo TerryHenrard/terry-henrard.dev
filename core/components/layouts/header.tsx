@@ -25,7 +25,7 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href} className='p-4'>
+        <Link href={href} className='h-full p-4'>
           <div className='text-sm leading-none font-bold'>{title}</div>
           <p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>{children}</p>
         </Link>
@@ -42,9 +42,6 @@ export default function Header() {
     <header className='bg-secondary/50 fixed top-0 right-0 left-0 z-50 h-16 border-b p-4 transition-colors duration-300'>
       <div className='container mx-auto flex h-full items-center justify-between'>
         <div className='flex items-center gap-8'>
-          {/* <Link className="font-bold text-xl" href="/">
-            AI
-          </Link> */}
           <NavigationMenu viewport={isMobile}>
             <NavigationMenuList className='gap-4'>
               <NavigationMenuItem>

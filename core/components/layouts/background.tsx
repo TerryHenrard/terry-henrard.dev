@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { AnimatedBackground } from '@/features/marketing/animated-background';
+import { AnimatedBackground } from '@/features/marketing/components/animated-background';
 
 interface BackgroundProps {
   imageSrc?: string;

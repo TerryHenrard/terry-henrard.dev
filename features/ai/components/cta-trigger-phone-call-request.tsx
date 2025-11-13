@@ -7,9 +7,9 @@ import { Button, ShadcnButtonProps } from '@/core/components/ui/button';
 import { useFloatingChatStore } from '../stores/floating-chat.store';
 
 export default function CtaTriggerPhoneCallRequest(props: ShadcnButtonProps) {
-  const t = useTranslations('about');
-  const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
+  const t = useTranslations('cta-trigger-phone-call-request');
 
+  const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
   const setPrompt = useFloatingChatStore((state) => state.setPrompt);
 
   return (
@@ -17,11 +17,11 @@ export default function CtaTriggerPhoneCallRequest(props: ShadcnButtonProps) {
       className='transition-all duration-300 hover:-translate-y-0.5'
       onClick={() => {
         setIsOpen(true);
-        setPrompt(t('cta.buttonPrompt'));
+        setPrompt(t('prompt'));
       }}
       {...props}
     >
-      {t('cta.button')}
+      {t('text')}
     </Button>
   );
 }

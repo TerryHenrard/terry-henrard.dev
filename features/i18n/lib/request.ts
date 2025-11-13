@@ -24,6 +24,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...(await import(`../messages/${locale}/header.json`)).default,
       ...(await import(`../messages/${locale}/locale-switcher.json`)).default,
       ...(await import(`../messages/${locale}/marketing.json`)).default,
+      ...(await import(`../messages/${locale}/cta-trigger-phone-call-request.json`)).default,
     },
   };
 });

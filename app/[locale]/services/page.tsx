@@ -1,5 +1,6 @@
 import type { ElementType } from 'react';
 
+import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { Brain, FileSearch, Hammer, type LucideIcon, ShieldCheck, Sparkles } from 'lucide-react';
@@ -9,11 +10,7 @@ import { Button } from '@/core/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/core/components/ui/card';
 import { Link } from '@/features/i18n/lib/navigation';
 
-export default async function ServicesPage({
-  params,
-}: {
-  params: Promise<{ locale: 'en' | 'fr' }>;
-}) {
+export default async function ServicesPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('services');
@@ -21,35 +18,39 @@ export default async function ServicesPage({
   const services: {
     title: string;
     href: string;
-    description: string;
+    description: React.ReactNode;
     icon: LucideIcon;
     cta: string;
   }[] = [
     {
       title: t('items.0.title'),
       href: '/services/audit',
-      description: t.raw('items.0.description'),
+      description: t.rich('items.0.description', {
+        b: (chunks) => <strong>{chunks}</strong>,
+      }),
       icon: FileSearch,
       cta: t('items.0.cta'),
     },
     {
       title: t('items.1.title'),
       href: '/services/mvp-foundry',
-      description: t.raw('items.1.description'),
+      description: t.rich('items.1.description', {
+        b: (chunks) => <strong>{chunks}</strong>,
+      }),
       icon: Hammer,
       cta: t('items.1.cta'),
     },
     {
       title: t('items.2.title'),
       href: '/services/ai-sprint',
-      description: t.raw('items.2.description'),
+      description: t('items.2.description'),
       icon: Brain,
       cta: t('items.2.cta'),
     },
     {
       title: t('items.3.title'),
       href: '/services/care-and-hosting-plan',
-      description: t.raw('items.3.description'),
+      description: t('items.3.description'),
       icon: ShieldCheck,
       cta: t('items.3.cta'),
     },
@@ -73,10 +74,12 @@ export default async function ServicesPage({
                 <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
                   {t('hero.description')}
                 </p>
-                <p
-                  className='text-foreground/60 mt-3'
-                  dangerouslySetInnerHTML={{ __html: t.raw('hero.guarantee') }}
-                />
+                <p className='text-foreground/60 mt-3 font-medium'>
+                  {t.rich('hero.guarantee', {
+                    em: (chunks) => <em>{chunks}</em>,
+                    u: (chunks) => <span className='underline'>{chunks}</span>,
+                  })}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -96,10 +99,7 @@ export default async function ServicesPage({
                     <Icon className='text-primary h-6 w-6' />
                   </div>
                   <h2 className='mb-2 text-2xl font-bold'>{service.title}</h2>
-                  <p
-                    className='text-foreground/70 mb-4 leading-relaxed'
-                    dangerouslySetInnerHTML={{ __html: service.description }}
-                  />
+                  <p className='text-foreground/70 mb-4 leading-relaxed'>{service.description}</p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>

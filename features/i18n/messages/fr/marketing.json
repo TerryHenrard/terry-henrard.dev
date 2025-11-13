@@ -1,6 +1,6 @@
 {
   "fomoCard": {
-    "limitedSpots": "Places limitées",
+    "limitedSpots": "1 place restante",
     "message": {
       "intro": "Je prends",
       "mvpFoundry": "max 2 constructions MVP/mois.",
@@ -9,12 +9,13 @@
     },
     "cta": {
       "call": "Réserver un appel rapide",
-      "audit": "Commencer avec le Plan MVP de 2-3 jours",
+      "mvp-audit": "Commencer avec le Plan MVP de 3 jours",
+      "ai-audit" : "Commencer avec le Plan IA de 5 jours",
       "mvpPrompt": "Je veux réserver un appel pour discuter de vos services MVP.",
       "aiSprintPrompt": "Je veux réserver un appel pour discuter de vos services Sprint IA."
     }
   },
   "guarantee": {
-    "text": "<strong>Garantie :</strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <span class=\"font-bold underline\">sans frais supplémentaires</span> jusqu'à ce que ce soit atteint. Filet de sécurité pour les corrections de bugs après le lancement inclus."
+    "text": "<strong>Garantie :</strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <span>sans frais supplémentaires</span> jusqu'à ce que ce qu'elle soit atteinte. Filet de sécurité pour les corrections de bugs après le lancement inclus."
   }
 }
