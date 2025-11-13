@@ -1,4 +1,5 @@
-import { getTranslations } from 'next-intl/server';
+import { Locale } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { CheckCircle2, Code2, Gauge, ShieldCheck, Sparkles, Users } from 'lucide-react';
 
@@ -6,8 +7,16 @@ import { Badge } from '@/core/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/core/components/ui/card';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 
-export default async function AboutPage() {
+interface AboutPageProps {
+  params: Promise<{ locale: Locale }>;
+}
+
+export default async function AboutPage({ params }: AboutPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations('about');
+
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='relative z-10 mx-auto max-w-6xl space-y-10 px-4 py-8 md:space-y-12'>
