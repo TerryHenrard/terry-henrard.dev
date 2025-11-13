@@ -4,6 +4,7 @@ import AiSprintMessages from './features/i18n/messages/en/ai-sprint.json';
 import AuditMessages from './features/i18n/messages/en/audit.json';
 import CareAndHostingMessages from './features/i18n/messages/en/care-and-hosting.json';
 import ContactMessages from './features/i18n/messages/en/contact.json';
+import CtaTriggerPhoneCallRequestMessages from './features/i18n/messages/en/cta-trigger-phone-call-request.json';
 import ExperienceMessages from './features/i18n/messages/en/experience.json';
 import HeaderMessages from './features/i18n/messages/en/header.json';
 import HomeMessages from './features/i18n/messages/en/home.json';
@@ -27,7 +28,8 @@ declare module 'next-intl' {
       typeof PhoneCallRequestFormMessages &
       typeof HeaderMessages &
       typeof LocaleSwitcherMessages &
-      typeof MarketingMessages;
+      typeof MarketingMessages &
+      typeof CtaTriggerPhoneCallRequestMessages;
     Locale: (typeof routing.locales)[number];
   }
 }

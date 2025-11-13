@@ -1,157 +1,63 @@
 {
   "about": {
-    "badge": "About Me",
+    "badge": "About",
     "hero": {
-      "title": "I'm Terry - a Next.js/TypeScript developer who ships fast, keeps promises, and owns outcomes.",
-      "description": "I combine <strong>production discipline</strong> (clean, tested, documented code) with <strong>product sense</strong> (scope ruthlessly, measure what matters) and <strong>ownership</strong> (I treat your app like mine)."
+      "title": "Work with a developer who ships and cares about outcomes.",
+      "description": "I'm Terry, a freelance developer focused on shipping <strong>usable MVPs</strong> and <strong>real AI features</strong>. I like short cycles, clear KPIs, and code that you can maintain after I'm gone."
     },
-    "credibility": {
+    "proofStrip": {
+      "mvp": "MVPs in weeks, not quarters",
+      "stack": "Next.js + TypeScript + AI",
+      "mindset": "Production-first mindset",
+      "team": "Built for product & founder teams"
+    },
+    "whatIDo": {
+      "title": "What I help you achieve",
       "items": {
-        "0": {
-          "label": "Ships reliably (weekly demos)"
-        },
-        "1": {
-          "label": "Production mindset (tests, CI/CD)"
-        },
-        "2": {
-          "label": "Next.js + AI experience"
-        },
-        "3": {
-          "label": "Clear comms & ownership"
-        }
+        "mvpSpeed": "Go from idea to <strong>first usable MVP in 4-6 weeks</strong>, with a tiny surface area and a clear scope.",
+        "aiFeature": "Ship <strong>one real AI feature in 14 days</strong> that reduces steps, response time, or support load.",
+        "roadmap": "Turn a fuzzy roadmap into a <strong>30-60 day plan</strong> you can defend to your team and stakeholders.",
+        "maintenance": "Keep your product <strong>fast, online, and healthy</strong> without surprise firefights every week."
       }
     },
-    "strongFit": {
-      "title": "I'm a strong fit for your team",
-      "points": {
-        "0": "I scope to must-haves first, then iterate — momentum > perfection.",
-        "1": "I communicate early and clearly: weekly demos, no surprises.",
-        "2": "I design for change: typed code, modular architecture, tests where it counts.",
-        "3": "I'm comfortable across the stack: Next.js/React, Node, Postgres, vector search, basic cloud.",
-        "4": "I've shipped AI features (RAG, assistants) on small projects and know the pitfalls (latency, evals, adoption).",
-        "5": "I document decisions so future you (or teammates) can move fast without me."
-      }
-    },
-    "principles": {
-      "title": "Principles I work by",
-      "items": {
-        "0": {
-          "title": "Clarity > Cleverness",
-          "description": "Readable, typed, predictable code beats magic. Future-proof means future-readable."
-        },
-        "1": {
-          "title": "Measure What Matters",
-          "description": "Latency, uptime, adoption. I pick 2-3 metrics and build around them."
-        },
-        "2": {
-          "title": "Owner's Mindset",
-          "description": "I optimize for the long-term health of your product, not just 'done'."
-        }
+    "howIWork": {
+      "title": "How I like to work",
+      "sprints": {
+        "title": "Short, focused sprints",
+        "description": "We cut scope hard, ship something small that works, then iterate. Weekly demos, no black box."
+      },
+      "production": {
+        "title": "Production over prototypes",
+        "description": "I think in terms of uptime, observability, and handover. Features are built to survive real users, not just demos."
+      },
+      "stack": {
+        "title": "Clear, modern stack",
+        "description": "Next.js, TypeScript, Postgres, and modern AI tooling. Typed, modular code that your team can pick up."
       }
     },
     "experience": {
-      "title": "Experience Snapshot",
-      "items": {
-        "0": {
-          "title": "Frontend & Platform",
-          "description": "React/Next.js (App Router), TypeScript, Tailwind, shadcn/ui, TanStack Query, CI/CD."
-        },
-        "1": {
-          "title": "Backend & Data",
-          "description": "Node.js, Postgres/Neon, REST, auth, file storage, background jobs, logging."
-        },
-        "2": {
-          "title": "AI",
-          "description": "RAG/assistants, prompt & context, evals basics, latency budgets, product adoption focus."
-        }
+      "title": "Experience in one glance",
+      "products": {
+        "label": "Products & contexts",
+        "description": "SaaS, internal tools, and AI assistants for small teams and founders who need to move fast without burning their runway."
+      },
+      "built": {
+        "label": "What I've built",
+        "description": "MVPs from scratch, integrations, AI-powered search & assistants, dashboards, and maintenance/hosting setups for live products."
+      },
+      "showUp": {
+        "label": "How I show up",
+        "description": "I work like an embedded teammate: async-friendly, opinionated on scope, and comfortable owning a problem from idea to production."
       }
     },
-    "tools": {
-      "title": "Tools I use daily",
-      "categories": {
-        "0": {
-          "category": "Frontend",
-          "skills": {
-            "0": "React",
-            "1": "Next.js",
-            "2": "TypeScript",
-            "3": "Tailwind CSS"
-          }
-        },
-        "1": {
-          "category": "Backend",
-          "skills": {
-            "0": "Node.js",
-            "1": "PostgreSQL (Neon)",
-            "2": "REST APIs"
-          }
-        },
-        "2": {
-          "category": "AI & Data",
-          "skills": {
-            "0": "Vercel AI SDK",
-            "1": "OpenAI SDK",
-            "2": "Vector Search (Upstash/PGVector)"
-          }
-        },
-        "3": {
-          "category": "Cloud",
-          "skills": {
-            "0": "Vercel",
-            "1": "AWS (basics)",
-            "2": "Supabase/Firebase (as needed)"
-          }
-        },
-        "4": {
-          "category": "DevX",
-          "skills": {
-            "0": "GitHub Actions",
-            "1": "Docker",
-            "2": "ESLint/Prettier"
-          }
-        },
-        "5": {
-          "category": "Collab",
-          "skills": {
-            "0": "Figma",
-            "1": "Linear/ClickUp",
-            "2": "Notion"
-          }
-        }
-      }
-    },
-    "story": {
-      "title": "My story (short)",
-      "timeline": {
-        "0": {
-          "period": "2018 → Today",
-          "description": "I fell in love with the craft of building fast, reliable web apps. Over time I focused on TypeScript/Next.js and pragmatic AI — not hype, just features users adopt."
-        },
-        "1": {
-          "period": "Recent",
-          "description": "Built MVPs and AI proofs on small projects; learned to cut scope, design for change, and keep latency budgets honest. I care about developer ergonomics and long-term maintainability."
-        },
-        "2": {
-          "period": "What this means for you",
-          "description": "You get someone who moves quickly without breaking tomorrow, communicates clearly, and treats your product like an owner."
-        }
-      }
-    },
-    "eligibility": {
-      "title": "Eligibility checklist",
-      "items": {
-        "0": "Can deliver an MVP baseline with clean, typed code and CI.",
-        "1": "Comfortable integrating AI features where they truly help users.",
-        "2": "Understands product trade-offs; scopes ruthlessly for momentum.",
-        "3": "Writes docs and ADRs so future work is faster.",
-        "4": "Collaborates well with PM/Design; async by default, quick when needed."
-      }
+    "human": {
+      "title": "A bit more human",
+      "paragraph1": "I'm based at Charleroi in Belgium, working mostly with European teams. I've spent my time between building products, integrating AI into existing apps, and keeping production systems healthy.",
+      "paragraph2": "Off-screen, I care about the same things that make good software: discipline, small improvements, and long-term thinking."
     },
     "cta": {
-      "title": "Want the no-fluff version?",
-      "description": "If you value speed, clarity, and ownership — I'm a good match. Happy to walk through code or past work.",
-      "button": "Book a 15-min call",
-      "buttonPrompt": "Can we book a 15-min call?"
+      "title": "See if we're a good fit",
+      "description": "If you're planning an MVP, an AI feature, or you need someone to take ownership of a small but important product, we can look at your roadmap together and see what would be realistic in the next 30-60 days."
     }
   }
 }
