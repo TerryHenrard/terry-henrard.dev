@@ -47,7 +47,7 @@ export default function FloatingChatbox() {
     return (
       <>
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent className='flex h-dvh max-h-dvh w-screen max-w-none flex-col gap-0 rounded-none p-0 [&>button]:top-4 [&>button]:right-4'>
+          <DialogContent className='flex h-dvh max-h-dvh w-screen max-w-none flex-col gap-0 rounded-none p-0 sm:max-w-none [&>button]:top-4 [&>button]:right-4'>
             <DialogHeader className='shrink-0 border-b px-4 py-3'>
               <DialogTitle>{t('title')}</DialogTitle>
             </DialogHeader>

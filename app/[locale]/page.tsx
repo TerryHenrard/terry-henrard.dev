@@ -18,7 +18,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   return (
     <main className='relative z-10 container mx-auto flex min-h-[calc(100vh-4rem)] items-center justify-center'>
       {/* Hero Section - content will be added later */}
-      <section className='w-full pb-14'>
+      <section className='w-full pb-0 lg:pb-14'>
         <div className=''>
           <div className='relative mx-auto flex max-w-6xl flex-col px-6 lg:flex-row lg:items-center'>
             <div className='mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left'>
