@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import { useIsMobile } from '@/core/hooks/use-mobile';
+import { useIsMobile } from '@/core/hooks/use-is-mobile';
 import { LocaleSwitcher } from '@/features/i18n/components/locale-switcher';
 import { Link } from '@/features/i18n/lib/navigation';
 
@@ -35,11 +35,11 @@ function ListItem({
 }
 
 export default function Header() {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   const t = useTranslations();
 
   return (
-    <header className='bg-secondary/50 fixed top-0 right-0 left-0 z-50 h-16 border-b p-4 transition-colors duration-300'>
+    <header className='bg-secondary/50 fixed top-0 right-0 left-0 z-50 hidden h-16 border-b p-4 transition-colors duration-300 lg:block'>
       <div className='container mx-auto flex h-full items-center justify-between'>
         <div className='flex items-center gap-8'>
           <NavigationMenu viewport={isMobile}>

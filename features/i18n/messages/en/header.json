@@ -2,6 +2,7 @@
   "header": {
     "title": "Home",
     "nav": {
+      "home": "Home",
       "experience": "My Experience",
       "services": {
         "trigger": "My services",

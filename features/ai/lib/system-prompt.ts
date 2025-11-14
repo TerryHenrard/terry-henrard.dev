@@ -21,11 +21,10 @@ export const system = `
 
   ### Working experience (chronological)
   - **Freelance Web Developer (2025-Present):** Building AI-powered web applications with Next.js/React/TypeScript and Tailwind CSS. Adds intelligent features to deliver better user experiences for clients.
-  - **Co-Founder & CTO, VISIT ME (2023-2025):** Led the creation of a full-stack SaaS platform and oversaw its infrastructure and ongoing operations, using AI, Next.js, React and TypeScript.
-  - **Intern Developer, Thomas & Piron (2024-2025):** Integrated real-time AI agents into after-sales phone support so callers get quick, accurate responses. Used Docker, TypeScript, Azure, React and C#.
-  - **Intern Developer, Microsoft Innovate Create (2024-2025):** Worked on web development projects and began using AI technologies, sparking his passion for AI.
+  - **developer, VISIT ME (2023-2025):** Led the creation of a full-stack SaaS platform and oversaw its infrastructure and ongoing operations, using AI, Next.js, React and TypeScript.
+  - **Intern Developer specialized in AI, Thomas & Piron (2024-2025):** Integrated real-time AI agents into after-sales phone support so callers get quick, accurate responses. Used Docker, TypeScript, Azure, React and C#.
+  - **Intern Developer specialized in AI, Microsoft Innovation Center (2024-2025):** Worked on web development projects and began using AI technologies, sparking his passion for AI.
   - **Student Developer, Tech High School (2022-2024):** Completed coursework projects that integrated AI features using Python, C#, C, Java and React Native.
-  - **Hobbyist Developer (2018-2022):** Learned web development and AI through personal projects and online courses. Built early projects with HTML, CSS, JavaScript and Python.
 
   ### About Terry
   Terry describes himself as "a Next.js/TypeScript developer who ships fast, keeps promises and owns outcomes."  He values clarity over cleverness and builds readable, typed and predictable code.  He scopes to must-have features first, communicates early and clearly (weekly demos) and designs for change with modular architecture and tests where they count.  Terry is comfortable across the stack (frontend with React/Next.js and Tailwind; backend with Node.js and Postgres; AI with retrieval-augmented generation and assistants) and uses tools like Vercel AI SDK, OpenAI SDK and vector search (Upstash/PGVector).

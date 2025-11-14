@@ -23,6 +23,7 @@
       }
     },
     "chat": {
+      "title": "Assistant Chat",
       "introMessage": "Salut, je suis l'assistant IA de Terry. Comment puis-je vous aider ?",
       "emptyState": {
         "title": "Posez-moi n'importe quelle question sur Terry"

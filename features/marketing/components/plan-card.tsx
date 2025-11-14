@@ -36,13 +36,13 @@ export function PlanCard({
   return (
     <Card
       className={cn(
-        'flex flex-col justify-between rounded-3xl p-8',
+        'flex flex-col justify-between rounded-3xl p-6 sm:p-8',
         highlighted && 'ring-primary/20 ring-2',
         className
       )}
     >
       <CardContent>
-        <h3 className='mb-2 text-xl font-bold'>{title}</h3>
+        <h3 className='mb-2 text-lg font-bold sm:text-xl'>{title}</h3>
         <p className='text-foreground/70 mb-4 text-sm'>{goal}</p>
 
         <div className='mb-4'>
