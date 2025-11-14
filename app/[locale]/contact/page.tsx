@@ -158,7 +158,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <p className='text-foreground/70 mx-auto mb-4 max-w-2xl text-sm md:text-base'>
             {t('cta.description')}
           </p>
-          <Button asChild size='lg' className='w-full text-base sm:text-lg'>
+          <Button asChild className='w-full sm:w-auto'>
             <a href='mailto:terry.henrard@outlook.com'>{t('cta.button')}</a>
           </Button>
         </div>

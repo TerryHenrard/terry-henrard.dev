@@ -147,7 +147,7 @@ export default async function AISprintPage({ params }: { params: Promise<{ local
 
         {/* Final CTA */}
         <div className='mb-2 flex flex-col items-center gap-3 text-center'>
-          <div className='flex w-full flex-col items-center gap-3 sm:flex-row'>
+          <div className='flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row'>
             <Button asChild size='lg' className='w-full sm:w-auto'>
               <Link href='/services/audit'>{t('cta.primary')}</Link>
             </Button>
@@ -157,7 +157,7 @@ export default async function AISprintPage({ params }: { params: Promise<{ local
               className='w-full sm:w-auto'
             />
           </div>
-          <p className='text-foreground/60 text-xs sm:text-sm'>
+          <p className='text-foreground/60 text-xs leading-relaxed sm:text-sm'>
             {t.rich('cta.footer', {
               link: (chunks: React.ReactNode) => (
                 <Link

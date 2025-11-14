@@ -209,7 +209,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
           <p className='text-foreground/70 mx-auto mb-4 max-w-2xl text-sm md:text-base'>
             {t('cta.description')}
           </p>
-          <CtaTriggerPhoneCallRequest className='w-full' />
+          <CtaTriggerPhoneCallRequest className='w-full sm:w-auto' />
         </div>
       </div>
     </main>

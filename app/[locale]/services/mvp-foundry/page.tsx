@@ -150,7 +150,7 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* Final CTA */}
-        <div className='mb-2 flex flex-col items-center gap-3 text-center sm:gap-4'>
+        <div className='mb-2 flex flex-col items-center gap-3 text-center'>
           <div className='flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row'>
             <Button asChild size='lg' className='w-full sm:w-auto'>
               <Link href='/services/audit'>{t('cta.primary')}</Link>
@@ -161,7 +161,7 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
               className='w-full sm:w-auto'
             />
           </div>
-          <p className='text-foreground/60 text-sm sm:text-base'>
+          <p className='text-foreground/60 text-xs leading-relaxed sm:text-sm'>
             {t.rich('cta.footer', {
               link: (chunks: React.ReactNode) => (
                 <Link
