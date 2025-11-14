@@ -12,18 +12,14 @@ import {
   Zap,
 } from 'lucide-react';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/core/components/ui/accordion';
 import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent } from '@/core/components/ui/card';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 import { Link } from '@/features/i18n/lib/navigation';
+import FAQCard from '@/features/marketing/components/faq-card';
 import FOMOCard from '@/features/marketing/components/fomo-card';
+import GlossaryAccordion from '@/features/marketing/components/glossary-accordion';
 
 export default async function MVPFoundryPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -133,43 +129,24 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* FAQ */}
-        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
-          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('faq.title')}</h2>
-          <Card className='rounded-3xl p-6 sm:p-8'>
-            <CardContent className='p-0'>
-              <Accordion type='single' collapsible className='w-full'>
-                {[0, 1, 2, 3, 4].map((idx) => (
-                  <AccordionItem key={idx} value={`item-${idx}`}>
-                    <AccordionTrigger className='text-left text-base sm:text-lg'>
-                      {t(`faq.items.${idx}.question` as any)}
-                    </AccordionTrigger>
-                    <AccordionContent className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
-                      {t(`faq.items.${idx}.answer` as any)}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
-        </div>
+        <FAQCard
+          title={t('faq.title')}
+          items={[0, 1, 2, 3, 4].map((idx) => ({
+            question: t(`faq.items.${idx}.question` as any),
+            answer: t(`faq.items.${idx}.answer` as any),
+          }))}
+        />
 
         {/* Glossary */}
         <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
           <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('glossary.title')}</h2>
-          <div className='grid gap-4 sm:gap-6 md:grid-cols-2'>
-            {[0, 1].map((idx) => (
-              <Card key={idx} className='rounded-3xl p-6 sm:p-8'>
-                <CardContent className='p-0'>
-                  <h3 className='mb-2 text-base font-semibold sm:text-lg'>
-                    {t(`glossary.items.${idx}.term` as any)}
-                  </h3>
-                  <p className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
-                    {t(`glossary.items.${idx}.definition` as any)}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <GlossaryAccordion
+            items={[0, 1].map((idx) => ({
+              term: t(`glossary.items.${idx}.term` as any),
+              definition: t(`glossary.items.${idx}.definition` as any),
+            }))}
+            defaultValue='item-0'
+          />
         </div>
 
         {/* Final CTA */}
