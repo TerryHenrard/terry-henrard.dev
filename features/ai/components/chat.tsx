@@ -35,9 +35,6 @@ import { PhoneCallRequestForm } from './phone-call-request-form';
 
 export default function Chat() {
   const { isMobile, isLoading: isLoadingMobile } = useIsMobile();
-  useEffect(() => {
-    console.log(isMobile);
-  }, [isMobile]);
   const tChat = useTranslations('home.chat');
   const tHome = useTranslations('home');
   const tPhone = useTranslations('phoneCallRequestForm');
