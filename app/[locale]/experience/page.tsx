@@ -49,7 +49,7 @@ export default function ExperiencePage() {
                     )}
                   >
                     <Card className='transition-all hover:-translate-y-1 hover:shadow-xl'>
-                      <CardContent className='space-y-3'>
+                      <CardContent className='space-y-3 px-4'>
                         <div className='flex flex-wrap items-start justify-between gap-2'>
                           <div className='flex-1 space-y-1'>
                             <h4 className='text-foreground text-base font-bold'>{item.title}</h4>
