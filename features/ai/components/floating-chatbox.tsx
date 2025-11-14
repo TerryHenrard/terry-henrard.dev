@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { MessageSquare, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
+import { Badge } from '@/core/components/ui/badge';
 import { Button } from '@/core/components/ui/button';
 import { Card, CardContent } from '@/core/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/components/ui/dialog';
@@ -25,19 +26,29 @@ export default function FloatingChatbox() {
   const hasShownIntro = useFloatingChatStore((state) => state.hasShownIntro);
   const setHasShownIntro = useFloatingChatStore((state) => state.setHasShownIntro);
   const setShouldShowIntro = useFloatingChatStore((state) => state.setShouldShowIntro);
+  const showNotificationBadge = useFloatingChatStore((state) => state.showNotificationBadge);
+  const setShowNotificationBadge = useFloatingChatStore((state) => state.setShowNotificationBadge);
 
   useEffect(() => {
-    // Only show intro once per session
+    // Only show notification badge once per session
     if (!isClient || hasShownIntro) return;
 
     const timer = setTimeout(() => {
-      setShouldShowIntro(!isOpen);
-      setIsOpen(true);
+      setShowNotificationBadge(true);
+      setShouldShowIntro(true); // Set intro message to show when chat opens
       setHasShownIntro(true);
     }, 10000); // 10 seconds
 
     return () => clearTimeout(timer);
-  }, [isClient, hasShownIntro, setIsOpen, setShouldShowIntro, setHasShownIntro, isOpen]);
+  }, [isClient, hasShownIntro, setShowNotificationBadge, setShouldShowIntro, setHasShownIntro]);
+
+  const handleToggleChat = () => {
+    setIsOpen(!isOpen);
+    // Hide notification badge when chat is opened
+    if (!isOpen && showNotificationBadge) {
+      setShowNotificationBadge(false);
+    }
+  };
 
   // Don't render anything on the server
   if (!isClient) return null;
@@ -63,22 +74,37 @@ export default function FloatingChatbox() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <Button
-            size='icon'
-            className='size-14 rounded-full shadow-lg'
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label='Toggle chat'
-          >
-            <motion.div
-              key={isOpen ? 'close' : 'open'}
-              initial={{ rotate: -180, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 180, opacity: 0 }}
-              transition={{ duration: 0.2 }}
+          <div className='relative'>
+            <Button
+              size='icon'
+              className='size-14 rounded-full shadow-lg'
+              onClick={handleToggleChat}
+              aria-label='Toggle chat'
             >
-              {isOpen ? <X className='size-6' /> : <MessageSquare className='size-6' />}
-            </motion.div>
-          </Button>
+              <motion.div
+                key={isOpen ? 'close' : 'open'}
+                initial={{ rotate: -180, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 180, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isOpen ? <X className='size-6' /> : <MessageSquare className='size-6' />}
+              </motion.div>
+            </Button>
+            <AnimatePresence>
+              {showNotificationBadge && !isOpen && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  className='absolute -top-1 -right-1'
+                >
+                  {/* eslint-disable-next-line react/jsx-no-literals */}
+                  <Badge className='size-4 bg-red-400 p-0'>1</Badge>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </motion.div>
       </>
     );
@@ -135,22 +161,37 @@ export default function FloatingChatbox() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        <Button
-          size='icon'
-          className='size-14 rounded-full shadow-lg'
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label='Toggle chat'
-        >
-          <motion.div
-            key={isOpen ? 'close' : 'open'}
-            initial={{ rotate: -180, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            exit={{ rotate: 180, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+        <div className='relative'>
+          <Button
+            size='icon'
+            className='size-14 rounded-full shadow-lg'
+            onClick={handleToggleChat}
+            aria-label='Toggle chat'
           >
-            {isOpen ? <X className='size-6' /> : <MessageSquare className='size-6' />}
-          </motion.div>
-        </Button>
+            <motion.div
+              key={isOpen ? 'close' : 'open'}
+              initial={{ rotate: -180, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 180, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {isOpen ? <X className='size-6' /> : <MessageSquare className='size-6' />}
+            </motion.div>
+          </Button>
+          <AnimatePresence>
+            {showNotificationBadge && !isOpen && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                className='absolute -top-1 -right-1'
+              >
+                {/* eslint-disable-next-line react/jsx-no-literals */}
+                <Badge className='size-4 bg-red-400 p-0'>1</Badge>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </motion.div>
     </>
   );
