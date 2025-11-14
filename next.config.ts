@@ -4,10 +4,9 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   reactCompiler: true,
   typedRoutes: true,
+  poweredByHeader: false,
   experimental: {
     turbopackFileSystemCacheForDev: true,
-    // turbopackFileSystemCacheForBuild: true,
-    typedEnv: true,
   },
 };
 
@@ -28,6 +27,7 @@ const withNextIntl = createNextIntlPlugin({
       './features/i18n/messages/en/header.json',
       './features/i18n/messages/en/marketing.json',
       './features/i18n/messages/en/locale-switcher.json',
+      './features/i18n/messages/en/cta-trigger-phone-call-request.json',
     ],
   },
 });

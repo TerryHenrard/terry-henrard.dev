@@ -1,92 +1,108 @@
 {
   "aiSprint": {
-    "badge": "Sprint Fonctionnalité IA",
+    "badge": "AI Spark",
     "hero": {
-      "title": "Livrez <span class=\"decoration-primary/50 underline underline-offset-4\">une vraie fonctionnalité IA</span> en 14 jours — mesurée, sûre et utilisable.",
-      "description": "Nous choisissons <strong>un KPI qui compte</strong> (moins d'étapes, réponses plus rapides, plus d'autonomie), et nous livrons une fonctionnalité de production que vos utilisateurs ressentent réellement.",
-      "guarantee": "<strong><em>Garantie :</em></strong> si nous manquons la métrique de succès ou la deadline convenue à cause de moi, je continue à travailler <strong class=\"underline\">sans frais supplémentaires</strong>."
+      "title": "J'ajoute à votre produit des fonctions d'intelligence artificielle concrètes, utiles et rentables",
+      "subtitle": "En 14 jours ouvrés",
+      "description": "Pour que vos utilisateurs gagnent du temps et que votre équipe livre plus avec moins."
     },
-    "fomo": {
-      "slots": "2 créneaux restants ce mois-ci",
-      "message": "Capacité limitée pour assurer une livraison de qualité"
-    },
-    "outcomes": {
-      "0": {
-        "title": "Réduire le temps de réponse",
-        "description": "Réduire le temps de traitement sur un flux clé (support, ops, docs) pour que les gens obtiennent ce dont ils ont besoin plus rapidement."
-      },
-      "1": {
-        "title": "Augmenter l'autonomie",
-        "description": "Dévier les tickets avec des réponses claires et citées ou rédiger de meilleures réponses en un clic."
-      },
-      "2": {
-        "title": "Supprimer les étapes manuelles",
-        "description": "Automatiser une tâche pénible (résumés, extraction, classification) qui ralentit l'équipe."
-      }
-    },
-    "deliverables": {
-      "title": "Ce que vous obtenez en 14 jours",
+    "whatIsIncluded": {
+      "title": "Ce qui est compris",
       "items": {
-        "0": "• Une fonctionnalité IA livrée (chat RAG, workflow agentique, ou assistance intelligente) liée à un KPI.",
-        "1": "• Rails de sécurité : contrôle d'accès, limites, solutions de repli, et humain dans la boucle si nécessaire.",
-        "2": "• Tableau de bord d'utilisation & analyses simples pour voir l'adoption, la latence et les retours.",
-        "3": "• Documentation claire + une passation enregistrée de 30 min pour que votre équipe puisse étendre en toute confiance.",
-        "4": "• <strong>Bouclier Bug 30 jours</strong> : corrections critiques incluses après le lancement."
-      }
-    },
-    "notIncluded": {
-      "title": "Ce que ce n'est pas",
-      "items": {
-        "0": "• Pas \"de l'IA pour l'IA\". Nous refusons les fonctionnalités que les utilisateurs ne ressentiront pas.",
-        "1": "• Pas un projet de recherche de 3 mois. C'est une construction ciblée qui livre.",
-        "2": "• Pas d'entraînement LLM personnalisé. Nous utilisons des blocs de construction éprouvés pour aller vite."
-      }
-    },
-    "process": {
-      "title": "Le Plan de 14 Jours",
-      "phases": {
         "0": {
-          "title": "Jours 1-2 · Scope",
-          "description": "Choisir le KPI, le flux utilisateur et la \"définition de terminé\". Confirmer l'accès aux données & le seuil de succès."
+          "title": "Développement et intégration",
+          "description": "Branchement sur vos données / API existantes"
         },
         "1": {
-          "title": "Jours 3-10 · Construction",
-          "description": "Implémenter, démontrer à mi-sprint, mettre en place des garde-fous, et câbler le suivi d'utilisation de base."
+          "title": "Interface ergonomique",
+          "description": "Interface simple et intuitive pour vos utilisateurs"
         },
         "2": {
-          "title": "Jours 11-14 · Prouver & Lancer",
-          "description": "Polir l'UX, ajouter des solutions de repli, exécuter des vérifications, livrer en production, et examiner les premières métriques."
+          "title": "Tests utilisateurs",
+          "description": "Tests réels et ajustements basés sur les retours"
+        },
+        "3": {
+          "title": "Tableau de suivi",
+          "description": "Suivi des résultats et métriques d'utilisation"
         }
-      },
-      "cta": "Réserver un créneau de sprint"
-    },
-    "metrics": {
-      "title": "Comment nous mesurons le succès",
-      "items": {
-        "0": "• <strong>Adoption</strong> : % d'utilisateurs cibles qui ont utilisé la fonctionnalité cette semaine.",
-        "1": "• <strong>Flux plus rapide</strong> : temps médian économisé par rapport à la tâche de référence.",
-        "2": "• <strong>Qualité</strong> : score utilisateur \"était-ce utile ?\" & erreurs signalées.",
-        "3": "• <strong>Contrôle des coûts</strong> : le coût par utilisation reste dans le plafond convenu.",
-        "4": "• <strong>Fiabilité</strong> : réponse p95 sous la cible ; aucun incident critique.",
-        "5": "• <strong>Impact business</strong> : 1 métrique simple (par ex., taux de déviation des tickets)."
       }
     },
-    "guarantee": {
-      "title": "Garantie simple",
-      "description": "Si nous manquons le KPI ou la deadline convenue à cause de moi, je continuerai à travailler sans frais supplémentaires jusqu'à ce que nous l'atteignions. Clair, équitable et aligné."
+    "whatYouGet": {
+      "title": "Ce que vous obtenez",
+      "description": "Une fonctionnalité AI en production, utilisée et mesurée.",
+      "summary": "Votre produit devient plus intelligent sans complexifier votre stack."
     },
-    "whoFor": {
-      "title": "Pour qui c'est fait",
+    "guarantees": {
+      "title": "Mes garanties",
       "items": {
-        "0": "• Équipes SaaS B2B avec un flux clair à améliorer et un seul décideur.",
-        "1": "• Vous pouvez fournir l'accès aux données dont nous avons besoin (ou un export d'échantillon).",
-        "2": "• Vous êtes d'accord avec une boucle de retour serrée et deux courtes vérifications par semaine."
+        "0": {
+          "title": "Fast-Track 14 jours",
+          "description": "Une 1ʳᵉ version fonctionnelle livrée en 14 jours ouvrés. Si raté, je continue de travailler sans frais supplémentaire jusqu'à l'implémentation complète."
+        },
+        "1": {
+          "title": "Résultat mesurable",
+          "description": "Chaque fonctionnalité AI est reliée à un indicateur métier (temps gagné, taux de conversion, satisfaction…). Si raté, je continue sans frais supplémentaire."
+        },
+        "2": {
+          "title": "Zéro jargon",
+          "description": "Tout est expliqué en langage simple, sans technicité inutile. Si vous ne comprenez pas le livrable : session de reprise offerte."
+        },
+        "3": {
+          "title": "Confidentialité garantie",
+          "description": "Vos données restent sur vos comptes, vos serveurs, vos modèles."
+        },
+        "4": {
+          "title": "Bug Killer",
+          "description": "Aucun bug critique en production dans les 30 jours. Si raté, correction sans frais supplémentaire."
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": {
+        "0": {
+          "question": "En quoi consiste votre service, concrètement ?",
+          "answer": "Je vous aide à trouver, concevoir et livrer une fonctionnalité AI utile (assistant, recherche, résumé, génération, etc.) — sans blabla ni expérimentation coûteuse."
+        },
+        "1": {
+          "question": "Quelle est la différence avec un simple \"Proof-of-concept (POC) AI\" ?",
+          "answer": "Le POC prouve une idée ; mon service la transforme en résultat mesurable et intégré à votre produit."
+        },
+        "2": {
+          "question": "Combien de temps ça prend ?",
+          "answer": "14 jours ouvrés."
+        },
+        "3": {
+          "question": "Faut-il déjà avoir des données ?",
+          "answer": "Non, mais plus elles sont structurées, plus on peut aller loin. Sinon, je vous aide à cadrer une première base."
+        },
+        "4": {
+          "question": "Peut-on combiner avec votre plan de maintenance ?",
+          "answer": "Oui, AI Spark s'intègre parfaitement à mon Plan de Maintenance & Hébergement."
+        }
+      }
+    },
+    "glossary": {
+      "title": "Glossaire",
+      "items": {
+        "0": {
+          "term": "Fonctionnalité AI",
+          "definition": "Une fonction intelligente intégrée à votre produit qui utilise l'IA pour automatiser, assister ou améliorer l'expérience utilisateur (ex: assistant conversationnel, résumé automatique, recherche sémantique)."
+        },
+        "1": {
+          "term": "Indicateur métier",
+          "definition": "Mesure quantifiable de la performance d'une fonctionnalité (temps économisé, taux de conversion, satisfaction client, coût par utilisation, etc.)."
+        },
+        "2": {
+          "term": "Proof-of-Concept (POC)",
+          "definition": "Démonstration technique qui prouve qu'une idée ou une technologie peut fonctionner. Contrairement à une fonctionnalité complète, un POC n'est généralement pas prêt pour la production et manque souvent d'intégration, de sécurité et de mesures de performance."
+        }
       }
     },
     "cta": {
-      "primary": "Commencez par l'Audit IA de 1 semaine",
-      "secondary": "Réserver un appel rapide",
-      "footer": "Après le lancement, maintenez l'élan avec <Link class=\"underline underline-offset-4\" href=\"/services/care-and-hosting-plan\">le Plan de Maintenance &amp; Hébergement</Link>."
+      "primary": "Démarrer avec l'Audit",
+      "secondary": "Planifier un appel découverte",
+      "footer": "Après le lancement, maintenez l'élan avec <link>le plan Care & Hosting</link>."
     }
   }
 }

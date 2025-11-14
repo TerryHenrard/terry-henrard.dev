@@ -1,157 +1,63 @@
 {
   "about": {
-    "badge": "À propos de moi",
+    "badge": "À propos",
     "hero": {
-      "title": "Je suis Terry - un développeur Next.js/TypeScript qui livre rapidement, tient ses promesses et assume ses résultats.",
-      "description": "Je combine <strong>la discipline de production</strong> (code propre, testé, documenté) avec <strong>le sens du produit</strong> (définir les priorités impitoyablement, mesurer ce qui compte) et <strong>la responsabilité</strong> (je traite votre application comme la mienne)."
+      "title": "Travaillez avec un développeur qui livre et se soucie des résultats.",
+      "description": "Je suis Terry, un développeur freelance spécialisé dans la livraison de <strong>MVPs utilisables</strong> et de <strong>fonctionnalités IA réelles</strong>. J'apprécie les cycles courts, les KPIs clairs et le code que vous pourrez maintenir après mon départ."
     },
-    "credibility": {
+    "proofStrip": {
+      "mvp": "Des MVPs en semaines, pas en trimestres",
+      "stack": "Next.js + TypeScript + IA",
+      "mindset": "État d'esprit production-first",
+      "team": "Conçu pour les équipes produit et fondateurs"
+    },
+    "whatIDo": {
+      "title": "Ce que je vous aide à réaliser",
       "items": {
-        "0": {
-          "label": "Livre de manière fiable (démos hebdomadaires)"
-        },
-        "1": {
-          "label": "Mentalité production (tests, CI/CD)"
-        },
-        "2": {
-          "label": "Expérience Next.js + IA"
-        },
-        "3": {
-          "label": "Communication claire & responsabilité"
-        }
+        "mvpSpeed": "Passer de l'idée au <strong>premier MVP utilisable en 4-6 semaines</strong>, avec une surface minimale et un périmètre clair.",
+        "aiFeature": "Livrer <strong>une vraie fonctionnalité IA en 14 jours</strong> qui réduit les étapes, le temps de réponse ou la charge de support.",
+        "roadmap": "Transformer une feuille de route floue en un <strong>plan de 30-60 jours</strong> que vous pouvez défendre auprès de votre équipe et parties prenantes.",
+        "maintenance": "Maintenir votre produit <strong>rapide, en ligne et en bonne santé</strong> sans crises surprises chaque semaine."
       }
     },
-    "strongFit": {
-      "title": "Je suis un atout solide pour votre équipe",
-      "points": {
-        "0": "Je me concentre d'abord sur l'essentiel, puis j'itère — momentum > perfection.",
-        "1": "Je communique tôt et clairement : démos hebdomadaires, aucune surprise.",
-        "2": "Je conçois pour le changement : code typé, architecture modulaire, tests là où ça compte.",
-        "3": "Je suis à l'aise sur toute la stack : Next.js/React, Node, Postgres, recherche vectorielle, cloud basique.",
-        "4": "J'ai livré des fonctionnalités IA (RAG, assistants) sur de petits projets et je connais les pièges (latence, évaluations, adoption).",
-        "5": "Je documente les décisions pour que vous (ou vos coéquipiers) puissiez avancer rapidement sans moi."
-      }
-    },
-    "principles": {
-      "title": "Principes selon lesquels je travaille",
-      "items": {
-        "0": {
-          "title": "Clarté > Ingéniosité",
-          "description": "Un code lisible, typé et prévisible l'emporte sur la magie. Pérenne signifie lisible à l'avenir."
-        },
-        "1": {
-          "title": "Mesurer ce qui compte",
-          "description": "Latence, disponibilité, adoption. Je choisis 2-3 métriques et je construis autour d'elles."
-        },
-        "2": {
-          "title": "Mentalité de propriétaire",
-          "description": "J'optimise pour la santé à long terme de votre produit, pas juste pour 'terminé'."
-        }
+    "howIWork": {
+      "title": "Comment j'aime travailler",
+      "sprints": {
+        "title": "Sprints courts et ciblés",
+        "description": "Nous réduisons drastiquement le périmètre, livrons quelque chose de petit qui fonctionne, puis itérons. Démos hebdomadaires, pas de boîte noire."
+      },
+      "production": {
+        "title": "Production plutôt que prototypes",
+        "description": "Je pense en termes de disponibilité, d'observabilité et de transmission. Les fonctionnalités sont construites pour survivre aux vrais utilisateurs, pas seulement aux démos."
+      },
+      "stack": {
+        "title": "Stack moderne et claire",
+        "description": "Next.js, TypeScript, Postgres et outils IA modernes. Code typé et modulaire que votre équipe peut reprendre."
       }
     },
     "experience": {
-      "title": "Aperçu de l'expérience",
-      "items": {
-        "0": {
-          "title": "Frontend & Plateforme",
-          "description": "React/Next.js (App Router), TypeScript, Tailwind, shadcn/ui, TanStack Query, CI/CD."
-        },
-        "1": {
-          "title": "Backend & Données",
-          "description": "Node.js, Postgres/Neon, REST, auth, stockage de fichiers, tâches en arrière-plan, logging."
-        },
-        "2": {
-          "title": "IA",
-          "description": "RAG/assistants, prompt & contexte, bases d'évaluations, budgets de latence, focus adoption produit."
-        }
+      "title": "Expérience en un coup d'œil",
+      "products": {
+        "label": "Produits & contextes",
+        "description": "SaaS, outils internes et assistants IA pour petites équipes et fondateurs qui doivent avancer rapidement sans brûler leur trésorerie."
+      },
+      "built": {
+        "label": "Ce que j'ai construit",
+        "description": "MVPs de zéro, intégrations, recherche et assistants alimentés par l'IA, tableaux de bord et configurations de maintenance/hébergement pour produits en production."
+      },
+      "showUp": {
+        "label": "Comment je me présente",
+        "description": "Je travaille comme un coéquipier intégré : compatible en asynchrone, avec des opinions sur le périmètre, et à l'aise pour prendre en charge un problème de l'idée à la production."
       }
     },
-    "tools": {
-      "title": "Outils que j'utilise quotidiennement",
-      "categories": {
-        "0": {
-          "category": "Frontend",
-          "skills": {
-            "0": "React",
-            "1": "Next.js",
-            "2": "TypeScript",
-            "3": "Tailwind CSS"
-          }
-        },
-        "1": {
-          "category": "Backend",
-          "skills": {
-            "0": "Node.js",
-            "1": "PostgreSQL (Neon)",
-            "2": "API REST"
-          }
-        },
-        "2": {
-          "category": "IA & Données",
-          "skills": {
-            "0": "Vercel AI SDK",
-            "1": "OpenAI SDK",
-            "2": "Recherche vectorielle (Upstash/PGVector)"
-          }
-        },
-        "3": {
-          "category": "Cloud",
-          "skills": {
-            "0": "Vercel",
-            "1": "AWS (bases)",
-            "2": "Supabase/Firebase (au besoin)"
-          }
-        },
-        "4": {
-          "category": "DevX",
-          "skills": {
-            "0": "GitHub Actions",
-            "1": "Docker",
-            "2": "ESLint/Prettier"
-          }
-        },
-        "5": {
-          "category": "Collab",
-          "skills": {
-            "0": "Figma",
-            "1": "Linear/ClickUp",
-            "2": "Notion"
-          }
-        }
-      }
-    },
-    "story": {
-      "title": "Mon histoire (courte)",
-      "timeline": {
-        "0": {
-          "period": "2018 → Aujourd'hui",
-          "description": "Je suis tombé amoureux de l'art de créer des applications web rapides et fiables. Au fil du temps, je me suis concentré sur TypeScript/Next.js et l'IA pragmatique — pas de hype, juste des fonctionnalités que les utilisateurs adoptent."
-        },
-        "1": {
-          "period": "Récemment",
-          "description": "J'ai construit des MVP et des preuves de concept IA sur de petits projets ; j'ai appris à réduire le scope, concevoir pour le changement, et garder des budgets de latence honnêtes. Je me soucie de l'ergonomie développeur et de la maintenabilité à long terme."
-        },
-        "2": {
-          "period": "Ce que cela signifie pour vous",
-          "description": "Vous obtenez quelqu'un qui avance rapidement sans casser demain, communique clairement, et traite votre produit comme un propriétaire."
-        }
-      }
-    },
-    "eligibility": {
-      "title": "Liste de contrôle d'éligibilité",
-      "items": {
-        "0": "Peut livrer une base MVP avec du code propre, typé et CI.",
-        "1": "À l'aise pour intégrer des fonctionnalités IA là où elles aident vraiment les utilisateurs.",
-        "2": "Comprend les compromis produit ; définit les priorités impitoyablement pour le momentum.",
-        "3": "Écrit des docs et des ADR pour que le travail futur soit plus rapide.",
-        "4": "Collabore bien avec PM/Design ; asynchrone par défaut, rapide quand nécessaire."
-      }
+    "human": {
+      "title": "Un peu plus humain",
+      "paragraph1": "Je suis basé à Charleroi en Belgique, travaillant principalement avec des équipes européennes. J'ai passé mon temps entre la construction de produits, l'intégration de l'IA dans des applications existantes et le maintien de systèmes de production en bonne santé.",
+      "paragraph2": "Hors écran, je me soucie des mêmes choses qui font un bon logiciel : discipline, petites améliorations et réflexion à long terme."
     },
     "cta": {
-      "title": "Vous voulez la version sans fioritures ?",
-      "description": "Si vous valorisez la rapidité, la clarté et le sens de l'appropriation — je suis un bon match. Heureux de parcourir du code ou des projets passés.",
-      "button": "Réserver un appel de 15 min",
-      "buttonPrompt": "Peut-on réserver un appel de 15 min ?"
+      "title": "Prêt à travailler ensemble ?",
+      "description": "Discutons de votre MVP, fonctionnalité IA ou feuille de route produit et voyons ce qui est réaliste dans les 30-60 prochains jours."
     }
   }
 }

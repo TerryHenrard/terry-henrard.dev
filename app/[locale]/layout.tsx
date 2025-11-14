@@ -10,7 +10,9 @@ import { Toaster } from 'sonner';
 
 import Background from '@/core/components/layouts/background';
 import Header from '@/core/components/layouts/header';
+import MobileHeader from '@/core/components/layouts/mobile-header';
 import Providers from '@/core/components/providers';
+import FloatingChatbox from '@/features/ai/components/floating-chatbox';
 import { routing } from '@/features/i18n/lib/routing';
 
 import '../globals.css';
@@ -42,12 +44,11 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<PropsWithChildren> & {
+type RootLayoutProps = Readonly<PropsWithChildren> & {
   params: Promise<{ locale: string }>;
-}) {
+};
+
+export default async function RootLayout({ children, params }: RootLayoutProps) {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -64,8 +65,10 @@ export default async function RootLayout({
       >
         <Providers>
           <Header />
+          <MobileHeader />
           <Background />
           {children}
+          <FloatingChatbox />
           <Toaster position='top-center' />
         </Providers>
       </body>

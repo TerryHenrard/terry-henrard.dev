@@ -1,4 +1,4 @@
-# Portfolio (Next.js + AI features)
+# personnal website (Next.js + AI features)
 
 This repository is a Next.js (app router) TypeScript project with built-in AI UI components.
 

@@ -1,7 +1,8 @@
 {
   "header": {
-    "title": "L'assistant de Terry",
+    "title": "Accueil",
     "nav": {
+      "home": "Accueil",
       "experience": "Mon Expérience",
       "services": {
         "trigger": "Mes services",
@@ -10,19 +11,19 @@
         "items": {
           "audit": {
             "title": "Audit",
-            "description": "Création de sites web réactifs et dynamiques adaptés à vos besoins"
+            "description": "En 2 à 5 jours, un plan défendable : portée, risques, coûts et une feuille de route de 30 à 60 jours."
           },
           "mvpFoundry": {
-            "title": "Forge MVP",
-            "description": "de zéro à un produit utilisable en 4 à 6 semaines"
+            "title": "Une app à partir de zéro (MVP)",
+            "description": "De zéro à un produit utilisable en 4 à 6 semaines"
           },
           "aiSprint": {
             "title": "Sprint IA",
-            "description": "livrer une vraie fonctionnalité IA en 14 jours, pas des mois"
+            "description": "Livrer une vraie fonctionnalité IA en 14 jours, pas des mois"
           },
           "careAndHosting": {
             "title": "Plan de Maintenance & Hébergement",
-            "description": "Création de sites web réactifs et dynamiques adaptés à vos besoins"
+            "description": "Améliorez, protégez et développez votre produit avec mes forfaits mensuels"
           }
         }
       },

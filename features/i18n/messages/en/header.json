@@ -1,7 +1,8 @@
 {
   "header": {
-    "title": "Terry's assistant",
+    "title": "Home",
     "nav": {
+      "home": "Home",
       "experience": "My Experience",
       "services": {
         "trigger": "My services",
@@ -10,19 +11,19 @@
         "items": {
           "audit": {
             "title": "Audit",
-            "description": "Building responsive and dynamic websites tailored to your needs"
+            "description": "In 2-5 days, a defensible plan: scope, risks, costs, and a 30-60 day roadmap."
           },
           "mvpFoundry": {
-            "title": "MVP Foundry",
-            "description": "from zero to a usable product in 4 to 6 weeks"
+            "title": "An app from zero (MVP)",
+            "description": "From zero to a usable product in 4 to 6 weeks"
           },
           "aiSprint": {
             "title": "AI Sprint",
-            "description": "deliver true AI functionality in 14 days, not months"
+            "description": "Ship true AI feature in 14 days, not months"
           },
           "careAndHosting": {
             "title": "Care & Hosting Plan",
-            "description": "Building responsive and dynamic websites tailored to your needs"
+            "description": "Enhance, protect, and grow your product with my monthly plans"
           }
         }
       },

@@ -5,10 +5,28 @@
       "about": "About"
     },
     "disclaimer": "Don't take what AI tells you for granted. It can make mistakes. It's for demonstration purposes only.",
+    "hero": {
+      "availableBadge": "Available Now",
+      "title": {
+        "prefix": "Ship",
+        "highlight": "10x",
+        "suffix": "Faster with Me"
+      },
+      "description": "I build and ship MVPs, add useful AI features, and keep your app fast and safe. Miss the metric ? I keep working at",
+      "descriptionHighlight": "no extra cost",
+      "descriptionSuffix": "until you hit your goals.",
+      "cta": {
+        "contact": "Contact Me"
+      },
+      "image": {
+        "alt": "Abstract Object"
+      }
+    },
     "chat": {
+      "title": "Chat Assistant",
+      "introMessage": "Hey, I'm Terry's AI assistant. How can I help you?",
       "emptyState": {
-        "title": "Ask me anything about Terry",
-        "description": "Press Enter to start or tap a suggestion below. You can also press 1-5 to pick a prompt."
+        "title": "Ask me anything about Terry"
       },
       "suggestions": {
         "1": "Show me your services with timelines & deliverables.",

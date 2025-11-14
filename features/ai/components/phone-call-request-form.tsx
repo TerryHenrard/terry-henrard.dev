@@ -1,10 +1,10 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useMemo } from 'react';
 
 import { useTranslations } from 'next-intl';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { addDays, format, setHours, setMinutes } from 'date-fns';
-import { Calendar, Phone } from 'lucide-react';
+import { addDays, format } from 'date-fns';
+import { Calendar, Clock, Phone } from 'lucide-react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
@@ -19,6 +19,13 @@ import {
 } from '@/core/components/ui/card';
 import { Field, FieldDescription, FieldError, FieldLabel } from '@/core/components/ui/field';
 import { Input } from '@/core/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/core/components/ui/select';
 import { Spinner } from '@/core/components/ui/spinner';
 
 import { summarizeHistory } from '../lib/utils/summarize-history';
@@ -53,6 +60,19 @@ export function PhoneCallRequestForm({
     resolver: zodResolver(phoneCallRequestFormSchema),
     defaultValues: { name: '', phone: '', datetime: '' },
   });
+
+  // Generate time slots in 15-minute intervals from 8:00 AM to 6:00 PM
+  const timeSlots = useMemo(() => {
+    const slots: string[] = [];
+    for (let hour = 8; hour <= 18; hour++) {
+      for (let minute = 0; minute < 60; minute += 15) {
+        if (hour === 18 && minute > 0) break; // Stop at 6:00 PM
+        const timeValue = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+        slots.push(timeValue);
+      }
+    }
+    return slots;
+  }, []);
 
   const onSubmit = form.handleSubmit(async (data: PhoneCallRequestForm) => {
     try {
@@ -154,31 +174,55 @@ export function PhoneCallRequestForm({
               <Controller
                 name='datetime'
                 control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor={field.name} className='flex items-center gap-2'>
-                      <Calendar className='h-4 w-4' />
-                      {t('card.fields.datetime.label')}
-                    </FieldLabel>
-                    <Input
-                      {...field}
-                      id={field.name}
-                      type='datetime-local'
-                      aria-invalid={fieldState.invalid}
-                      className='w-full'
-                      min={format(
-                        setMinutes(setHours(addDays(new Date(), 1), 8), 0),
-                        "yyyy-MM-dd'T'HH:mm"
-                      )}
-                      max={format(
-                        setMinutes(setHours(addDays(new Date(), 30), 18), 0),
-                        "yyyy-MM-dd'T'HH:mm"
-                      )}
-                    />
-                    <FieldDescription>{t('card.fields.datetime.description')}</FieldDescription>
-                    {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-                  </Field>
-                )}
+                render={({ field, fieldState }) => {
+                  const [dateValue, timeValue] = (field.value || '').split('T');
+
+                  return (
+                    <Field data-invalid={fieldState.invalid}>
+                      <FieldLabel htmlFor={field.name} className='flex items-center gap-2'>
+                        <Calendar className='h-4 w-4' />
+                        {t('card.fields.datetime.label')}
+                      </FieldLabel>
+                      <div className='flex gap-2'>
+                        <Input
+                          id={field.name}
+                          type='date'
+                          aria-invalid={fieldState.invalid}
+                          className='flex-1'
+                          value={dateValue || ''}
+                          onChange={(e) => {
+                            const newDate = e.target.value;
+                            const time = timeValue || '08:00';
+                            field.onChange(newDate ? `${newDate}T${time}` : '');
+                          }}
+                          min={format(addDays(new Date(), 1), 'yyyy-MM-dd')}
+                          max={format(addDays(new Date(), 30), 'yyyy-MM-dd')}
+                        />
+                        <Select
+                          value={timeValue || ''}
+                          onValueChange={(newTime) => {
+                            const date = dateValue || format(addDays(new Date(), 1), 'yyyy-MM-dd');
+                            field.onChange(`${date}T${newTime}`);
+                          }}
+                        >
+                          <SelectTrigger className='w-[140px]' aria-invalid={fieldState.invalid}>
+                            <Clock className='mr-2 h-4 w-4' />
+                            <SelectValue placeholder='Time' />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {timeSlots.map((time) => (
+                              <SelectItem key={time} value={time}>
+                                {time}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <FieldDescription>{t('card.fields.datetime.description')}</FieldDescription>
+                      {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                    </Field>
+                  );
+                }}
               />
             </div>
           </CardContent>
