@@ -8,7 +8,7 @@ interface BackgroundProps {
 }
 
 export default function Background({
-  imageSrc = '/abstract-mountain.jpg',
+  imageSrc = '/abstract-bg.jpg',
   blurClass = 'backdrop-blur-2xl',
 }: BackgroundProps) {
   return (
