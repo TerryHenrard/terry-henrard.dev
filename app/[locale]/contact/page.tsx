@@ -151,6 +151,17 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </CardContent>
           </Card>
         </div>
+
+        {/* CTA */}
+        <div className='mb-2 flex flex-col items-center gap-3 text-center sm:gap-4'>
+          <h2 className='text-2xl font-bold sm:text-3xl'>{t('cta.title')}</h2>
+          <p className='text-foreground/70 mx-auto mb-4 max-w-2xl text-sm md:text-base'>
+            {t('cta.description')}
+          </p>
+          <Button asChild size='lg' className='w-full text-base sm:text-lg'>
+            <a href='mailto:terry.henrard@outlook.com'>{t('cta.button')}</a>
+          </Button>
+        </div>
       </div>
     </main>
   );

@@ -34,6 +34,11 @@
         "title": "Privacy & Respect",
         "description": "Your details stay between us. No spam, no resale."
       }
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "description": "Let's discuss your project and see how I can help you achieve your goals.",
+      "button": "Send an Email"
     }
   }
 }
