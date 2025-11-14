@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import { useIsMobile } from '@/core/hooks/use-mobile';
+import { useIsMobile } from '@/core/hooks/use-is-mobile';
 import { LocaleSwitcher } from '@/features/i18n/components/locale-switcher';
 import { Link } from '@/features/i18n/lib/navigation';
 
@@ -35,7 +35,7 @@ function ListItem({
 }
 
 export default function Header() {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   const t = useTranslations();
 
   return (

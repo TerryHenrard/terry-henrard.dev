@@ -9,6 +9,8 @@ import { DefaultChatTransport, lastAssistantMessageIsCompleteWithToolCalls } fro
 import { MessageSquare } from 'lucide-react';
 import { toast } from 'sonner';
 
+import { useIsMobile } from '@/core/hooks/use-is-mobile';
+
 import { useFloatingChatStore } from '../stores/floating-chat.store';
 import { ChatMessage } from '../tools';
 import {
@@ -32,7 +34,11 @@ import { Suggestion, Suggestions } from './ai-elements/suggestion';
 import { PhoneCallRequestForm } from './phone-call-request-form';
 
 export default function Chat() {
-  const t = useTranslations('home.chat');
+  const { isMobile, isLoading: isLoadingMobile } = useIsMobile();
+  useEffect(() => {
+    console.log(isMobile);
+  }, [isMobile]);
+  const tChat = useTranslations('home.chat');
   const tHome = useTranslations('home');
   const tPhone = useTranslations('phoneCallRequestForm');
   const [isInputDisabled, setIsInputDisabled] = useState(false);
@@ -46,11 +52,11 @@ export default function Chat() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const starterPrompts = [
-    t('suggestions.1'),
-    t('suggestions.2'),
-    t('suggestions.3'),
-    t('suggestions.4'),
-    t('suggestions.5'),
+    tChat('suggestions.1'),
+    tChat('suggestions.2'),
+    tChat('suggestions.3'),
+    tChat('suggestions.4'),
+    tChat('suggestions.5'),
   ];
 
   const { messages, sendMessage, status, addToolResult, error, stop, setMessages } =
@@ -98,7 +104,7 @@ export default function Chat() {
     // Send first starter prompt on Enter (no Shift) when empty.
     if (messages.length === 0 && empty && e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      firePrompt(t('suggestions.1'));
+      firePrompt(tChat('suggestions.1'));
       return;
     }
 
@@ -113,20 +119,22 @@ export default function Chat() {
     if (empty && /^[1-5]$/.test(e.key)) {
       e.preventDefault();
       const idx = Number(e.key);
-      firePrompt(t(`suggestions.${idx}` as any));
+      firePrompt(tChat(`suggestions.${idx}` as any));
     }
   };
 
   useEffect(() => {
-    if (!textareaRef.current) return;
-    textareaRef.current?.focus();
-  }, []);
+    // Only focus on desktop, never on mobile
+    if (textareaRef.current && !isMobile && !isLoadingMobile) {
+      textareaRef.current.focus();
+    }
+  }, [isMobile, isLoadingMobile]);
 
   useEffect(() => {
     if (error) {
-      toast.error(t('errors.generic'), { duration: 5000 });
+      toast.error(tChat('errors.generic'), { duration: 5000 });
     }
-  }, [error, t]);
+  }, [error, tChat]);
 
   // Fire message when prompt is set from the store (e.g., from CTA button)
   useEffect(() => {
@@ -147,14 +155,14 @@ export default function Chat() {
           parts: [
             {
               type: 'text',
-              text: t('introMessage'),
+              text: tChat('introMessage'),
             },
           ],
         },
       ]);
       setShouldShowIntro(false);
     }
-  }, [shouldShowIntro, messages.length, setMessages, t, setShouldShowIntro]);
+  }, [shouldShowIntro, messages.length, setMessages, tChat, setShouldShowIntro]);
 
   return (
     <div className='flex h-full flex-col justify-between'>
@@ -166,7 +174,7 @@ export default function Chat() {
             <div>
               <ConversationEmptyState
                 icon={<MessageSquare className='size-12' />}
-                title={t('emptyState.title')}
+                title={tChat('emptyState.title')}
                 description=''
               />
               <Suggestions className='mx-auto flex max-w-min flex-wrap items-center justify-center'>
@@ -245,12 +253,13 @@ export default function Chat() {
       <PromptInput onSubmit={handleSubmit} className='mt-4' globalDrop multiple>
         <PromptInputBody>
           <PromptInputTextarea
+            autoFocus={false}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={onTextareaKeyDown}
             ref={textareaRef}
             value={text}
             disabled={isInputDisabled}
-            placeholder={t('placeholder')}
+            placeholder={tChat('placeholder')}
           />
         </PromptInputBody>
         <PromptInputFooter className='w-auto'>
