@@ -20,24 +20,28 @@ export default function FOMOCard({ variant }: FOMOCardProps) {
   const variantCTA = variant === 'mvp-foundry' ? t('cta.mvp-audit') : t('cta.ai-audit');
 
   return (
-    <div className='mb-10 flex flex-col items-center justify-between gap-3 rounded-2xl border p-4 md:flex-row md:p-5'>
-      <div className='flex items-center gap-2'>
-        <div className='relative'>
+    <div className='mb-8 flex flex-col items-center justify-between gap-4 rounded-2xl border p-4 sm:mb-10 sm:gap-3 sm:p-5 md:flex-row'>
+      <div className='flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left'>
+        <div className='relative shrink-0'>
           <span className='bg-destructive absolute inline-flex h-full w-full animate-ping rounded-full opacity-75'></span>
           <Badge className='relative rounded-full' variant='destructive'>
             {t('limitedSpots')}
           </Badge>
         </div>
-        <span className='text-foreground/80 text-sm md:text-base'>
+        <span className='text-foreground/80 text-sm leading-relaxed sm:text-base'>
           {t('message.intro')} <strong>{variantText}</strong>{' '}
           {firstToUpper(new Intl.DateTimeFormat('fr-BE', { month: 'long' }).format(new Date()))}{' '}
           {t('message.intakeOpen')}
         </span>
       </div>
-      <div className='flex items-center gap-2'>
-        <CtaTriggerPhoneCallRequest />
+      <div className='flex w-full flex-col items-center gap-2 sm:w-auto sm:flex-row'>
+        <CtaTriggerPhoneCallRequest className='w-full sm:w-auto' />
 
-        <Button asChild variant='outline'>
+        <Button
+          asChild
+          variant='outline'
+          className='line-clamp-2 w-full truncate text-center sm:w-auto'
+        >
           <Link href='/services/audit'>{variantCTA}</Link>
         </Button>
       </div>
