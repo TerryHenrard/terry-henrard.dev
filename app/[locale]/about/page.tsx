@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { CheckCircle2, Code2, Gauge, ShieldCheck, Sparkles, Users } from 'lucide-react';
 
 import { Badge } from '@/core/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/core/components/ui/card';
+import { Card, CardContent } from '@/core/components/ui/card';
 import CtaTriggerPhoneCallRequest from '@/features/ai/components/cta-trigger-phone-call-request';
 
 interface AboutPageProps {
@@ -18,30 +18,32 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const t = await getTranslations('about');
 
   return (
-    <div className='relative min-h-screen overflow-hidden'>
-      <div className='relative z-10 mx-auto max-w-6xl space-y-10 px-4 py-8 md:space-y-12'>
+    <main className='relative container mx-auto min-h-[calc(100vh-4rem)] overflow-hidden px-4 sm:px-6 lg:px-8'>
+      <div className='relative z-10 mx-auto max-w-6xl py-8 sm:py-12 lg:py-16'>
         {/* Hero — who you'll work with */}
-        <div className='relative mb-2 overflow-hidden rounded-3xl'>
-          <Card className='border-0 bg-transparent'>
+        <div className='relative mb-8 overflow-hidden rounded-3xl sm:mb-12 lg:mb-16'>
+          <Card className='relative border-0 bg-transparent'>
             <CardContent className='p-0'>
-              <Badge className='mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium'>
-                <Sparkles className='h-3 w-3' />
-                {t('badge')}
-              </Badge>
-              <h1 className='mb-4 text-4xl font-bold text-balance md:text-6xl'>
-                {t('hero.title')}
-              </h1>
-              <p className='text-foreground/70 text-lg leading-relaxed text-pretty md:text-xl'>
-                {t.rich('hero.description', {
-                  strong: (chunks) => <strong>{chunks}</strong>,
-                })}
-              </p>
+              <div className='flex flex-col items-center text-center md:items-start md:text-left'>
+                <Badge className='mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium'>
+                  <Sparkles className='h-3 w-3' />
+                  {t('badge')}
+                </Badge>
+                <h1 className='mb-3 text-3xl font-bold text-balance sm:text-4xl md:text-5xl lg:text-6xl'>
+                  {t('hero.title')}
+                </h1>
+                <p className='text-foreground/70 text-base leading-relaxed text-pretty sm:text-lg md:text-xl'>
+                  {t.rich('hero.description', {
+                    strong: (chunks) => <strong>{chunks}</strong>,
+                  })}
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
 
         {/* Quick proof strip */}
-        <div className='grid grid-cols-2 gap-3 md:grid-cols-4'>
+        <div className='mb-8 grid grid-cols-2 gap-3 sm:mb-10 md:mb-12 md:grid-cols-4 lg:mb-16'>
           {[
             {
               icon: Gauge,
@@ -71,147 +73,145 @@ export default async function AboutPage({ params }: AboutPageProps) {
         </div>
 
         {/* What I do for clients */}
-        <Card className='p-6 md:p-8'>
-          <CardHeader className='pb-4'>
-            <CardTitle className='text-2xl md:text-3xl'>{t('whatIDo.title')}</CardTitle>
-          </CardHeader>
-          <CardContent className='text-foreground/80'>
-            <ul className='grid gap-4 md:grid-cols-2'>
-              <li className='flex gap-2'>
-                <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
-                <span>
-                  {t.rich('whatIDo.items.mvpSpeed', {
-                    strong: (chunks) => <strong>{chunks}</strong>,
-                  })}
-                </span>
-              </li>
-              <li className='flex gap-2'>
-                <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
-                <span>
-                  {t.rich('whatIDo.items.aiFeature', {
-                    strong: (chunks) => <strong>{chunks}</strong>,
-                  })}
-                </span>
-              </li>
-              <li className='flex gap-2'>
-                <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
-                <span>
-                  {t.rich('whatIDo.items.roadmap', {
-                    strong: (chunks) => <strong>{chunks}</strong>,
-                  })}
-                </span>
-              </li>
-              <li className='flex gap-2'>
-                <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
-                <span>
-                  {t.rich('whatIDo.items.maintenance', {
-                    strong: (chunks) => <strong>{chunks}</strong>,
-                  })}
-                </span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('whatIDo.title')}</h2>
+          <Card className='rounded-3xl p-6 sm:p-8'>
+            <CardContent className='text-foreground/80 p-0'>
+              <ul className='grid gap-4 md:grid-cols-2'>
+                <li className='flex gap-2'>
+                  <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
+                  <span>
+                    {t.rich('whatIDo.items.mvpSpeed', {
+                      strong: (chunks) => <strong>{chunks}</strong>,
+                    })}
+                  </span>
+                </li>
+                <li className='flex gap-2'>
+                  <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
+                  <span>
+                    {t.rich('whatIDo.items.aiFeature', {
+                      strong: (chunks) => <strong>{chunks}</strong>,
+                    })}
+                  </span>
+                </li>
+                <li className='flex gap-2'>
+                  <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
+                  <span>
+                    {t.rich('whatIDo.items.roadmap', {
+                      strong: (chunks) => <strong>{chunks}</strong>,
+                    })}
+                  </span>
+                </li>
+                <li className='flex gap-2'>
+                  <CheckCircle2 className='text-primary mt-1 h-5 w-5 shrink-0' />
+                  <span>
+                    {t.rich('whatIDo.items.maintenance', {
+                      strong: (chunks) => <strong>{chunks}</strong>,
+                    })}
+                  </span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* How I work */}
-        <Card className='p-6 md:p-8'>
-          <CardHeader className='pb-4'>
-            <CardTitle className='text-2xl md:text-3xl'>{t('howIWork.title')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className='grid gap-4 md:grid-cols-3'>
-              <Card className='p-4'>
-                <CardHeader className='pb-2'>
-                  <div className='bg-primary/10 mb-2 flex h-10 w-10 items-center justify-center rounded-xl'>
-                    <Gauge className='text-primary h-5 w-5' />
-                  </div>
-                  <CardTitle className='text-lg'>{t('howIWork.sprints.title')}</CardTitle>
-                </CardHeader>
-                <CardContent className='text-foreground/70 pt-0'>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('howIWork.title')}</h2>
+          <div className='grid gap-4 sm:gap-6 md:grid-cols-3'>
+            <Card className='rounded-3xl p-6 sm:p-8'>
+              <CardContent className='p-0'>
+                <div className='bg-primary/10 mb-4 flex h-10 w-10 items-center justify-center rounded-2xl sm:h-12 sm:w-12'>
+                  <Gauge className='text-primary h-5 w-5 sm:h-6 sm:w-6' />
+                </div>
+                <h3 className='mb-1 text-lg font-semibold sm:mb-2 sm:text-xl'>
+                  {t('howIWork.sprints.title')}
+                </h3>
+                <p className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
                   {t('howIWork.sprints.description')}
-                </CardContent>
-              </Card>
+                </p>
+              </CardContent>
+            </Card>
 
-              <Card className='p-4'>
-                <CardHeader className='pb-2'>
-                  <div className='bg-primary/10 mb-2 flex h-10 w-10 items-center justify-center rounded-xl'>
-                    <ShieldCheck className='text-primary h-5 w-5' />
-                  </div>
-                  <CardTitle className='text-lg'>{t('howIWork.production.title')}</CardTitle>
-                </CardHeader>
-                <CardContent className='text-foreground/70 pt-0'>
+            <Card className='rounded-3xl p-6 sm:p-8'>
+              <CardContent className='p-0'>
+                <div className='bg-primary/10 mb-4 flex h-10 w-10 items-center justify-center rounded-2xl sm:h-12 sm:w-12'>
+                  <ShieldCheck className='text-primary h-5 w-5 sm:h-6 sm:w-6' />
+                </div>
+                <h3 className='mb-1 text-lg font-semibold sm:mb-2 sm:text-xl'>
+                  {t('howIWork.production.title')}
+                </h3>
+                <p className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
                   {t('howIWork.production.description')}
-                </CardContent>
-              </Card>
+                </p>
+              </CardContent>
+            </Card>
 
-              <Card className='p-4'>
-                <CardHeader className='pb-2'>
-                  <div className='bg-primary/10 mb-2 flex h-10 w-10 items-center justify-center rounded-xl'>
-                    <Code2 className='text-primary h-5 w-5' />
-                  </div>
-                  <CardTitle className='text-lg'>{t('howIWork.stack.title')}</CardTitle>
-                </CardHeader>
-                <CardContent className='text-foreground/70 pt-0'>
+            <Card className='rounded-3xl p-6 sm:p-8'>
+              <CardContent className='p-0'>
+                <div className='bg-primary/10 mb-4 flex h-10 w-10 items-center justify-center rounded-2xl sm:h-12 sm:w-12'>
+                  <Code2 className='text-primary h-5 w-5 sm:h-6 sm:w-6' />
+                </div>
+                <h3 className='mb-1 text-lg font-semibold sm:mb-2 sm:text-xl'>
+                  {t('howIWork.stack.title')}
+                </h3>
+                <p className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
                   {t('howIWork.stack.description')}
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
 
         {/* Experience snapshot */}
-        <Card className='p-6 md:p-8'>
-          <CardHeader className='pb-4'>
-            <CardTitle className='text-2xl md:text-3xl'>{t('experience.title')}</CardTitle>
-          </CardHeader>
-          <CardContent className='text-foreground/80'>
-            <div className='grid gap-4 md:grid-cols-3'>
-              <div className='rounded-xl p-2'>
-                <div className='text-primary mb-1 text-sm font-semibold'>
-                  {t('experience.products.label')}
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('experience.title')}</h2>
+          <Card className='rounded-3xl p-6 sm:p-8'>
+            <CardContent className='text-foreground/80 p-0'>
+              <div className='grid gap-4 md:grid-cols-3'>
+                <div className='rounded-xl p-2'>
+                  <div className='text-primary mb-1 text-sm font-semibold'>
+                    {t('experience.products.label')}
+                  </div>
+                  <p className='text-sm'>{t('experience.products.description')}</p>
                 </div>
-                <p className='text-sm'>{t('experience.products.description')}</p>
-              </div>
-              <div className='rounded-xl p-2'>
-                <div className='text-primary mb-1 text-sm font-semibold'>
-                  {t('experience.built.label')}
+                <div className='rounded-xl p-2'>
+                  <div className='text-primary mb-1 text-sm font-semibold'>
+                    {t('experience.built.label')}
+                  </div>
+                  <p className='text-sm'>{t('experience.built.description')}</p>
                 </div>
-                <p className='text-sm'>{t('experience.built.description')}</p>
-              </div>
-              <div className='rounded-xl p-2'>
-                <div className='text-primary mb-1 text-sm font-semibold'>
-                  {t('experience.showUp.label')}
+                <div className='rounded-xl p-2'>
+                  <div className='text-primary mb-1 text-sm font-semibold'>
+                    {t('experience.showUp.label')}
+                  </div>
+                  <p className='text-sm'>{t('experience.showUp.description')}</p>
                 </div>
-                <p className='text-sm'>{t('experience.showUp.description')}</p>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* A bit about me */}
-        <Card className='p-6 md:p-8'>
-          <CardHeader className='pb-4'>
-            <CardTitle className='text-2xl md:text-3xl'>{t('human.title')}</CardTitle>
-          </CardHeader>
-          <CardContent className='text-foreground/80 space-y-4'>
-            <p>{t('human.paragraph1')}</p>
-            <p className='text-foreground/70 text-sm'>{t('human.paragraph2')}</p>
-          </CardContent>
-        </Card>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('human.title')}</h2>
+          <Card className='rounded-3xl p-6 sm:p-8'>
+            <CardContent className='text-foreground/80 space-y-4 p-0'>
+              <p>{t('human.paragraph1')}</p>
+              <p className='text-foreground/70 text-sm'>{t('human.paragraph2')}</p>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* CTA */}
-        <Card className='p-6 text-center md:p-8'>
-          <CardHeader>
-            <CardTitle className='text-2xl md:text-3xl'>{t('cta.title')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className='text-foreground/70 mx-auto mb-6 max-w-2xl text-sm md:text-base'>
-              {t('cta.description')}
-            </p>
-            <CtaTriggerPhoneCallRequest />
-          </CardContent>
-        </Card>
+        <div className='mb-2 flex flex-col items-center gap-3 text-center sm:gap-4'>
+          <h2 className='text-2xl font-bold sm:text-3xl'>{t('cta.title')}</h2>
+          <p className='text-foreground/70 mx-auto mb-4 max-w-2xl text-sm md:text-base'>
+            {t('cta.description')}
+          </p>
+          <CtaTriggerPhoneCallRequest className='w-full' />
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
