@@ -61,8 +61,10 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         <FOMOCard variant='mvp-foundry' />
 
         {/* What's included */}
-        <div className='mb-10 sm:mb-12 lg:mb-16'>
-          <h2 className='mb-6 text-2xl font-bold sm:text-3xl'>{t('whatIsIncluded.title')}</h2>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>
+            {t('whatIsIncluded.title')}
+          </h2>
           <div className='grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {[
               { icon: Target, key: '0' },
@@ -76,7 +78,7 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
                   <div className='bg-primary/10 mb-4 flex h-10 w-10 items-center justify-center rounded-2xl sm:h-12 sm:w-12'>
                     <item.icon className='text-primary h-5 w-5 sm:h-6 sm:w-6' />
                   </div>
-                  <h3 className='mb-1 text-lg font-semibold sm:text-xl'>
+                  <h3 className='mb-1 text-lg font-semibold sm:mb-2 sm:text-xl'>
                     {t(`whatIsIncluded.items.${item.key}.title` as any)}
                   </h3>
                   <p className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
@@ -89,16 +91,18 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* What you get */}
-        <div className='mb-10 sm:mb-12 lg:mb-16'>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
           <Card className='bg-primary/5 border-primary/20 rounded-3xl border-2 p-6 sm:p-8'>
             <CardContent className='p-0'>
-              <div className='mb-4 flex flex-col items-center gap-3 text-center sm:flex-row sm:text-left'>
+              <div className='mb-3 flex flex-col items-center gap-3 text-center sm:mb-4 sm:flex-row sm:text-left'>
                 <div className='bg-primary flex h-10 w-10 items-center justify-center rounded-2xl sm:h-12 sm:w-12'>
                   <Lightbulb className='h-5 w-5 text-white sm:h-6 sm:w-6' />
                 </div>
                 <h2 className='text-xl font-bold sm:text-2xl'>{t('whatYouGet.title')}</h2>
               </div>
-              <p className='mb-4 text-base font-medium sm:text-lg'>{t('whatYouGet.description')}</p>
+              <p className='mb-3 text-base font-medium sm:mb-4 sm:text-lg'>
+                {t('whatYouGet.description')}
+              </p>
               <p className='text-foreground/70 text-base leading-relaxed sm:text-lg'>
                 {t('whatYouGet.summary')}
               </p>
@@ -107,13 +111,13 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* Guarantees */}
-        <div className='mb-10 sm:mb-12 lg:mb-16'>
-          <h2 className='mb-6 text-2xl font-bold sm:text-3xl'>{t('guarantees.title')}</h2>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('guarantees.title')}</h2>
           <div className='grid gap-4 sm:gap-6 md:grid-cols-2'>
             {[0, 1, 2, 3, 4].map((idx) => (
               <Card key={idx} className='rounded-3xl p-6 sm:p-8'>
                 <CardContent className='p-0'>
-                  <div className='bg-primary/10 mb-4 flex h-10 w-10 items-center justify-center rounded-2xl sm:h-12 sm:w-12'>
+                  <div className='bg-primary/10 mb-3 flex h-10 w-10 items-center justify-center rounded-2xl sm:mb-4 sm:h-12 sm:w-12'>
                     <ShieldCheck className='text-primary h-5 w-5 sm:h-6 sm:w-6' />
                   </div>
                   <h3 className='mb-2 text-lg font-semibold sm:text-xl'>
@@ -129,8 +133,8 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* FAQ */}
-        <div className='mb-10 sm:mb-12 lg:mb-16'>
-          <h2 className='mb-6 text-2xl font-bold sm:text-3xl'>{t('faq.title')}</h2>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('faq.title')}</h2>
           <Card className='rounded-3xl p-6 sm:p-8'>
             <CardContent className='p-0'>
               <Accordion type='single' collapsible className='w-full'>
@@ -150,8 +154,8 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* Glossary */}
-        <div className='mb-10 sm:mb-12 lg:mb-16'>
-          <h2 className='mb-6 text-2xl font-bold sm:text-3xl'>{t('glossary.title')}</h2>
+        <div className='mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
+          <h2 className='mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl'>{t('glossary.title')}</h2>
           <div className='grid gap-4 sm:gap-6 md:grid-cols-2'>
             {[0, 1].map((idx) => (
               <Card key={idx} className='rounded-3xl p-6 sm:p-8'>
@@ -169,7 +173,7 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* Final CTA */}
-        <div className='mb-2 flex flex-col items-center gap-3 text-center'>
+        <div className='mb-2 flex flex-col items-center gap-3 text-center sm:gap-4'>
           <div className='flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row'>
             <Button asChild size='lg' className='w-full sm:w-auto'>
               <Link href='/services/audit'>{t('cta.primary')}</Link>
@@ -180,7 +184,7 @@ export default async function MVPFoundryPage({ params }: { params: Promise<{ loc
               className='w-full sm:w-auto'
             />
           </div>
-          <p className='text-foreground/60 text-sm'>
+          <p className='text-foreground/60 text-sm sm:text-base'>
             {t.rich('cta.footer', {
               link: (chunks: React.ReactNode) => (
                 <Link
