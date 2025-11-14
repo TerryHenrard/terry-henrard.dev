@@ -35,9 +35,11 @@ import { PhoneCallRequestForm } from './phone-call-request-form';
 
 export default function Chat() {
   const { isMobile, isLoading: isLoadingMobile } = useIsMobile();
+
   const tChat = useTranslations('home.chat');
   const tHome = useTranslations('home');
   const tPhone = useTranslations('phoneCallRequestForm');
+
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [text, setText] = useState('');
 
@@ -45,6 +47,7 @@ export default function Chat() {
   const clearExternalPrompt = useFloatingChatStore((state) => state.setPrompt);
   const shouldShowIntro = useFloatingChatStore((state) => state.shouldShowIntro);
   const setShouldShowIntro = useFloatingChatStore((state) => state.setShouldShowIntro);
+  const isOpen = useFloatingChatStore((state) => state.isOpen);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -122,10 +125,10 @@ export default function Chat() {
 
   useEffect(() => {
     // Only focus on desktop, never on mobile
-    if (textareaRef.current && !isMobile && !isLoadingMobile) {
-      textareaRef.current.focus();
-    }
-  }, [isMobile, isLoadingMobile]);
+    textareaRef.current?.blur();
+    if (!textareaRef.current || isMobile || isLoadingMobile) return;
+    textareaRef.current.focus();
+  }, [isMobile, isLoadingMobile, isOpen]);
 
   useEffect(() => {
     if (error) {

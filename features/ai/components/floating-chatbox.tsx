@@ -19,8 +19,11 @@ import Chat from './chat';
 
 export default function FloatingChatbox() {
   const t = useTranslations('home.chat');
+
   const isClient = useIsClient();
+
   const { isMobile } = useIsMobile();
+
   const isOpen = useFloatingChatStore((state) => state.isOpen);
   const setIsOpen = useFloatingChatStore((state) => state.setIsOpen);
   const hasShownIntro = useFloatingChatStore((state) => state.hasShownIntro);
@@ -39,8 +42,22 @@ export default function FloatingChatbox() {
       setHasShownIntro(true);
     }, 10000); // 10 seconds
 
+    if (isOpen) {
+      setShowNotificationBadge(false);
+      setShouldShowIntro(false);
+      setHasShownIntro(true);
+      clearTimeout(timer);
+    }
+
     return () => clearTimeout(timer);
-  }, [isClient, hasShownIntro, setShowNotificationBadge, setShouldShowIntro, setHasShownIntro]);
+  }, [
+    isClient,
+    hasShownIntro,
+    setShowNotificationBadge,
+    setShouldShowIntro,
+    setHasShownIntro,
+    isOpen,
+  ]);
 
   const handleToggleChat = () => {
     setIsOpen(!isOpen);
@@ -58,7 +75,10 @@ export default function FloatingChatbox() {
     return (
       <>
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent className='flex h-dvh max-h-dvh w-screen max-w-none flex-col gap-0 rounded-none p-0 sm:max-w-none [&>button]:top-4 [&>button]:right-4'>
+          <DialogContent
+            className='flex h-dvh max-h-dvh w-screen max-w-none flex-col gap-0 rounded-none p-0 sm:max-w-none [&>button]:top-4 [&>button]:right-4'
+            onOpenAutoFocus={(event) => event.preventDefault()}
+          >
             <DialogHeader className='shrink-0 border-b px-4 py-3'>
               <DialogTitle>{t('title')}</DialogTitle>
             </DialogHeader>
